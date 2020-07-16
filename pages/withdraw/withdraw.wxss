@@ -1,0 +1,68 @@
+/* pages/withdraw/withdraw.wxss */
+page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.recharge_model{
+    margin: 20rpx 30rpx;
+    border-radius: 16rpx;
+    padding: 30rpx;
+    background: #fff;
+    box-shadow: 0 5px 5px 0 rgba(236,236,236,1);
+}
+.recharge_model .title{
+    font-size: 28rpx;
+}
+.recharge_ipt{
+    padding: 30rpx 0;
+    border-bottom: 1px solid #E4E4E4;
+}
+.recharge_ipt text{
+    font-size: 56rpx;
+    padding-top: 10rpx;
+    padding-right: 10rpx;
+}
+.recharge_ipt input{
+    font-size: 80rpx;
+    height: 90rpx;
+    padding: 0 10rpx;
+}
+.recharge{
+    height: 90rpx;
+    margin: 80rpx 0 40rpx 0;
+    line-height: 90rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 34rpx;
+    font-weight: 500;
+    border-radius: 10rpx;
+    background-image: linear-gradient(to right, #69C63C , #40B333);
+}
+.slect_bank{
+    margin:20rpx 30rpx 0;
+    padding: 0 30rpx;
+    background: #fff;
+    height: 170rpx;
+    line-height: 170rpx;
+    border-radius: 16rpx;
+    align-items: center;
+    font-size: 28rpx;
+}
+.slect_bank image{
+    width: 20rpx;
+    height: 26rpx;
+    margin-left: 10rpx;
+}
+.slect_bank .card{
+    flex: 1;
+    text-align: right;
+}
+.hint{
+    color: #666;
+    font-size: 26rpx;
+    padding-top: 30rpx;
+}
+.hint .all{
+    color: #5F8FFF;
+    margin-left: 30rpx;
+}

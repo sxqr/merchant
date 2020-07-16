@@ -1,0 +1,103 @@
+/* pages/storeDetail/storeDetail.wxss */
+page{
+    height: 100%;
+    background: #efefef;
+}
+.store_top{
+    padding: 30rpx;
+    color: #fff;
+    margin-bottom: 20rpx;
+    background-image: linear-gradient(to right, #69C63C , #40B333);
+}
+.store_title{
+    padding-top: 20rpx;
+}
+.store_title text{
+    font-weight: 500;
+    font-size: 36rpx;
+}
+.store_title .edit{
+    float: right;
+    padding: 0 10rpx 10rpx;
+    margin-right: -10rpx;
+}
+.store_title image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.store_top .addr{
+    align-items: center;
+    padding-top: 30rpx;
+}
+.store_top .addr image{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+.store_top .addr text{
+    font-size: 26rpx;
+}
+.store_top .grop{
+    padding-top: 60rpx;
+    display: flex;
+}
+.store_top .grop .item{
+    flex: 1;
+    text-align: center;
+}
+.store_top .grop .item .add{
+    width: 80rpx;
+    height: 80rpx;
+    display: block;
+    margin: 0 auto;
+}
+.store_top .grop .item text{
+    display: block;
+    padding-top:10rpx;
+    font-size: 30rpx;
+}
+.shopclerk{
+    padding-left: 30rpx;
+    background: #fff;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 30rpx;
+}
+.shopclerk .add_member{
+    color: #6AC63C;
+    float: right;
+    padding: 0 30rpx;
+}
+.store_list .list_cell{
+    background: #fff;
+    padding: 30rpx;
+    border-top: 1px solid #F6F6F6;
+    align-items: center;
+}
+.store_list .list_lt .phone{
+    align-items: center;
+    padding-top: 10rpx;
+}
+.list_lt .phone image{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 8rpx;
+}
+.store_list .list_lt{
+    flex: 1;
+}
+.store_list .list_lt .title{
+    font-size: 36rpx;
+    font-weight: 500;
+}
+.list_rt .code image{
+    height: 70rpx;
+    width: 70rpx;
+    display: block;
+    margin: 0 auto;
+}
+.list_rt .code text{
+    display: block;
+    font-size: 26rpx;
+    padding-top: 5rpx;
+}

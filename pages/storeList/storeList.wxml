@@ -1,0 +1,22 @@
+<!--pages/storeList/storeList.wxml-->
+<view class="we_page">
+    <view class="store_list">
+        <view class="list_cell">
+            <view class="title">收银门店名称</view>
+            <view class="addr flex">
+                <image src="../../images/her.png"></image>
+                <text>湖南省-长沙市-岳麓区-麓谷信息港B座8001</text>
+            </view>
+        </view>
+        <view class="list_cell">
+            <view class="title">收银门店名称</view>
+            <view class="addr flex">
+                <image src="../../images/her.png"></image>
+                <text>湖南省-长沙市-岳麓区-麓谷信息港B座8001</text>
+            </view>
+        </view>
+    </view>
+    <view class="btm_menu">
+        +新增门店
+    </view>
+</view>

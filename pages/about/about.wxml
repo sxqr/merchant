@@ -1,0 +1,14 @@
+<!--pages/about/about.wxml-->
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="page_list">
+        <view class="cell">
+            <view class="title">用户加盟协议</view>
+            <image src="../../images/right.png" class="right_icon"></image>
+        </view>
+        <view class="cell">
+            <view class="title">支付协议</view>
+            <image src="../../images/right.png" class="right_icon"></image>
+        </view>
+    </view>
+</view>

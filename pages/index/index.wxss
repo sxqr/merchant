@@ -1,0 +1,103 @@
+/**index.wxss**/
+.top_bg{
+  background: #63C33B;
+}
+.my_header{
+  padding: 30rpx;
+  align-items: center;
+  color: #fff;
+  padding-bottom: 100rpx;
+}
+.my_header .logo{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+.info .name{
+  font-size: 34rpx;
+  font-weight: 500;
+  padding-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.info .name image{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 20rpx;
+}
+.info .card{
+  font-size: 30rpx;
+}
+.model{
+  margin: 0 30rpx;
+  margin-top: -60rpx;
+}
+.model .content{
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0 5px 5px 0 rgba(236,236,236,1);
+}
+.model .title{
+  text-align: center;
+  padding-top: 30rpx;
+  font-size: 30rpx;
+}
+.model .monney{
+  text-align: center;
+  padding:20rpx 0;
+  font-weight: 550;
+  font-size: 54rpx;
+}
+.monney_btm .item{
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0 30rpx 0;
+  position: relative;
+}
+.monney_btm .item .title{
+  display: block;
+  color: #999;
+  font-size: 28rpx;
+  padding-bottom: 10rpx;
+}
+.monney_btm .item .num{
+  font-size: 34rpx;
+  color: #333;
+  font-weight: 500;
+}
+.monney_btm .item:nth-child(1){
+  /* border: 1px solid #FEFEFE;
+  border-radius: 12rpx;
+  box-shadow: 0 5px 5px 0 rgba(236,236,236,1); */
+}
+.monney_btm .item:nth-child(1)::before{
+  content: "";
+  display: inline-block;
+  height: 100rpx;
+  width: 1rpx;
+  background: #E3E3E3;
+  position: absolute;
+  right: 0rpx;
+  top: calc((100% - 100rpx) / 2);
+}
+.grid_menu{
+  padding-top: 35rpx;
+}
+.list_cell .item{
+  width: 25%;
+  float: left;
+  text-align: center;
+  padding: 26rpx 0;
+}
+.list_cell .item image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+.list_cell .item text{
+  font-size: 28rpx;
+  color: #333;
+  display: block;
+  padding-top: 10rpx;
+}

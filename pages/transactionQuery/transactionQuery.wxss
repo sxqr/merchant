@@ -1,0 +1,134 @@
+/* pages/transactionQuery/transactionQuery.wxss */
+page{
+    height: 100%;
+    background: #efefef;
+}
+.transaction{
+    padding: 20rpx 30rpx 30rpx 30rpx;
+    background-image: linear-gradient(to right, #69C63C , #40B333);
+}
+.top_menu .item{
+    color: #fff;
+    font-size: 30rpx;
+    padding-right: 30rpx;
+}
+.top_menu .active text{
+    display: inline-block;
+    border-bottom: 2rpx solid #fff;
+    padding-bottom: 15rpx;
+    font-size: 32rpx;
+}
+.transaction .cut{
+    display: flex;
+}
+.cut .item{
+    background: rgba(125,205,97,1);
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 60rpx;
+    text-align: center;
+    color: #fff;
+    margin-right: 30rpx;
+}
+.cut .item.active{
+    background: #fff;
+    color: #63D15F;
+}
+.btn_menu{
+    padding-top: 40rpx;
+    align-items: center;
+}
+.btn_menu .time_menu{
+    flex: 1;
+    text-align: right;
+}
+.select_time{
+    float: right;
+    color: #fff;
+    background: rgba(125,205,97,1);
+    border-radius: 10rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    display: flex;
+    align-items: center;
+}
+.select_time text{
+    display: inline-block;
+    padding: 0 20rpx;
+    position: relative;
+}
+.select_time .line{
+    width: 2rpx;
+    height: 40rpx;
+    background: #C0E6BC;
+    margin-right: 20rpx;
+}
+.select_time image{
+    height: 40rpx;
+    width: 40rpx;
+    padding-right: 10rpx;
+}
+.gathering_num{
+    margin-top: 20rpx;
+    background: #fff;
+    text-align: right;
+    font-size: 30rpx;
+    padding-top: 30rpx;
+    padding-right: 30rpx;
+}
+.list_menu{
+    background: #fff;
+    padding: 20rpx 30rpx;
+    border-bottom: 1px solid #F1F1F1;
+}
+.list_menu .item{
+    padding-right: 60rpx;
+    font-size: 30rpx;
+}
+.list_menu .item text{
+    display: inline-block;
+    padding-bottom: 15rpx;
+}
+.list_menu .item.active text{
+    border-bottom: 2px solid #6AC63C;
+    color: #6AC63C;
+}
+.list_lt .item{
+    display: flex;
+    align-items: center;
+}
+.list_lt image{
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+.page_list .list_cell{
+    padding: 20rpx 30rpx;
+    background: #fff;
+    border-bottom: 1px solid #E9E9E9;
+}
+.list_cell .list_rt{
+    flex: 1;
+    text-align: right;
+    color: #FF8554;
+    font-weight: 500;
+    font-size: 36rpx;
+    padding-top: 10rpx;
+}
+.list_lt .item text{
+    font-size: 32rpx;
+}
+.list_lt .time{
+    color: #999;
+    font-size: 26rpx;
+    padding-top: 10rpx;
+}
+.wechat{
+    color: #00C800;
+}
+.alipay{
+    color: #42B6F0;
+}

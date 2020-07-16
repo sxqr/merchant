@@ -1,0 +1,11 @@
+<!--pages/recharge/recharge.wxml-->
+<view class="we_page">
+    <view class="recharge_model">
+        <view class="title">充值金额</view>
+        <view class="recharge_ipt flex">
+            <text>¥</text>
+            <input value="30"></input>
+        </view>
+        <view class="recharge">充值</view>
+    </view>
+</view>

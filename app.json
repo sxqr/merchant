@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/psd3/psd3",
+    "pages/psd2/psd2",
+    "pages/psd/psd",
+    "pages/memberCode/memberCode",
+    "pages/code/code",
+    "pages/codeList/codeList",
+    "pages/succeed/succeed",
+    "pages/withdraw/withdraw",
+    "pages/recharge/recharge",
+    "pages/billDetail/billDetail",
+    "pages/addBankCard/addBankCard",
+    "pages/bankCard/bankCard",
+    "pages/addStore/addStore",
+    "pages/cloudAdd/cloudAdd",
+    "pages/addStaff/addStaff",
+    "pages/cloudDetail/cloudDetail",
+    "pages/cloudSound/cloudSound",
+    "pages/walletDetail/walletDetail",
+    "pages/storeDetail/storeDetail",
+    "pages/storeList/storeList",
+    "pages/transactionQuery/transactionQuery",
+    "pages/wallet/wallet",
+    "pages/about/about",
+    "pages/personal/personal",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

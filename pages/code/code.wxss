@@ -1,0 +1,86 @@
+/* pages/code/code.wxss */
+page{
+    height: 100%;
+    background: #42B433;
+}
+.we_page{
+    background: #42B433;
+    height: 100%;
+}
+.we_page .ht{
+    height: 120rpx;
+}
+.code_mode{
+    background: #fff;
+    border-radius: 20rpx;
+    margin: 0 50rpx;
+    position: relative;
+    padding-top: 100rpx;
+    padding-bottom: 120rpx;
+}
+.code_mode .logo{
+    width: 180rpx;
+    height: 180rpx;
+    margin: 0 auto;
+    position: absolute;
+    top: -90rpx;
+    left: calc((100% - 180rpx) / 2);
+}
+.shop_name{
+    padding-top: 40rpx;
+    text-align: center;
+    font-size: 32rpx;
+}
+.code_img{
+    height: 440rpx;
+    width: 440rpx;
+    margin: 0 auto;
+    margin-top: 80rpx;
+    position: relative;
+    /* background: #000000; */
+}
+.number{
+    color: #999;
+    font-size: 30rpx;
+    padding-top: 40rpx;
+    text-align: center;
+}
+.relieve{
+    margin: 0 50rpx;
+    background: #fff;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-radius: 90rpx;
+    text-align: center;
+    color: #FF3451;
+    margin-top: 20rpx;
+    font-size: 32rpx;
+}
+.canvas{
+    margin: 0 40rpx;
+    box-sizing: border-box;
+}
+.can_code{
+    height: 40rpx;
+}
+.code_img .corner{
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+}
+.code_img .corner.let_top{
+    left: 0;
+    top: 0;
+}
+.code_img .corner.rit_top{
+    right: 0;
+    top: 0;
+}
+.code_img .corner.let_btm{
+    left: 0;
+    bottom: 0;
+}
+.code_img .corner.rit_btm{
+    right: 0;
+    bottom: 0;
+}

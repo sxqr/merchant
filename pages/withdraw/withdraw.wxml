@@ -1,0 +1,20 @@
+<!--pages/withdraw/withdraw.wxml-->
+<view class="we_page">
+    <view class="slect_bank flex">
+        <text>到银行卡</text>
+        <text class="card">工商银行 （5758）</text>
+        <image src="../../images/right.png"></image>
+    </view>
+    <view class="recharge_model">
+        <view class="title">提现金额</view>
+        <view class="recharge_ipt flex">
+            <text>¥</text>
+            <input value="30"></input>
+        </view>
+        <view class="hint flex">
+            <text>可提现余额1800:00</text>
+            <view class="all">全部提现</view>
+        </view>
+        <view class="recharge">确定</view>
+    </view>
+</view>

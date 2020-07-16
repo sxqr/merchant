@@ -1,0 +1,31 @@
+<!--pages/walletDetail/walletDetail.wxml-->
+<view class="we_page">
+    <view class="page_list">
+        <view class="list_cell flex">
+            <view class="list_lt">
+                <view class="item">
+                    <text class="wechat">充值</text>
+                </view>
+                <view class="time">
+                    15:12:13
+                </view>
+            </view>
+            <view class="list_rt">
+                +11.00
+            </view>
+        </view>
+        <view class="list_cell flex">
+            <view class="list_lt">
+                <view class="item">
+                    <text class="wechat">提现</text>
+                </view>
+                <view class="time">
+                    15:12:13
+                </view>
+            </view>
+            <view class="list_rt">
+                +11.00
+            </view>
+        </view>
+    </view>
+</view>

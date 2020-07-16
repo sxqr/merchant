@@ -1,0 +1,37 @@
+/* pages/cloudSound/cloudSound.wxss */
+page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.page_list{
+    margin-top: 20rpx;
+}
+.page_list .list_cell{
+    background: #fff;
+    padding: 30rpx;
+    border-bottom: 1px solid #F6F6F6;
+}
+.list_cell image{
+    width: 120rpx;
+    height: 100rpx;
+    margin-right: 10rpx;
+}
+.list_cell .title_number{
+    font-size: 36rpx;
+    font-weight: 500;
+}
+.list_cell .store_number{
+    font-size: 26rpx;
+    color: #999;
+    padding-top: 5rpx;
+}
+.btm_menu{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    background: #fff;
+    font-size: 34rpx;
+}

@@ -1,0 +1,51 @@
+/* pages/billDetail/billDetail.wxss */
+page{
+    height: 100%;
+}
+.bill_page{
+    padding: 0 30rpx;
+}
+.bill_page .monney{
+    text-align: center;
+    padding: 50rpx 0;
+    font-size: 62rpx;
+    font-weight: 550;
+}
+.bill_dt .cell{
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 32rpx;
+    align-items: center;
+}
+.bill_page .state{
+    color: #78CB53;
+    text-align: center;
+    font-size: 28rpx;
+    padding-bottom: 20rpx;
+}
+.group{
+    flex: 1;
+    text-align: right;
+    color: #999;
+}
+.bill_type image{
+    display: inline-block;
+    width: 60rpx;
+    height: 60rpx;
+}
+.bill_type text{
+    vertical-align: middle;
+    display: inline-block;
+    padding-left: 8rpx;
+}
+.division{
+    padding-top: 30rpx;
+    margin-top: 40rpx;
+    border-top:1rpx solid #E5E5E5;
+}
+.wechat{
+    color: #00C800;
+}
+.alipay{
+    color: #42B6F0;
+}

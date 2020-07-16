@@ -1,0 +1,22 @@
+<!--pages/wallet/wallet.wxml-->
+<view class="we_page">
+    <view class="wellet">
+        <view class="title">余额(元)</view>
+        <view class="monney">10.00</view>
+        <view class="we_btn">
+            <view class="btn">提现</view>
+            <view class="btn">充值</view>
+        </view>
+    </view>
+    <view class="page_list">
+        <view class="cell">
+            <view class="title">钱包明细</view>
+            <image src="../../images/right.png" class="right_icon"></image>
+        </view>
+        <view class="cell">
+            <view class="title">提现到银行卡</view>
+            <view class="txt">3</view>
+            <image src="../../images/right.png" class="right_icon"></image>
+        </view>
+    </view>
+</view>

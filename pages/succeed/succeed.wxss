@@ -1,0 +1,20 @@
+/* pages/succeed/succeed.wxss */
+page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.succeed{
+    margin-top: 120rpx;
+}
+.succeed image{
+    display: block;
+    width: 120rpx;
+    height: 120rpx;
+    margin:0 auto;
+}
+.succeed .state{
+    text-align: center;
+    font-weight: 500;
+    font-size: 36rpx;
+    padding-top: 40rpx;
+}

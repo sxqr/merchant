@@ -1,0 +1,34 @@
+/* pages/addStaff/addStaff.wxss */
+page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.add_staff{
+    margin-top: 20rpx;
+}
+.we_page .inpt_cell{
+    align-items: center;
+    background: #fff;
+    padding: 16rpx 30rpx;
+    border-bottom: 1px solid #f8f8f8;
+}
+.inpt_cell text{
+    padding-right: 30rpx;
+    font-size: 32rpx;
+}
+.inpt_cell input{
+    flex: 1;
+    padding: 10rpx 0;
+    font-size: 30rpx;
+}
+.add_btn{
+    height: 90rpx;
+    margin: 40rpx 60rpx;
+    line-height: 90rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 34rpx;
+    font-weight: 500;
+    border-radius: 10rpx;
+    background-image: linear-gradient(to right, #69C63C , #40B333);
+}

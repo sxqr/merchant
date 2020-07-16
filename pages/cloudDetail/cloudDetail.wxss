@@ -1,0 +1,33 @@
+/* pages/cloudDetail/cloudDetail.wxss */
+page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.cloud{
+    background: #fff;
+    padding-top: 50rpx;
+    margin-bottom: 20rpx;
+    padding-bottom: 20rpx;
+}
+.cloud .cloud_logo{
+    width: 140rpx;
+    height: 140rpx;
+    margin:0 auto;
+}
+.cloud .cloud_number{
+    color: #666;
+    text-align: center;
+    padding-top: 30rpx;
+    font-size: 28rpx;
+}
+.del_cloud{
+    margin: 0 30rpx;
+    height: 90rpx;
+    font-size: 34rpx;
+    font-weight: 500;
+    line-height: 90rpx;
+    background: #fff;
+    color: #FF2E4B;
+    border-radius: 90rpx;
+    text-align: center;
+}

@@ -1,0 +1,33 @@
+/* pages/walletDetail/walletDetail.wxss */
+page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.page_list{
+    margin-top: 20rpx;
+}
+.list_lt .item{
+    display: flex;
+    align-items: center;
+}
+.page_list .list_cell{
+    padding: 20rpx 30rpx;
+    background: #fff;
+    border-bottom: 1px solid #E9E9E9;
+}
+.list_cell .list_rt{
+    flex: 1;
+    text-align: right;
+    color: #FF8554;
+    font-weight: 500;
+    font-size: 36rpx;
+    padding-top: 10rpx;
+}
+.list_lt .item text{
+    font-size: 32rpx;
+}
+.list_lt .time{
+    color: #999;
+    font-size: 26rpx;
+    padding-top: 10rpx;
+}

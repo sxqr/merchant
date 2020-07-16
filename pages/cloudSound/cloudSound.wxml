@@ -1,0 +1,22 @@
+<!--pages/cloudSound/cloudSound.wxml-->
+<view class="we_page">
+    <view class="page_list">
+        <view class="list_cell flex">
+            <view class="logo"><image src="../../images/her.png"></image></view>
+            <view class="item">
+                <view class="title_number">编号1255444</view>
+                <view class="store_number">XXX门店</view>
+            </view>
+        </view>
+        <view class="list_cell flex">
+            <view class="logo"><image src="../../images/her.png"></image></view>
+            <view class="item">
+                <view class="title_number">编号1255444</view>
+                <view class="store_number">XXX门店</view>
+            </view>
+        </view>
+    </view>
+    <view class="btm_menu">
+        +新增设备
+    </view>
+</view>

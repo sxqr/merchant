@@ -1,0 +1,32 @@
+/* pages/about/about.wxss */
+page{
+    height: 100%;
+}
+.we_page{
+    background: #EFEFEF;
+    height: 100%;
+}
+.ht_20{
+    background: #EFEFEF;
+    height: 20rpx;
+}
+.cell{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 26rpx 30rpx;
+    background: #fff;
+    margin-bottom: 20rpx;
+    box-sizing: border-box;
+}
+.cell .right_icon{
+    width: 7px;
+    height: 12px;
+    /* position: absolute; */
+    margin-left: 10px;
+}
+.page_list .title{
+    flex: 1;
+    font-size: 32rpx;
+    color: #4D84FF;
+}

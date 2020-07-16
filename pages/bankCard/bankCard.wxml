@@ -1,0 +1,20 @@
+<!--pages/bankCard/bankCard.wxml-->
+<view class="we_page">
+    <view class="banck_list">
+        <view class="list_cell">
+            <view class="banck_logo flex">
+                <image src="../../images/logo.png"></image>
+                <text class="title">农业银行储蓄卡</text>
+            </view>
+            <view class="card">**** **** **** 1234</view>
+        </view>
+        <view class="list_cell">
+            <view class="banck_logo flex">
+                <image src="../../images/logo.png"></image>
+                <text class="title">农业银行储蓄卡</text>
+            </view>
+            <view class="card">**** **** **** 1234</view>
+        </view>
+    </view>
+    <view class="add_btn">新增银行卡</view>
+</view>

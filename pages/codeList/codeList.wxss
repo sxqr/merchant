@@ -1,0 +1,29 @@
+/* pages/codeList/codeList.wxss */
+page{
+    background: #EFEFEF;
+    height: 100%;
+}
+.code_list{
+    margin-top: 20rpx;
+}
+.code_list .list_cell{
+    /* align-items: center; */
+    background: #fff;
+    padding: 24rpx 30rpx;
+    border-bottom: 1px solid #F2F2F2;
+}
+.list_cell image{
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 20rpx;
+}
+.code_rt .title{
+    font-weight: 500;
+    font-size: 36rpx;
+    padding-top: 5rpx;
+}
+.code_rt text{
+    display: inline-block;
+    color: #999;
+    padding-top: 15rpx;
+}
