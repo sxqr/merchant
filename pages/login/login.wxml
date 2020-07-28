@@ -15,7 +15,7 @@
             </view>
             
         </form>
-        <view class="login_btn" bindtap="login">登录11</view>
+        <view class="login_btn" bindtap="login">登录1111</view>
     </view>
     <view class="wx_login flex">
         <image src="../../images/weixin-icon.png"></image>
