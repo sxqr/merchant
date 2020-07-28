@@ -1,4 +1,44 @@
 /* pages/storeDetail/storeDetail.wxss */
+.custom{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 44px;
+    background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
+    /* background: #000; */
+    background-size: 100% 100%;
+    z-index: 999;
+}
+.custom .back_title{
+    float: left;
+    color: #fff;
+    font-size: 36rpx;
+    font-weight: 500;
+    width: calc(100% - 88px);
+    line-height: 44px;
+    text-align: left;
+    margin:0 auto;
+}
+.custom .iphone{
+    text-align: center;
+}
+.custom .back{
+    width: 40px;
+    height: 44px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.custom .back image{
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: 30rpx;
+}
+.empty_custom{
+    height: 44px;
+    width: 100%;
+}
 page{
     height: 100%;
     background: #efefef;
@@ -7,7 +47,7 @@ page{
     padding: 30rpx;
     color: #fff;
     margin-bottom: 20rpx;
-    background-image: linear-gradient(to right, #69C63C , #40B333);
+    background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
 }
 .store_title{
     padding-top: 20rpx;
@@ -22,16 +62,16 @@ page{
     margin-right: -10rpx;
 }
 .store_title image{
-    width: 40rpx;
-    height: 40rpx;
+    width: 30rpx;
+    height: 30rpx;
 }
 .store_top .addr{
     align-items: center;
     padding-top: 30rpx;
 }
 .store_top .addr image{
-    width: 30rpx;
-    height: 30rpx;
+    width: 24rpx;
+    height: 28rpx;
     margin-right: 10rpx;
 }
 .store_top .addr text{
@@ -46,8 +86,8 @@ page{
     text-align: center;
 }
 .store_top .grop .item .add{
-    width: 80rpx;
-    height: 80rpx;
+    width: 64rpx;
+    height: 64rpx;
     display: block;
     margin: 0 auto;
 }
@@ -57,16 +97,20 @@ page{
     font-size: 30rpx;
 }
 .shopclerk{
-    padding-left: 30rpx;
+    /* padding-left: 30rpx; */
+    /* padding:30rpx 0 30rpx 30rpx; */
     background: #fff;
-    height: 90rpx;
-    line-height: 90rpx;
+    /* height: 90rpx;
+    line-height: 90rpx; */
     font-size: 30rpx;
+}
+.shopclerk .lt{
+    padding: 30rpx;
 }
 .shopclerk .add_member{
     color: #6AC63C;
     float: right;
-    padding: 0 30rpx;
+    padding: 30rpx;
 }
 .store_list .list_cell{
     background: #fff;
@@ -77,27 +121,28 @@ page{
 .store_list .list_lt .phone{
     align-items: center;
     padding-top: 10rpx;
+    font-size: 26rpx;
 }
 .list_lt .phone image{
-    width: 30rpx;
-    height: 30rpx;
+    width: 26rpx;
+    height: 26rpx;
     margin-right: 8rpx;
 }
 .store_list .list_lt{
     flex: 1;
 }
 .store_list .list_lt .title{
-    font-size: 36rpx;
+    font-size: 32rpx;
     font-weight: 500;
 }
 .list_rt .code image{
-    height: 70rpx;
-    width: 70rpx;
+    height: 40rpx;
+    width: 40rpx;
     display: block;
     margin: 0 auto;
 }
 .list_rt .code text{
     display: block;
-    font-size: 26rpx;
+    font-size: 24rpx;
     padding-top: 5rpx;
 }

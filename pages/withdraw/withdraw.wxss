@@ -3,6 +3,16 @@ page{
     height: 100%;
     background: #EFEFEF;
 }
+.warm_hint{
+    font-size: 26rpx;
+    color: #666;
+    line-height: 40rpx;
+    text-align: justify;
+    padding-bottom: 10rpx;
+}
+/* input{
+    caret-color:#4DB25B;
+} */
 .recharge_model{
     margin: 20rpx 30rpx;
     border-radius: 16rpx;
@@ -12,20 +22,22 @@ page{
 }
 .recharge_model .title{
     font-size: 28rpx;
+    display: inline-block;
+    border-bottom: 10px;
 }
 .recharge_ipt{
     padding: 30rpx 0;
     border-bottom: 1px solid #E4E4E4;
 }
 .recharge_ipt text{
-    font-size: 56rpx;
+    font-size: 68rpx;
     padding-top: 10rpx;
     padding-right: 10rpx;
 }
 .recharge_ipt input{
-    font-size: 80rpx;
+    font-size: 90rpx;
     height: 90rpx;
-    padding: 0 10rpx;
+    padding: 10rpx;
 }
 .recharge{
     height: 90rpx;
@@ -36,7 +48,7 @@ page{
     font-size: 34rpx;
     font-weight: 500;
     border-radius: 10rpx;
-    background-image: linear-gradient(to right, #69C63C , #40B333);
+    background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
 }
 .slect_bank{
     margin:20rpx 30rpx 0;
@@ -60,9 +72,166 @@ page{
 .hint{
     color: #666;
     font-size: 26rpx;
-    padding-top: 30rpx;
+    padding-top: 20rpx;
 }
 .hint .all{
-    color: #5F8FFF;
+    color: #4D84FF;
     margin-left: 30rpx;
 }
+/* 输入框样式 */
+.psd_model{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(000, 000, 000, 0.4);
+    z-index: 9999;
+}
+.dialog_content{
+    background: #fff;
+    margin: 0 80rpx;
+    border-radius: 20rpx;
+    margin-top: 180rpx;
+    position: relative;
+    padding-bottom: 60rpx;
+}
+.dialog_content .clos{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40rpx;
+    height: 40rpx;
+    padding: 10rpx 20rpx;
+}
+.dialog_title{
+    font-size: 36rpx;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 40rpx;
+    color: #000;
+}
+.dialog_content .des{
+    color: #666;
+    font-size: 30rpx;
+    text-align: center;
+    padding-top: 14rpx;
+}
+.dialog_content .money{
+    text-align: center;
+    font-weight: 500;
+    color: #000;
+    font-size: 66rpx;
+    padding: 20rpx 0 40rpx 0;
+}
+.txt-s{
+    font-size: 46rpx;
+    padding-right: 5rpx;
+}
+/* 支付密码框 */
+.pay_number {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #E8E8E8;
+    /* border-radius:10rpx; */
+  }
+  .pay_number_interval {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    border-left: 1px solid #E8E8E8;
+    /* border:none; */
+  }
+  
+  /* 第一个格子输入框 */
+  .content .noBorder{
+     border-left:none; 
+  }
+  
+  
+  /* 支付密码框聚焦的时候 */
+  
+  .get_focus {
+    border-color: #D2D2D2;
+  }
+  
+  /* 单个格式样式 */
+  
+  .password_dot {
+    flex: 1;
+    border-left: 1px solid #E8E8E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .password_dot_interval {
+    flex: 1;
+    border: 1px solid #E8E8E8;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 单个格式样式（聚焦的时候） */
+  
+  .get_focus_dot {
+    flex: 1;
+    border-left: 1px solid #D2D2D2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .get_focus_dot_interval {
+    flex: 1;
+    border: 1px solid #D2D2D2;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 模拟光标 */
+  
+  .cursor {
+    width: 1px;
+    height: 15px;
+    background-color: #4DB25B;
+    animation: focus .7s infinite;
+  }
+  
+  /* 光标动画 */
+  
+  @keyframes focus {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  
+  /* 格式中的点 */
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+  }
+  
+  /* 输入框 */
+  
+  .input_container {
+    height: 0;
+    width: 0;
+    min-height: 0;
+    position: relative;
+    text-indent: -999em;
+    left: -100%;
+  }
+  

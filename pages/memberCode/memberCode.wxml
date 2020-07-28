@@ -3,7 +3,7 @@
     <view class="ht"></view>
     <view class="code_mode">
         <view class="logo">
-            <image src="../../images/logo.png"></image>
+            <image src="../../images/login-logo.png"></image>
         </view>
         <view class="shop_name">商户名称</view>
         <!-- 二维码 -->
@@ -14,7 +14,6 @@
             <view class="corner let_btm"><image src="../../images/lt_btm.png"></image></view>
             <view class="corner rit_btm"><image src="../../images/rt_btm.png"></image></view>
             <canvas class='canvas' style="width:{{qrcode_w}}px; height:{{qrcode_w}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
-            <view class="add_code" style="display: none;"><image src="../../images/edit_code.png"></image></view>
         </view>
         <view class="number">
             编号：4564564151

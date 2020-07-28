@@ -1,7 +1,7 @@
 <!--pages/codeList/codeList.wxml-->
 <view class="we_page">
     <view class="code_list">
-        <view class="list_cell flex">
+        <view class="list_cell flex"  bindtap="goCode">
             <view class="code_logo">
                 <image src="../../images/code.png"></image>
             </view>

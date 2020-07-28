@@ -28,7 +28,18 @@ Page({
     onShow: function () {
 
     },
-
+    // 新增设备
+    advDevice: function(){
+        wx.navigateTo({
+          url: '../cloudAdd/cloudAdd',
+        })
+    },
+    // 详情
+    cloudDetail: function(){
+        wx.navigateTo({
+          url: '../cloudDetail/cloudDetail',
+        })
+    },
     /**
      * 生命周期函数--监听页面隐藏
      */

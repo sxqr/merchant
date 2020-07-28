@@ -31,9 +31,21 @@ App({
           })
         }
       }
-    })
+    });
+    wx.getSystemInfo({
+      success: e => {
+        this.globalData.statusBarHeight = e.platform == 'android' ? e.statusBarHeight + 3 : e.statusBarHeight;
+        if(e.platform == 'android'){
+          this.globalData.facility = false;
+        } else if(e.platform == 'ios'){
+          this.globalData.facility = true;
+        }
+      }
+    });
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    facility:false,
+    statusBarHeight:''
   }
 })

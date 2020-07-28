@@ -1,4 +1,7 @@
 // pages/wallet/wallet.js
+const common = require("../../utils/common.js");
+
+
 Page({
 
     /**
@@ -28,7 +31,22 @@ Page({
     onShow: function () {
 
     },
-
+    // 提现
+    withdraw: function() {
+        common.go('../withdraw/withdraw')
+    },
+    // 充值
+    recharge: function() {
+        common.go('../recharge/recharge')
+    },
+    // 钱包明细
+    walletDetail: function(){
+        common.go('../walletDetail/walletDetail')
+    },
+    // 银行卡
+    bankCard: function(){
+        common.go('../bankCard/bankCard')
+    },
     /**
      * 生命周期函数--监听页面隐藏
      */

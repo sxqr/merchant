@@ -1,0 +1,34 @@
+<!--pages/login/login.wxml-->
+<view class="we_page">
+    <view class="login_icon">
+        <image src="../../images/login-logo.png"></image>
+    </view>
+    <view class="login_model">
+        <form>
+            <view class="cell flex">
+                <image src="../../images/account-icon.png"></image>
+                <input placeholder-class="phcolor" placeholder="请输入用户账号"></input>
+            </view>
+            <view class="cell flex" style="margin-bottom:20rpx;">
+                <image style="width:42rpx;height:42rpx;" src="../../images/psd-icon.png"></image>
+                <input placeholder-class="phcolor" placeholder="请输入密码"></input>
+            </view>
+            
+        </form>
+        <view class="login_btn" bindtap="login">登录11</view>
+    </view>
+    <view class="wx_login flex">
+        <image src="../../images/weixin-icon.png"></image>
+        <text>微信授权登录</text>
+    </view>
+    <view class="consent">
+        <label class="checkbox">
+            <view class="slect_checkbox">
+                <image src="../../images/juxing.png"></image>
+            </view>
+            <view style="display:inline-block;">我已阅读并同意</view>
+            <text>《用户加盟协议》</text>
+            <text>《支付协议》</text>
+        </label>
+    </view>
+</view>

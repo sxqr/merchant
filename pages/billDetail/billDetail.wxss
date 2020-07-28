@@ -8,20 +8,20 @@ page{
 .bill_page .monney{
     text-align: center;
     padding: 50rpx 0;
-    font-size: 62rpx;
-    font-weight: 550;
+    font-size: 64rpx;
+    font-weight: 500;
 }
 .bill_dt .cell{
-    height: 60rpx;
-    line-height: 60rpx;
+    height: 65rpx;
+    line-height: 65rpx;
     font-size: 32rpx;
     align-items: center;
 }
 .bill_page .state{
-    color: #78CB53;
+    color: #69C63C;
     text-align: center;
     font-size: 28rpx;
-    padding-bottom: 20rpx;
+    padding-bottom: 30rpx;
 }
 .group{
     flex: 1;
@@ -30,8 +30,8 @@ page{
 }
 .bill_type image{
     display: inline-block;
-    width: 60rpx;
-    height: 60rpx;
+    width: 40rpx;
+    height: 40rpx;
 }
 .bill_type text{
     vertical-align: middle;
@@ -41,7 +41,7 @@ page{
 .division{
     padding-top: 30rpx;
     margin-top: 40rpx;
-    border-top:1rpx solid #E5E5E5;
+    border-top:1rpx solid #DDDDDD;
 }
 .wechat{
     color: #00C800;

@@ -1,13 +1,20 @@
 // pages/transactionQuery/transactionQuery.js
+const app = getApp()
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        statusBarHeight: app.globalData.statusBarHeight,
+        facility: app.globalData.facility
     },
-
+    back: function(){
+        wx.navigateBack({
+          delta: 1,
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -26,7 +33,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        console.log(this.data.facility)
     },
 
     /**

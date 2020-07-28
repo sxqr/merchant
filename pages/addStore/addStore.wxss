@@ -35,7 +35,13 @@ page{
     font-size: 34rpx;
     font-weight: 500;
     border-radius: 10rpx;
-    background-image: linear-gradient(to right, #69C63C , #40B333);
+    background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
+}
+.we_page .add_store .tarea{
+    height: 130rpx;
+    display: flex;
+align-items: initial;
+
 }
 .tarea text{
     width: 140rpx;
@@ -47,4 +53,6 @@ page{
     font-size: 30rpx;
     height: 130rpx;
     margin-top: 4rpx;
+    padding: 0;
+    line-height: 30rpx;
 }

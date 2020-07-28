@@ -1,4 +1,7 @@
 // pages/codeList/codeList.js
+const common = require("../../utils/common.js");
+
+
 Page({
 
     /**
@@ -28,7 +31,10 @@ Page({
     onShow: function () {
 
     },
-
+    // 二维码详情
+    goCode: function(){
+        common.go('../code/code');
+    },
     /**
      * 生命周期函数--监听页面隐藏
      */

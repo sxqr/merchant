@@ -1,7 +1,7 @@
 <!--pages/succeed/succeed.wxml-->
 <view class="we_page">
     <view class="succeed">
-        <image src="../../images/logo.png"></image>
+        <image src="../../images/chenggong.png"></image>
         <view class="state">提现成功!</view>
     </view>
 </view>

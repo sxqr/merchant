@@ -25,7 +25,7 @@
 /* 支付密码框聚焦的时候 */
 
 .get_focus {
-  border-color: orange;
+  border-color: #D2D2D2;
 }
 
 /* 单个格式样式 */
@@ -51,7 +51,7 @@
 
 .get_focus_dot {
   flex: 1;
-  border-left: 1px solid orange;
+  border-left: 1px solid #D2D2D2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +59,7 @@
 
 .get_focus_dot_interval {
   flex: 1;
-  border: 1px solid orange;
+  border: 1px solid #D2D2D2;
   margin-right: 5px;
   display: flex;
   align-items: center;
@@ -71,8 +71,8 @@
 .cursor {
   width: 1px;
   height: 15px;
-  background-color: orange;
-  animation: focus 0.7s infinite;
+  background-color: #4DB25B;
+  animation: focus .7s infinite;
 }
 
 /* 光标动画 */

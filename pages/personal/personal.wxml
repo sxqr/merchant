@@ -5,7 +5,7 @@
         <view class="cell">
             <view class="title">头像</view>
             <view class="logo">
-                <image src="../../images/logo.png"></image>
+                <image src="../../images/login-logo.png"></image>
             </view>
             <image src="../../images/right.png" class="right_icon"></image>
         </view>
@@ -21,13 +21,6 @@
             <view class="txt">
                 123456
             </view>
-        </view>
-        <view class="cell">
-            <view class="title">绑定微信</view>
-            <view class="txt">
-                已绑定
-            </view>
-            <image src="../../images/right.png" class="right_icon"></image>
         </view>
     </view>
 </view>

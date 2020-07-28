@@ -1,4 +1,7 @@
 // pages/bankCard/bankCard.js
+const common = require("../../utils/common.js");
+
+
 Page({
 
     /**
@@ -28,7 +31,10 @@ Page({
     onShow: function () {
 
     },
-
+    // 新增银行卡
+    addBankCard: function(){
+        common.go('../addBankCard/addBankCard');
+    },
     /**
      * 生命周期函数--监听页面隐藏
      */

@@ -1,9 +1,10 @@
 <!--pages/cloudAdd/cloudAdd.wxml-->
 <view class="we_page">
+    <view class="ht_20"></view>
     <view class="add_cloud">
         <view class="inpt_cell flex">
             <text>设备编号</text>
-            <input placeholder="请输入设备编号"></input>
+            <input placeholder="请输入设备编号" placeholder-class="phcolor"></input>
         </view>
     </view>
     <view class="add_btn">确定</view>

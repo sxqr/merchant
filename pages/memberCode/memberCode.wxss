@@ -1,9 +1,10 @@
+/* pages/code/code.wxss */
 page{
     height: 100%;
     background: #42B433;
 }
 .we_page{
-    background: #42B433;
+    background:linear-gradient(rgba(106,198,60,1),rgba(61,178,50,1));
     height: 100%;
 }
 .we_page .ht{
@@ -24,6 +25,8 @@ page{
     position: absolute;
     top: -90rpx;
     left: calc((100% - 180rpx) / 2);
+    border: 1rpx solid #fff;
+    border-radius: 100%;
 }
 .shop_name{
     padding-top: 40rpx;
@@ -51,23 +54,13 @@ page{
     line-height: 90rpx;
     border-radius: 90rpx;
     text-align: center;
-    color: #FF3451;
+    color: #FF2443;
     margin-top: 20rpx;
     font-size: 32rpx;
 }
 .canvas{
     margin: 0 40rpx;
     box-sizing: border-box;
-}
-.add_code{
-    /* margin: 0 40rpx; */
-    position: absolute;
-    left: 40rpx;
-    top: 40rpx;
-}
-.add_code image{
-    width: 360rpx;
-    height: 360rpx;
 }
 .can_code{
     height: 40rpx;

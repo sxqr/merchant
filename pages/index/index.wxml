@@ -1,11 +1,16 @@
+<!-- 顶部导航 -->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <view class="{{facility?'custom_title iphone' : 'custom_title'}}">首页</view>
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
 <view class="we_page">
     <view class="top_bg">
         <view class="my_header flex">
             <view class="logo">
-                <image src="../../images/logo.png"></image>
+                <image src="../../images/index-logo.png"></image>
             </view>
             <view class="info">
-                <view class="name"><text>用户名</text> <image src="../../images/right.png"></image></view>
+                <view class="name"><text>用户名</text> <image src="../../images/index_right.png"></image></view>
                 <view class="card">ID：123456</view>
             </view>
         </view>
@@ -30,32 +35,32 @@
     <!-- 下面菜单 -->
     <view class="grid_menu">
         <view class="list_cell">
-            <view class="item">
-                <image src="../../images/her.png"></image>
+            <view class="item" bindtap="transactionQuery">
+                <image src="../../images/jiaoyi.png"></image>
                 <text>交易查询</text>
             </view>
-            <view class="item">
-                <image src="../../images/her.png"></image>
+            <view class="item" bindtap="statement">
+                <image src="../../images/bobiao.png"></image>
                 <text>报表</text>
             </view>
-            <view class="item">
-                <image src="../../images/her.png"></image>
+            <view class="item" bindtap="storeList">
+                <image src="../../images/mendian.png"></image>
                 <text>门店管理</text>
             </view>
-            <view class="item">
-                <image src="../../images/her.png"></image>
+            <view class="item" bindtap="cloudSound">
+                <image src="../../images/yunynxiang.png"></image>
                 <text>云音响</text>
             </view>
-            <view class="item">
-                <image src="../../images/her.png"></image>
+            <view class="item" bindtap="codeList">
+                <image src="../../images/erweima.png"></image>
                 <text>二维码</text>
             </view>
-            <view class="item">
-                <image src="../../images/her.png"></image>
+            <view class="item" bindtap="wallet">
+                <image src="../../images/wodeqianbao.png"></image>
                 <text>我的钱包</text>
             </view>
-            <view class="item">
-                <image src="../../images/her.png"></image>
+            <view class="item" bindtap="about">
+                <image src="../../images/guanyu.png"></image>
                 <text>关于我们</text>
             </view>
         </view>

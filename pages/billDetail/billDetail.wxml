@@ -13,9 +13,9 @@
                 <text class="group">用户名</text>
             </view>
             <view class="cell flex">
-                <text>收款通道</text>
-                <view class="bill_type group">
-                    <image src="../../images/her.png"></image>
+                <text style="flex:1;">收款通道</text>
+                <view class="bill_type" style="display: flex;align-items: center;">
+                    <image src="../../images/alipay-icon.png"></image>
                     <text class="alipay">支付宝</text>
                 </view>
             </view>

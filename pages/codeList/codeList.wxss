@@ -4,7 +4,7 @@ page{
     height: 100%;
 }
 .code_list{
-    margin-top: 20rpx;
+    padding-top: 20rpx;
 }
 .code_list .list_cell{
     /* align-items: center; */
@@ -19,7 +19,7 @@ page{
 }
 .code_rt .title{
     font-weight: 500;
-    font-size: 36rpx;
+    font-size: 32rpx;
     padding-top: 5rpx;
 }
 .code_rt text{

@@ -5,17 +5,17 @@ page{
 }
 .cloud{
     background: #fff;
-    padding-top: 50rpx;
+    padding-top: 20rpx;
     margin-bottom: 20rpx;
     padding-bottom: 20rpx;
 }
 .cloud .cloud_logo{
-    width: 140rpx;
-    height: 140rpx;
+    width: 240rpx;
+    height: 240rpx;
     margin:0 auto;
 }
 .cloud .cloud_number{
-    color: #666;
+    color: #999;
     text-align: center;
     padding-top: 30rpx;
     font-size: 28rpx;
@@ -27,7 +27,7 @@ page{
     font-weight: 500;
     line-height: 90rpx;
     background: #fff;
-    color: #FF2E4B;
+    color: #FF2443;
     border-radius: 90rpx;
     text-align: center;
 }

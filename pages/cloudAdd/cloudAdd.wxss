@@ -3,8 +3,8 @@ page{
     height: 100%;
     background: #EFEFEF;
 }
-.add_cloud{
-    margin-top: 20rpx;
+.ht_20{
+    height: 20rpx;
 }
 .we_page .inpt_cell{
     align-items: center;
@@ -30,5 +30,5 @@ page{
     font-size: 34rpx;
     font-weight: 500;
     border-radius: 10rpx;
-    background-image: linear-gradient(to right, #69C63C , #40B333);
+    background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
 }

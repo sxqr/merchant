@@ -2,7 +2,7 @@
 <view class="we_page">
     <view class="cloud">
         <view class="cloud_logo">
-            <image src="../../images/her.png"></image>
+            <image src="../../images/yingxiang.png"></image>
         </view>
         <view class="cloud_number">编号：54165465465114</view>
     </view>

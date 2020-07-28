@@ -8,8 +8,8 @@ page{
 }
 .succeed image{
     display: block;
-    width: 120rpx;
-    height: 120rpx;
+    width: 80rpx;
+    height: 80rpx;
     margin:0 auto;
 }
 .succeed .state{
@@ -17,4 +17,5 @@ page{
     font-weight: 500;
     font-size: 36rpx;
     padding-top: 40rpx;
+    color: #010101;
 }

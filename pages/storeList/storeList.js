@@ -1,4 +1,7 @@
 // pages/storeList/storeList.js
+const common = require("../../utils/common.js");
+
+
 Page({
 
     /**
@@ -28,7 +31,14 @@ Page({
     onShow: function () {
 
     },
-
+    // 新增门店
+    addStore: function(){
+        common.go('../addStore/addStore');
+    },
+    // 门店详情
+    storeDetail: function(){
+        common.go('../storeDetail/storeDetail');
+    },
     /**
      * 生命周期函数--监听页面隐藏
      */

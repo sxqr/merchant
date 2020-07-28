@@ -1,4 +1,9 @@
 <!--pages/transactionQuery/transactionQuery.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <view class="back" bindtap="back"><image src="../../images/fanhui@3x.png"></image></view>
+  <view class="{{facility?'back_title iphone' : 'back_title'}}">交易查询</view>
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
 <view class="we_page">
     <view class="transaction">
         <view class="top_menu flex">
@@ -20,7 +25,7 @@
                 <view class="select_time">
                     <text>2020.07.21</text>
                     <view class="line"></view>
-                    <image src="../../images/her.png"></image>
+                    <image src="../../images/date-icon.png"></image>
                 </view>
             </view>
         </view>
@@ -38,7 +43,7 @@
         <view class="list_cell flex">
             <view class="list_lt">
                 <view class="item">
-                    <image src="../../images/her.png"></image>
+                    <image src="../../images/weChat-icon.png"></image>
                     <text class="wechat">微信</text>
                 </view>
                 <view class="time">
@@ -52,7 +57,7 @@
         <view class="list_cell flex">
             <view class="list_lt">
                 <view class="item">
-                    <image src="../../images/her.png"></image>
+                    <image src="../../images/weChat-icon.png"></image>
                     <text class="wechat">微信</text>
                 </view>
                 <view class="time">
@@ -66,7 +71,7 @@
         <view class="list_cell flex">
             <view class="list_lt">
                 <view class="item">
-                    <image src="../../images/her.png"></image>
+                    <image src="../../images/alipay-icon.png"></image>
                     <text class="alipay">支付宝</text>
                 </view>
                 <view class="time">

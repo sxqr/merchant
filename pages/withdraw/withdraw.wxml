@@ -15,6 +15,29 @@
             <text>可提现余额1800:00</text>
             <view class="all">全部提现</view>
         </view>
-        <view class="recharge">确定</view>
+        <view class="recharge" bindtap="recharge">确定</view>
+        <view class="warm_hint">注：提现到账时间为次日9点到16点之间，每笔需两元的提现手续费</view>
+    </view>
+    <!-- 支付弹窗 -->
+    <view class="psd_model" wx:if="{{show}}">
+        <view class="dialog_content">
+            <view class="clos" bindtap="clos"><image src="../../images/logo.png"></image></view>
+            <view class="dialog_title">请输入支付密码</view>
+            <view class="des">提现金额</view>
+            <view class="money"><text class="txt-s">¥</text>  <text>10000000.00</text></view>
+            <paySix 
+                bindvalueSix="valueSix" 
+                input_value="{{inputData.input_value}}" 
+                value_length="{{inputData.value_length}}" 
+                isNext="{{inputData.isNext}}" 
+                get_focus="{{inputData.get_focus}}" 
+                focus_class="{{inputData.focus_class}}" 
+                value_num="{{inputData.value_num}}"
+                height="{{inputData.height}}" 
+                width="{{inputData.width}}" 
+                see="{{inputData.see}}" 
+                interval="{{inputData.interval}}">
+            </paySix>
+        </view>
     </view>
 </view>
