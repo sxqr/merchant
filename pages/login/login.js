@@ -59,6 +59,7 @@ Page({
           username:username,
           password:password
         }
+        console.log(json);
         api("/user/login/merchant",json,"POST",1)
           .then(t =>{
             if(t.code==200){

@@ -35,6 +35,7 @@ function api(url, form, method, type, that) {
     if(wx.getStorageSync('sessionId')){
       form.sessionId=wx.getStorageSync('sessionId')
     }
+    console.log(config.apiUrl + url);
     wx.request({
       url: config.apiUrl + url,
       data: form,
