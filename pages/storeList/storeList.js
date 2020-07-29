@@ -1,6 +1,6 @@
 // pages/storeList/storeList.js
 const common = require("../../utils/common.js");
-
+const api = require("../../utils/ajax.js");
 
 Page({
 
@@ -8,7 +8,11 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        storeList:[],
+        page: 1,
+        limit: 10,
+        count: 0,
+        storeName:""
     },
 
     /**
@@ -17,27 +21,43 @@ Page({
     onLoad: function (options) {
 
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.setData({
+            page: 1,
+            limit: 10,
+            storeList: []
+          })
+          let that = this;
+          let json = {
+            access_token: wx.getStorageSync("access_token"),
+            storeName:"",
+            page: 1,
+            limit: 10
+          };
+          storeList(that, json);
     },
-    // 新增门店
-    addStore: function(){
-        common.go('../addStore/addStore');
-    },
-    // 门店详情
-    storeDetail: function(){
-        common.go('../storeDetail/storeDetail');
+      //到达底部
+    scrollToLower: function (e) {
+        let that = this;
+        let page = that.data.page;
+        let limit = that.data.limit;
+        let count = that.data.count;
+        if (count > page * limit) {
+            page++;
+            that.setData({
+                page: page
+            })
+            let json = {
+                access_token: wx.getStorageSync("access_token"),
+                storeName:"",
+                page: page,
+                limit: limit
+            };
+            storeList(that, json);
+        }
     },
     /**
      * 生命周期函数--监听页面隐藏
@@ -45,32 +65,28 @@ Page({
     onHide: function () {
 
     },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
+    // 新增门店
+    addStore: function(){
+        common.go('../addStore/addStore');
     },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
+    // 门店详情
+    storeDetail: function(e){
+        var storeno = e.currentTarget.dataset.storeno;
+        common.go('../storeDetail/storeDetail?storeNo=' + storeno);
     },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    }
 })
+function storeList(that, json) {
+    api("/mercStore/list", json, "POST",1)
+      .then(t => {
+        var storeList = that.data.storeList;
+        var newStoreList = t.data;
+        for (var i = 0; i < newStoreList.length; i++) {
+            storeList.push(newStoreList[i]);
+        }
+        console.log(storeList);
+        that.setData({
+            storeList: storeList,
+            count: t.count
+        })
+      })
+  }

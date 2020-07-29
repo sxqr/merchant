@@ -35,9 +35,9 @@ page{
     padding: 10rpx 0;
     font-size: 30rpx;
 }
-.add_btn{
+.edit_btn,.delete_btn{
     height: 90rpx;
-    margin: 60rpx;
+    margin: 60rpx 60rpx 0 60rpx;
     line-height: 90rpx;
     text-align: center;
     color: #fff;
@@ -45,6 +45,13 @@ page{
     font-weight: 500;
     border-radius: 10rpx;
     background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
+}
+.we_page .delete_btn{
+    margin-top: 80rpx;
+    background:linear-gradient(-90deg,rgba(230,67,64,1),rgba(230,67,64,0.8));
+}
+.we_page .edit_btn{
+    margin-top: 40rpx;
 }
 .bankNameList{
     position:fixed; 

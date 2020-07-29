@@ -23,11 +23,11 @@
             <view class="monney_btm flex">
                 <view class="item">
                     <text class="title">可提现金额</text>
-                    <text class="num">1000.00</text>
+                    <text class="num">{{usableAmount}}</text>
                 </view>
                 <view class="item">
                     <text class="title">利息</text>
-                    <text class="num">10.00</text>
+                    <text class="num">{{interestAmount}}</text>
                 </view>
             </view>
         </view>
@@ -65,4 +65,15 @@
             </view>
         </view>
     </view>
+</view>
+<!--授权登录弹出层-->
+<view class='write' hidden='{{loginFlag}}'>
+  <view class='child2' catchtap='rf' style="background-color: #fff;">
+    <view class="mt-60">授权获取用户信息</view>
+    <view class="content">将获得您的公开信息 （昵称和头像等）</view>
+    <view class="accredit_btn">
+      <view class="btn_no" bindtap='hidden'>暂不登录</view>
+      <button class="btn_yes" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">确认授权</button>
+    </view>
+  </view>
 </view>

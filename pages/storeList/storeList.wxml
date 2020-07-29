@@ -1,20 +1,15 @@
 <!--pages/storeList/storeList.wxml-->
 <view class="we_page">
     <view class="store_list">
-        <view class="list_cell" bindtap="storeDetail">
-            <view class="title">收银门店名称</view>
-            <view class="addr flex">
-                <image src="../../images/loction-icon.png"></image>
-                <text>湖南省-长沙市-岳麓区-麓谷信息港B座8001</text>
+        <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 89vh; min-height: 0px;">
+            <view class="list_cell" wx:for="{{storeList}}" data-storeno="{{item.storeNo}}" bindtap="storeDetail">
+                <view class="title">{{item.storeName}}</view>
+                <view class="addr flex">
+                    <image src="../../images/loction-icon.png"></image>
+                    <text>{{item.detailAddr}}</text>
+                </view>
             </view>
-        </view>
-        <view class="list_cell">
-            <view class="title">收银门店名称</view>
-            <view class="addr flex">
-                <image src="../../images/loction-icon.png"></image>
-                <text>湖南省-长沙市-岳麓区-麓谷信息港B座8001</text>
-            </view>
-        </view>
+        </scroll-view>
     </view>
     <view class="btm_menu" bindtap="addStore">
         +新增门店

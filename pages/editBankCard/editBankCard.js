@@ -9,6 +9,7 @@ Page({
     data: {
         bankName:"",
         bankNo:"",
+        id:"",
         bankFlag:true,
         backNameList:[]
     },
@@ -17,7 +18,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        console.log(options);
+        this.setData({
+            bankName:options.bankName,
+            bankNo:options.bankNo,
+            id:options.id
+        }) 
     },
 
     /**
@@ -64,10 +70,10 @@ Page({
             bankNo:e.detail.value
         })
     },
-    // 添加银行卡
-    addBank:function(){
+    // 修改银行卡
+    editBank:function(){
         let bankNo = this.data.bankNo;
-        let bankName = this.data.bankName;
+        let bankName = "中国银行";
         if(bankNo == ""){
             wx.showToast({
               icon: 'none',  
@@ -83,15 +89,16 @@ Page({
             return false;
         }
         let json = {
+            id:this.data.id,
             bankName:bankName,
             bankNo:bankNo,
             access_token:wx.getStorageSync('access_token')
         }
-        api("/merchantBank/add",json,"POST",1)
+        api("/merchantBank/update",json,"POST",1)
             .then(t => {
                 wx.showToast({
                     icon: 'success',
-                    title: '添加成功',
+                    title: '修改成功',
                 })
                 setTimeout(function(){
                     wx.navigateBack({
@@ -99,5 +106,33 @@ Page({
                     })
                 }, 1500)
             })
+    },
+    // 删除银行卡
+    deleteBank:function(){
+        var _this = this;
+        wx.showModal({
+          title:"提示",
+          content:"您确认删除该银行卡?",
+          success(res){
+              if(res.confirm){  
+                let json = {
+                    id: _this.data.id,
+                    access_token: wx.getStorageSync('access_token')
+                }  
+                api("/merchantBank/del",json,"POST",1)
+                    .then(t => {
+                        wx.showToast({
+                            icon: 'success',
+                            title: '删除成功',
+                        })
+                        setTimeout(function(){
+                            wx.navigateBack({
+                                delta: 1
+                            })
+                        }, 1500)
+                    })
+              }
+          }
+        })
     }
 })

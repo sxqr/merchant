@@ -27,47 +27,26 @@
     </view>
     <view class="shopclerk clearfix">
         <view class="lt">店员</view>
-        <view class="add_member">+新增</view>
+        <view class="add_member" bindtap="addStaff">+新增</view>
     </view>
     <view class="store_list">
-        <view class="list_cell flex">
-            <view class="list_lt">
-                <view class="title">店员名称</view>
-                <view class="phone flex">
-                    <image src="../../images/phone-icon.png"></image>
-                    <text>18873557604</text>
+        <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 54vh; min-height: 0px;">
+            <view class="list_cell flex" wx:for="{{storeClerk}}">
+                <view class="list_lt">
+                    <view class="title">{{item.clerkName}}</view>
+                    <view class="phone flex">
+                        <image src="../../images/phone-icon.png"></image>
+                        <text>{{item.phone}}</text>
+                    </view>
+                </view>
+                <view class="list_rt">
+                    <view class="code">
+                        <image src="../../images/code-icon.png"></image>
+                        <text>二维码</text>
+                    </view>
                 </view>
             </view>
-            <view class="list_rt">
-                <view class="code">
-                    <image src="../../images/code-icon.png"></image>
-                    <text>二维码</text>
-                </view>
-            </view>
-        </view>
-        <view class="list_cell flex">
-            <view class="list_lt">
-                <view class="title">店员名称</view>
-                <view class="phone flex">
-                    <image src="../../images/phone-icon.png"></image>
-                    <text>18873557604</text>
-                </view>
-            </view>
-            <view class="list_rt">
-                
-            </view>
-        </view>
-        <view class="list_cell flex">
-            <view class="list_lt">
-                <view class="title">店员名称</view>
-                <view class="phone flex">
-                    <image src="../../images/phone-icon.png"></image>
-                    <text>18873557604</text>
-                </view>
-            </view>
-            <view class="list_rt">
-                
-            </view>
-        </view>
+        </scroll-view>
+        
     </view>
 </view>

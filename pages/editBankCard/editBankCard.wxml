@@ -1,6 +1,6 @@
 <!--pages/addBankCard/addBankCard.wxml-->
 <view class="we_page">
-    <view class="ht_20"></view>
+<view class="ht_20"></view>
     <view class="add_bank">
         <view class="inpt_cell flex" style="margin-bottom:10rpx;padding: 26rpx 30rpx">
             <text>姓名</text>
@@ -9,7 +9,7 @@
         </view>
         <view class="inpt_cell flex">
             <text>银行卡号</text>
-            <input placeholder="请输入银行卡号" bindinput="bankNo" placeholder-class="phcolor"></input>
+            <input placeholder="请输入银行卡号" value="{{bankNo}}" bindinput="bankNo" placeholder-class="phcolor"></input>
         </view>
         <view class="inpt_cell flex" bindtap="openDialog">
             <text>所属银行</text>
@@ -17,8 +17,9 @@
             <image src="../../images/right.png"></image>
         </view>
     </view>
-    <view class="add_btn" bindtap="addBank">添加</view>
-    <!-- 银行卡弹窗 -->
+    <view class="delete_btn" bindtap="deleteBank">删除</view>
+    <view class="edit_btn" bindtap="editBank">修改</view>
+
     <view class="bankNameList" hidden="{{bankFlag}}" bindtap="hidden">
         <view class="bankName_box" catchtap="rf">
             <view class="title">选择所属银行</view>

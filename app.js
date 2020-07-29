@@ -1,5 +1,9 @@
 //app.js
 App({
+  data: {
+    url: "http://192.168.0.132:9000/v1/admin",
+    imgUrl:"http://192.168.0.132:9000/v1",
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

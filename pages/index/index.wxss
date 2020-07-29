@@ -96,7 +96,7 @@ page{
   padding:20rpx 0;
   font-weight: bold;
   font-size: 54rpx;
-  font-family:PingFang SC;
+  color: #333;
 }
 .monney_btm .item{
   flex: 1;
@@ -149,4 +149,97 @@ page{
   display: block;
   padding-top: 10rpx;
   font-weight: 500;
+}
+
+.write{
+  position:fixed; 
+  top :0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  text-align: center;
+  background:rgba(0,0,0,.3);
+  z-index: 99;
+}
+.child{
+  width: 80%;
+  z-index: 100;
+  top: 30%;
+  position: fixed;
+  font-size: 30rpx;
+  left: 10%;
+  right: 10%;
+}
+.child1{
+  width: 80%;
+  z-index: 100;
+  top: 30%;
+  position: fixed;
+  font-size: 30rpx;
+  left: 10%;
+  right: 10%;
+  max-height: 400rpx;
+  overflow-y: scroll;
+}
+.child2{
+  width: 80%;
+  z-index: 100;
+  top: 30%;
+  position: fixed;
+  font-size: 30rpx;
+  left: 10%;
+  right: 10%;
+  border-radius: 16rpx;
+}
+.male{
+  padding: 20rpx;
+  border-bottom: 1px solid #efefef;
+  color: #999;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.female{
+  padding: 20rpx;
+  color: #999;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.choose{
+  color: rgb(16, 202, 248)
+}
+
+.mt-60{
+  margin-top: 60rpx;
+  padding-bottom: 5rpx;
+}
+.content{
+  font-size: 28rpx;
+  color: #979797;
+}
+.accredit_btn{
+  display: flex;
+  align-items: center;
+  margin-top: 70rpx;
+}
+.btn_no{
+  width: 50%;
+  background: #EDEDED;
+  color: #57BF6A;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom-left-radius: 16rpx;
+}
+.btn_yes{
+  width: 50% !important;
+  background: #57BF6A;
+  color: #fff;
+  font-weight: 500;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  border-bottom-right-radius: 16rpx;
 }

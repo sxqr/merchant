@@ -39,7 +39,7 @@ page{
     line-height: 90rpx;
     text-align: center;
     border-radius: 10rpx;
-    margin: 50rpx 60rpx 0 60rpx;
+    margin: 60rpx;
     background: #DDDDDD;
     color: #fff;
     font-size: 34rpx;

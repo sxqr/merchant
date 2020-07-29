@@ -3,17 +3,17 @@
     <view class="add_store">
         <view class="inpt_cell flex">
             <text>名称</text>
-            <input placeholder="请输入门店名称" placeholder-class="phcolor"></input>
+            <input placeholder="请输入门店名称" bindinput="storeName" placeholder-class="phcolor"></input>
         </view>
         <view class="inpt_cell flex">
             <text>经营地址</text>
-            <input placeholder="请选择" placeholder-class="phcolor" style="text-align: right;"></input>
+            <input placeholder="请选择" disabled="true" placeholder-class="phcolor" style="text-align: right;"></input>
             <image src="../../images/right.png"></image>
         </view>
         <view class="inpt_cell tarea">
             <text>详细地址</text>
-            <textarea disable-default-padding="{{true}}" placeholder="请输入详细地址" placeholder-class="phcolor"></textarea>
+            <textarea disable-default-padding="{{true}}" bindinput="addr" placeholder="请输入详细地址" placeholder-class="phcolor"></textarea>
         </view>
     </view>
-    <view class="add_btn">确定</view>
+    <view class="add_btn" bindtap="addStore">确定</view>
 </view>

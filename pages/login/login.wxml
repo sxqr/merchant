@@ -7,11 +7,11 @@
         <form>
             <view class="cell flex">
                 <image src="../../images/account-icon.png"></image>
-                <input placeholder-class="phcolor" placeholder="请输入用户账号"></input>
+                <input placeholder-class="phcolor" bindinput="username" placeholder="请输入用户账号"></input>
             </view>
             <view class="cell flex" style="margin-bottom:20rpx;">
                 <image style="width:42rpx;height:42rpx;" src="../../images/psd-icon.png"></image>
-                <input placeholder-class="phcolor" placeholder="请输入密码"></input>
+                <input placeholder-class="phcolor" bindinput="password" password placeholder="请输入密码"></input>
             </view>
             
         </form>
