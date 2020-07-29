@@ -5,11 +5,13 @@
             <text>名称</text>
             <input placeholder="请输入门店名称" bindinput="storeName" placeholder-class="phcolor"></input>
         </view>
-        <view class="inpt_cell flex">
-            <text>经营地址</text>
-            <input placeholder="请选择" disabled="true" placeholder-class="phcolor" style="text-align: right;"></input>
-            <image src="../../images/right.png"></image>
-        </view>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="inpt_cell flex">
+                <text>经营地址</text>
+                <input placeholder="请选择" value="{{address}}" disabled="true" placeholder-class="phcolor" style="text-align: right;"></input>
+                <image src="../../images/right.png"></image>
+            </view>
+        </picker>
         <view class="inpt_cell tarea">
             <text>详细地址</text>
             <textarea disable-default-padding="{{true}}" bindinput="addr" placeholder="请输入详细地址" placeholder-class="phcolor"></textarea>

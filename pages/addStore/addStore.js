@@ -1,5 +1,6 @@
 // pages/addStore/addStore.js
 const api = require("../../utils/ajax.js");
+
 Page({
 
     /**
@@ -7,7 +8,12 @@ Page({
      */
     data: {
         storeName:"",
-        detailAddr:""
+        detailAddr:"",
+        provinces: [],
+        citys: [],
+        countys: [],
+        region: ['北京市', '北京市', '东城区'],
+        address: ""
     },
 
     /**
@@ -21,7 +27,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        
     },
     storeName:function(e){
         this.setData({
@@ -65,6 +71,22 @@ Page({
             }
         })
     },
+    //获取三级联动
+    bindRegionChange: function(e){
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        var region = e.detail.value;
+        this.setData({
+          region: region,
+          address: region[0]+region[1]+region[2]
+        })
+        // api("/area/getProvinceList",{},"POST",1).then(t => {
+        //     console.log(t);
+        //     if(t.code == 200){
+                
+        //     }
+        // })    
+    },
+
     /**
      * 生命周期函数--监听页面隐藏
      */
