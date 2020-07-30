@@ -1,32 +1,57 @@
 // pages/walletDetail/walletDetail.js
+const common = require("../../utils/common.js");
+const api = require("../../utils/ajax.js");
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        dataList:[],
+        page: 1,
+        limit: 10,
+        count: 0,
+    },
+    onLoad: function(option){
 
     },
-
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
     onShow: function () {
-
+        this.setData({
+            page: 1,
+            limit: 10,
+            storeList: []
+          })
+          let that = this;
+          let json = {
+            access_token: wx.getStorageSync("access_token"),
+            page: 1,
+            limit: 10
+          };
+          console.log("显示");
+          storeList(that, json);
+    },
+      //到达底部
+    scrollToLower: function (e) {
+        let that = this;
+        let page = that.data.page;
+        let limit = that.data.limit;
+        let count = that.data.count;
+        if (count > page * limit) {
+            page++;
+            that.setData({
+                page: page
+            })
+            let json = {
+                access_token: wx.getStorageSync("access_token"),
+                page: page,
+                limit: limit
+            };
+            storeList(that, json);
+        }
     },
 
     /**
@@ -34,33 +59,20 @@ Page({
      */
     onHide: function () {
 
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
     }
 })
+function storeList(that, json) {
+    api("/merchantWithdraw/applet/wdView", json, "POST",1)
+      .then(t => {
+        var dataList = that.data.dataList;
+        var newList = t.data;
+        for (var i = 0; i < newList.length; i++) {
+            dataList.push(newList[i]);
+        }
+        console.log(dataList);
+        that.setData({
+            dataList: dataList,
+            count: t.count
+        })
+      })
+  }

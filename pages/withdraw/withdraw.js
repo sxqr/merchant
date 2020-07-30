@@ -1,4 +1,7 @@
 // pages/withdraw/withdraw.js
+const api = require("../../utils/ajax.js");
+const common = require("../../utils/common.js");
+
 Page({
 
     /**
@@ -20,6 +23,12 @@ Page({
         },
         password:"",
         show:false,
+        banckDialog:true,// 银行卡弹窗
+        backNameList:[],
+        bankNo:"",
+        bankName:"",
+        amount:"",
+        usableAmount:""
     },
 
     /**
@@ -28,22 +37,83 @@ Page({
     onLoad: function (options) {
         wx.getSystemInfo({
             success: function (res) {
-              console.log(res.model)
-              console.log(res.pixelRatio)
-              console.log(res.windowWidth)
-              console.log(res.windowHeight)
-              console.log(res.language)
-              console.log(res.version)
-              console.log(res.platform)
+            //   console.log(res.model)
+            //   console.log(res.pixelRatio)
+            //   console.log(res.windowWidth)
+            //   console.log(res.windowHeight)
+            //   console.log(res.language)
+            //   console.log(res.version)
+            //   console.log(res.platform)
             }
+        });
+        this.setData({
+            usableAmount:options.amount
+        })
+        api("/merchantBank/getMerBanks",{access_token:wx.getStorageSync('access_token')},"POST",1).then(t => {
+            if(t.code == 200){
+                this.setData({
+                    backNameList:t.data,
+                    bankNo:t.data[0].bankNo,
+                    bankName:t.data[0].bankName
+                })
+            }
+        });
+    },
+        /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+        api("/merchant/getMerchant",{access_token:wx.getStorageSync('access_token')},"POST",1).then(t => {
+            if(t.code == 200){
+                if(!t.data.payPwd){
+                    wx.showModal({
+                        title:"提示",
+                        confirmText:"去设置",
+                        content:"您未设置支付密码，请先设置支付密码",
+                        success(res){
+                            if(res.confirm){  
+                                common.go("../payPassword/payPassword");
+                            }
+                        }
+                    })
+                }
+            }
+        });
+    },
+    amountChange:function(e){
+        var amount = e.detail.value;
+        this.setData({
+            amount:amount
         })
     },
     recharge: function(){
+        var amount = parseFloat(this.data.amount);
+        var usableAmount = parseFloat(this.data.usableAmount);
+        if(amount && amount > 0){
+            if(amount > usableAmount){
+                wx.showToast({
+                    icon:'none',
+                    title: '可提现金额不足'
+                })
+            } else {
+                this.setData({
+                    'inputData.get_focus':true,
+                    'inputData.focus_class':true,
+                    show:true
+                });
+            }
+        } else {
+            wx.showToast({
+                icon:'none',
+                title: '请输入提现金额'
+            })
+        }
+        
+    },
+    allRecharge: function(){
         this.setData({
-            'inputData.get_focus':true,
-            'inputData.focus_class':true,
-            show:true
-        });
+            amount:this.data.usableAmount
+        })
     },
     clos: function(){
         this.setData({
@@ -56,58 +126,51 @@ Page({
         this.setData({
             show:false
         });
-        wx.showToast({
-          title: '支付成功',
-          icon: 'success',
-          duration: 2000
+        let json = {
+            bankNo:this.data.bankNo,
+            amount:this.data.amount * 100,
+            payPwd:e.detail,
+            access_token:wx.getStorageSync('access_token')
+        }
+        api("/merchantWithdraw/add",json,"POST",1).then(t => {
+            if(t.code == 200){
+                wx.showToast({
+                    icon: 'success',
+                    title: '申请提现成功',
+                })
+                setTimeout(function(){
+                    wx.navigateBack({
+                        delta: 1
+                    })
+                }, 1500)
+            }
+        }).catch((response)=>{
+            wx.showToast({
+              icon: 'none',
+              title: response.msg
+            })
+          });
+    },
+    // 选择银行卡
+    slectBankCard:function(){
+        this.setData({
+            banckDialog:false
         })
     },
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
+    // 关闭弹窗
+    closeBanck:function(){
+        this.setData({
+            banckDialog:true
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
+    ref:function(){
+        return false;
     },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+    slectBanck:function(e){
+        this.setData({
+            bankNo:e.currentTarget.dataset.card,
+            bankName:e.currentTarget.dataset.name,
+            banckDialog:true
+        })
     }
 })

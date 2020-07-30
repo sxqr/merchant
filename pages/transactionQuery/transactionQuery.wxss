@@ -95,12 +95,7 @@ page{
     align-items: center;
     padding-right: 10rpx;
 }
-.select_time text{
-    display: inline-block;
-    padding: 0 20rpx;
-    position: relative;
-    font-size: 28rpx;
-}
+
 .select_time .line{
     width: 2rpx;
     height: 40rpx;
@@ -174,4 +169,9 @@ page{
 }
 .alipay{
     color: #25ABEE;
+}
+
+.picker{
+    font-size: 28rpx;
+    padding: 0 20rpx;
 }

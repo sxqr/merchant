@@ -2,7 +2,7 @@
 <view class="we_page">
     <view class="store_list">
         <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 89vh; min-height: 0px;">
-            <view class="list_cell" wx:for="{{storeList}}" data-storeno="{{item.storeNo}}" bindtap="storeDetail">
+            <view class="list_cell" wx:for="{{storeList}}" data-storeno="{{item.storeNo}}" data-id="{{item.id}}" bindtap="storeDetail">
                 <view class="title">{{item.storeName}}</view>
                 <view class="addr flex">
                     <image src="../../images/loction-icon.png"></image>

@@ -1,4 +1,10 @@
 <!--pages/transactionQuery/transactionQuery.wxml-->
+<wxs module="count">
+  var money = function(val) {
+    return (val / 100).toFixed(2);
+  }
+  module.exports.money = money;
+</wxs>
 <view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
   <view class="back" bindtap="back"><image src="../../images/fanhui@3x.png"></image></view>
   <view class="{{facility?'back_title iphone' : 'back_title'}}">交易查询</view>
@@ -7,80 +13,88 @@
 <view class="we_page">
     <view class="transaction">
         <view class="top_menu flex">
-            <view class="item active">
+            <view class="item {{isType ? 'active' : ''}}" data-type="receipt" bindtap="status">
                 <text>收款明细</text>
             </view>
-            <view class="item">
+            <view class="item {{isType1 ? 'active' : ''}}" data-type="withdraw" bindtap="status">
                 <text>提现明细</text>
             </view>
         </view>
         <!-- 两个按钮 -->
         <view class="btn_menu flex">
             <view class="cut">
-                <view class="item active">日</view>
-                <view class="item">月</view>
+                <view class="item {{dayType ? 'active' : ''}}" data-day="slectDay" bindtap="slectMonth">日</view>
+                <view class="item {{dayType1 ? 'active' : ''}}" data-day="slectMonth" bindtap="slectMonth">月</view>
             </view>
             <!-- 时间选择 -->
             <view class="time_menu">
-                <view class="select_time">
-                    <text>2020.07.21</text>
-                    <view class="line"></view>
-                    <image src="../../images/date-icon.png"></image>
-                </view>
+                 <picker mode="date" value="{{appleDate}}" fields="{{dayMonth ? 'day' : 'month'}}" bindchange="dayDateChange">
+                    <view class="select_time">
+                        <view class="picker">
+                            {{appleDate}}
+                        </view>
+                        <view class="line"></view>
+                        <image src="../../images/date-icon.png"></image>
+                    </view>
+                </picker>
             </view>
         </view>
     </view>
-    <view class="gathering_num">
-        <text style="color:#999">收款 </text><text>33.00</text> <text style="padding-left:10rpx">3笔</text>
-    </view>
-    <view class="list_menu flex">
-        <view class="item active"><text>全部</text></view>
-        <view class="item"><text>支付宝</text></view>
-        <view class="item"><text>微信</text></view>
-    </view>
+    <block wx:if="{{isType}}">
+        <view class="gathering_num">
+        <text style="color:#999">收款 </text><text>{{count.money(totalAmount)}}</text>元 <text style="padding-left:10rpx">{{totalCount}}笔</text>
+        </view>
+        <view class="list_menu flex">
+            <view class="item {{isChoose ? 'active' : ''}}" data-status="" bindtap="slectType"><text>全部</text></view>
+            <view class="item {{isChoose1 ? 'active' : ''}}" data-status="ALIPAY_SERVICEW" bindtap="slectType"><text>支付宝</text></view>
+            <view class="item {{isChoose2 ? 'active' : ''}}" data-status="WECHAT_GZH" bindtap="slectType"><text>微信</text></view>
+        </view>
 
-    <view class="page_list">
-        <view class="list_cell flex">
-            <view class="list_lt">
-                <view class="item">
-                    <image src="../../images/weChat-icon.png"></image>
-                    <text class="wechat">微信</text>
+        <view class="page_list">
+            <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 60vh; min-height: 0px;">
+                <view class="list_cell flex" wx:for="{{appletList}}">
+                    <view class="list_lt">
+                        <view class="item">
+                            <block wx:if="{{item.product == 'WECHAT_GZH'}}">
+                                <image src="../../images/weChat-icon.png"></image>
+                                <text class="wechat">微信</text>
+                            </block>    
+                            <block wx:if="{{item.product == 'ALIPAY_SERVICEW'}}">
+                                <image src="../../images/alipay-icon.png"></image>
+                                <text class="wechat">支付宝</text>
+                            </block>
+                        </view>
+                        <view class="time">
+                            {{item.paymentTime}}
+                        </view>
+                    </view>
+                    <view class="list_rt">
+                        +{{count.money(item.amount)}}
+                    </view>
                 </view>
-                <view class="time">
-                    15:12:13
-                </view>
-            </view>
-            <view class="list_rt">
-                +11.00
-            </view>
+            </scroll-view>
         </view>
-        <view class="list_cell flex">
-            <view class="list_lt">
-                <view class="item">
-                    <image src="../../images/weChat-icon.png"></image>
-                    <text class="wechat">微信</text>
-                </view>
-                <view class="time">
-                    15:12:13
-                </view>
-            </view>
-            <view class="list_rt">
-                +11.00
-            </view>
+    </block>
+    <block wx:if="{{isType1}}">
+        <view class="gathering_num" style="padding-bottom:30rpx;border-bottom:1px solid #E9E9E9">
+        <text style="color:#999">收款 </text><text>{{count.money(totalAmount2)}}</text>元 <text style="padding-left:10rpx">{{totalCount2}}笔</text>
         </view>
-        <view class="list_cell flex">
-            <view class="list_lt">
-                <view class="item">
-                    <image src="../../images/alipay-icon.png"></image>
-                    <text class="alipay">支付宝</text>
+        <view class="page_list">
+            <scroll-view scroll-y lower-threshold="100" bindscrolltolower="withdrawScrollToLower" style="height: 65vh; min-height: 0px;">
+                <view class="list_cell flex" wx:for="{{withdrawList}}">
+                    <view class="list_lt">
+                        <view class="item">
+                            <text>交易提现</text> 
+                        </view>
+                        <view class="time">
+                            {{item.createTime}}
+                        </view>
+                    </view>
+                    <view class="list_rt">
+                        -{{count.money(item.amount)}}
+                    </view>
                 </view>
-                <view class="time">
-                    15:12:13
-                </view>
-            </view>
-            <view class="list_rt">
-                +11.00
-            </view>
+            </scroll-view>
         </view>
-    </view>
+    </block>
 </view>

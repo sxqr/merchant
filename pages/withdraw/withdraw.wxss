@@ -3,6 +3,10 @@ page{
     height: 100%;
     background: #EFEFEF;
 }
+.ht_20{
+  height: 20rpx;
+  background: #EFEFEF;
+}
 .warm_hint{
     font-size: 26rpx;
     color: #666;
@@ -51,7 +55,7 @@ page{
     background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
 }
 .slect_bank{
-    margin:20rpx 30rpx 0;
+    margin:0 30rpx;
     padding: 0 30rpx;
     background: #fff;
     height: 170rpx;
@@ -99,10 +103,14 @@ page{
 .dialog_content .clos{
     position: absolute;
     right: 0;
-    top: 0;
+    top: 5px;
     width: 40rpx;
     height: 40rpx;
     padding: 10rpx 20rpx;
+}
+.dialog_content .clos image{
+    width: 24rpx;
+    height: 24rpx;
 }
 .dialog_title{
     font-size: 36rpx;
@@ -199,7 +207,7 @@ page{
   .cursor {
     width: 1px;
     height: 15px;
-    background-color: #4DB25B;
+    background-color: #333;
     animation: focus .7s infinite;
   }
   
@@ -235,3 +243,85 @@ page{
     left: -100%;
   }
   
+  /* 银行卡弹窗 */
+  .picker_content{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .picker_model{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    border-radius: 0;
+    opacity: 0.6;
+    color: #3d4145;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    height: 50vh;
+    background: #fff;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, -webkit-transform;
+    transition-property: transform, opacity;
+    transition-property: transform, opacity, -webkit-transform;
+  }
+  .picker_model.active{
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .picker_bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 88;
+    background:rgba(0,0,0,.3);
+  }
+  .toolbar{
+    position: relative;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    border-bottom: 1rpx solid #EBEBEB;
+  }
+  .toolbar .close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 120rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+  }
+  .toolbar .close image{
+    width: 26rpx;
+    height: 26rpx;
+  }
+  .picker_list{
+    text-align: left;
+    padding-left: 30rpx;
+  }
+  .picker_list .cell{
+    display: flex;
+    align-items: center;
+    padding: 30rpx 0;
+    border-bottom: 1rpx solid #EBEBEB;
+  }
+  .picker_list .cell image{
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 20rpx;
+  }
+  .picker_list .cell text{
+    padding-right: 10rpx;
+    font-size: 30rpx;
+    font-weight: 500;
+  }

@@ -1,44 +1,71 @@
 // pages/cloudSound/cloudSound.js
+const api = require("../../utils/ajax.js");
+const common = require("../../utils/common.js");
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+      fixingList:[],
+      page: 1,
+      limit: 10,
+      count: 0,
     },
-
-    /**
+   /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: function () {
 
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+      this.setData({
+          page: 1,
+          limit: 10,
+          fixingList: []
+        })
+        let that = this;
+        let json = {
+          access_token: wx.getStorageSync("access_token"),
+          page: 1,
+          limit: 10
+        };
+        getSound(that, json);
+    },
+      //到达底部
+    scrollToLower: function (e) {
+        let that = this;
+        let page = that.data.page;
+        let limit = that.data.limit;
+        let count = that.data.count;
+        if (count > page * limit) {
+            page++;
+            that.setData({
+                page: page
+            })
+            let json = {
+                access_token: wx.getStorageSync("access_token"),
+                storeName:"",
+                page: page,
+                limit: limit
+            };
+            getSound(that, json);
+        }
     },
     // 新增设备
     advDevice: function(){
-        wx.navigateTo({
-          url: '../cloudAdd/cloudAdd',
-        })
+        common.go("../cloudAdd/cloudAdd");
     },
     // 详情
-    cloudDetail: function(){
-        wx.navigateTo({
-          url: '../cloudDetail/cloudDetail',
-        })
+    cloudDetail: function(e){
+        var id = e.currentTarget.dataset.id;
+        var fixingvol = e.currentTarget.dataset.fixingvol;
+        var storename = e.currentTarget.dataset.storename;
+        common.go("../cloudDetail/cloudDetail?id=" + id + "&fixingVol=" + fixingvol + "&storeName=" + storename);
     },
     /**
      * 生命周期函数--监听页面隐藏
@@ -46,32 +73,18 @@ Page({
     onHide: function () {
 
     },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    }
 })
+function getSound(that, json) {
+  api("/merchantFixing/sound/getMerchantFixingList", json, "POST",1)
+    .then(t => {
+      var storeList = that.data.fixingList;
+      var newStoreList = t.data;
+      for (var i = 0; i < newStoreList.length; i++) {
+          storeList.push(newStoreList[i]);
+      }
+      that.setData({
+          fixingList: storeList,
+          count: t.count
+      })
+    })
+}

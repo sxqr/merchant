@@ -7,21 +7,33 @@
 <view class="we_page">
     <view class="store_top">
         <view class="store_title">
-            <text>收银门店名称</text>
+            <text>{{storeName}}</text>
             <view class="edit"><image src="../../images/edit-icon.png"></image></view>
         </view>
         <view class="addr flex">
             <image src="../../images/loction-b-icon.png"></image>
-            <text>湖南省-长沙市-岳麓区-麓谷信息港B座8001</text>
+            <text>{{detailAddr}}</text>
         </view>
         <view class="grop">
-            <view class="item">
-                <image class="add" src="../../images/add-icon.png"></image>
-                <text>关联云音响</text>
+            <view class="item">       
+                <block wx:if="{{isFixing}}">
+                    <image class="show_img" src="../../images/yinxiang-b.png"></image>
+                     <text>云音响</text>
+                </block>
+                <block wx:else>
+                    <image class="add" src="../../images/add-icon.png"></image>
+                    <text>关联云音响</text>
+                </block>
             </view>
             <view class="item">
-                <image class="add" src="../../images/add-icon.png"></image>
-                <text>关联二维码</text>
+                <block wx:if="{{isReceiptCode}}">
+                    <image class="show_img" src="../../images/code-icon-b.png"></image>
+                    <text>二维码</text>
+                </block>
+                <block wx:else>
+                    <image class="add" src="../../images/add-icon.png"></image>
+                    <text>关联二维码</text>
+                </block>
             </view>
         </view>
     </view>

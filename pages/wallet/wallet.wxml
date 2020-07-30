@@ -2,7 +2,7 @@
 <view class="we_page">
     <view class="wellet">
         <view class="title">余额(元)</view>
-        <view class="monney">10.00</view>
+        <view class="monney">{{usableAmount}}</view>
         <view class="we_btn">
             <view class="btn" bindtap="withdraw">提现</view>
             <view class="btn" bindtap="recharge">充值</view>
@@ -14,8 +14,8 @@
             <image src="../../images/right.png" class="right_icon"></image>
         </view>
         <view class="cell" bindtap="bankCard">
-            <view class="title">提现到银行卡</view>
-            <view class="txt">3</view>
+            <view class="title">我的银行卡</view>
+            <view class="txt">{{bankCardlengh}}</view>
             <image src="../../images/right.png" class="right_icon"></image>
         </view>
     </view>

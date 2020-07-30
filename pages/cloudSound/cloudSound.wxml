@@ -2,20 +2,15 @@
 <view class="we_page">
     <view class="ht_20"></view>
     <view class="page_list">
-        <view class="list_cell flex" bindtap="cloudDetail">
-            <view class="logo"><image src="../../images/yingxiang.png"></image></view>
-            <view class="item">
-                <view class="title_number">编号1255444</view>
-                <view class="store_number">XXX门店</view>
+        <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 89vh; min-height: 0px;">
+            <view class="list_cell flex" wx:for="{{fixingList}}" data-id="{{item.cloudHornId}}" data-fixingvol="{{item.fixingVol}}" data-storename="{{item.storeName}}"  bindtap="cloudDetail">
+                <view class="logo"><image src="../../images/yingxiang.png"></image></view>
+                <view class="item">
+                    <view class="title_number">编号{{item.cloudHornId}}</view>
+                    <view class="store_number">{{item.storeName}}</view>
+                </view>
             </view>
-        </view>
-        <view class="list_cell flex">
-            <view class="logo"><image src="../../images/yingxiang.png"></image></view>
-            <view class="item">
-                <view class="title_number">编号1255444</view>
-                <view class="store_number">XXX门店</view>
-            </view>
-        </view>
+        </scroll-view>
     </view>
     <view class="btm_menu" bindtap="advDevice">
         +新增设备

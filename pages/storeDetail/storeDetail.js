@@ -12,10 +12,15 @@ Page({
         statusBarHeight: app.globalData.statusBarHeight,
         facility: app.globalData.facility,
         storeClerk:[],
-        storeNo:"",
+        storeNo:"",//门店编号
+        id:"",//门店ID
         page:1,
         limit: 10,
-        count: 0
+        count: 0,
+        storeName:"",//门店名称
+        detailAddr:"",//门店地址
+        isFixing:false,//是否绑定云音响
+        isReceiptCode:false,//是否绑定二维码
     },
     back: function(){
         wx.navigateBack({
@@ -27,7 +32,8 @@ Page({
      */
     onLoad: function (options) {
         this.setData({
-            storeNo:options.storeNo
+            storeNo:options.storeNo,
+            id:options.id
         })
     },
 
@@ -48,6 +54,21 @@ Page({
             limit: 10
           };
           storeClerk(that, json);
+        // 获取门店详情
+        let json1 = {
+            id:this.data.id,
+            access_token: wx.getStorageSync("access_token"),
+        }
+        api("/mercStore/getStore",json1,"POST",1).then(t => {
+            if(t.code == 200){
+                this.setData({
+                    storeName:t.data.storeName,
+                    detailAddr:t.data.detailAddr,
+                    isFixing:t.data.isFixing,
+                    isReceiptCode:t.data.isReceiptCode
+                })
+            }
+        })
     },
     // 新增店员
     addStaff:function(){

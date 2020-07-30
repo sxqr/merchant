@@ -1,19 +1,26 @@
 <!--pages/withdraw/withdraw.wxml-->
+<wxs module="count">
+  var num = function(val) {
+    return val.substring(val.length-4);
+  }
+  module.exports.num = num;
+</wxs>
 <view class="we_page">
-    <view class="slect_bank flex">
+    <view class="ht_20"></view>
+    <view class="slect_bank flex" bindtap="slectBankCard">
         <text>到银行卡</text>
-        <text class="card">工商银行 （5758）</text>
+        <text class="card">{{bankName}} （{{count.num(bankNo)}}）</text>
         <image src="../../images/right.png"></image>
     </view>
     <view class="recharge_model">
         <view class="title">提现金额</view>
         <view class="recharge_ipt flex">
             <text>¥</text>
-            <input value="30"></input>
+            <input value="{{amount}}" bindinput="amountChange"></input>
         </view>
         <view class="hint flex">
-            <text>可提现余额1800:00</text>
-            <view class="all">全部提现</view>
+            <text>可提现余额{{usableAmount}}</text>
+            <view class="all" bindtap="allRecharge">全部提现</view>
         </view>
         <view class="recharge" bindtap="recharge">确定</view>
         <view class="warm_hint">注：提现到账时间为次日9点到16点之间，每笔需两元的提现手续费</view>
@@ -21,10 +28,10 @@
     <!-- 支付弹窗 -->
     <view class="psd_model" wx:if="{{show}}">
         <view class="dialog_content">
-            <view class="clos" bindtap="clos"><image src="../../images/logo.png"></image></view>
+            <view class="clos" bindtap="clos"><image src="../../images/close.png"></image></view>
             <view class="dialog_title">请输入支付密码</view>
             <view class="des">提现金额</view>
-            <view class="money"><text class="txt-s">¥</text>  <text>10000000.00</text></view>
+            <view class="money"><text class="txt-s">¥</text>  <text>{{amount}}</text></view>
             <paySix 
                 bindvalueSix="valueSix" 
                 input_value="{{inputData.input_value}}" 
@@ -38,6 +45,26 @@
                 see="{{inputData.see}}" 
                 interval="{{inputData.interval}}">
             </paySix>
+        </view>
+    </view>
+</view>
+<!-- 银行卡弹窗 -->
+<view class="picker_bg" hidden="{{banckDialog}}" bindtap="closeBanck">
+
+</view>
+<view class="picker_content">
+    <view class="picker_model {{!banckDialog ? 'active' : ''}}" catchtap="ref">
+        <view class="toolbar">
+            <view class="title">选择到账银行卡</view>
+            <view class="close" bindtap="closeBanck"><image src="../../images/close.png"></image></view>
+        </view>
+        <view class="picker_list">
+            <view class="cell" wx:for="{{backNameList}}" data-card="{{item.bankNo}}" data-name="{{item.bankName}}" bindtap="slectBanck">
+                <image src="../../images/ly_logo.png"></image>
+                <text>{{item.bankName}}</text>
+                <text>储蓄卡</text>
+                <text>({{count.num(item.bankNo)}})</text>
+            </view>
         </view>
     </view>
 </view>

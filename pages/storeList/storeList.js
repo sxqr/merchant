@@ -72,7 +72,8 @@ Page({
     // 门店详情
     storeDetail: function(e){
         var storeno = e.currentTarget.dataset.storeno;
-        common.go('../storeDetail/storeDetail?storeNo=' + storeno);
+        var id = e.currentTarget.dataset.id;
+        common.go('../storeDetail/storeDetail?storeNo=' + storeno + "&id=" + id);
     },
 })
 function storeList(that, json) {

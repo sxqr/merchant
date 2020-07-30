@@ -85,7 +85,7 @@ page{
     flex: 1;
     text-align: center;
 }
-.store_top .grop .item .add{
+.store_top .grop .item .add,.store_top .grop .item .show_img{
     width: 64rpx;
     height: 64rpx;
     display: block;

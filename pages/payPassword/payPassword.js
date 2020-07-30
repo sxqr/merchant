@@ -1,4 +1,6 @@
-const app = getApp()
+const common = require("../../utils/common.js");
+const api = require("../../utils/ajax.js");
+const app = getApp();
 
 Page({
   data: {
@@ -31,23 +33,27 @@ Page({
     })
   },
   onShow: function(){
-    
+      var str = "inputData.input_value";
+      var str1 = "inputData.value_length";
+      this.setData({
+        [str]:"",
+        [str1]:0
+      })
   },
   nextStep: function(){
-    console.log("点了一下");
-    if(this.data.password == ""){
+    var password = this.data.password;
+    if(password == ""){
         wx.showToast({
           icon:'none',
           title: '请输入支付密码',
         })
     }else{
-
+        console.log("../payPassword2/payPassword2?password=" + password);
+        common.go("../payPassword2/payPassword2?password=" + password);
     }
-    console.log(this.data.password);
   },
   // 当组件输入数字6位数时的自定义函数
   valueSix(e) {
-    console.log(e);
     this.setData({
       password: e.detail
     })

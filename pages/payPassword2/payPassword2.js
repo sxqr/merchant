@@ -1,4 +1,7 @@
 //获取应用实例
+const common = require("../../utils/common.js");
+const api = require("../../utils/ajax.js");
+
 const app = getApp()
 
 Page({
@@ -16,47 +19,64 @@ Page({
       see: false,//是否明文展示
       interval: true,//是否显示间隔格子
     },
-    password:""
+    password:"",
+    firstPassword:""
   },
-  onload: function () {
-    wx.getSystemInfo({
-      success: function (res) {
-        console.log(res.model)
-        console.log(res.pixelRatio)
-        console.log(res.windowWidth)
-        console.log(res.windowHeight)
-        console.log(res.language)
-        console.log(res.version)
-        console.log(res.platform)
-      }
+      /**
+     * 生命周期函数--监听页面加载
+     */
+  onLoad: function (options) {
+    this.setData({
+      firstPassword:options.password
     })
   },
   onShow: function(){
     
   },
   nextStep: function(){
-    console.log("点了一下");
-    if(this.data.password == ""){
+    var password = this.data.password;
+    var firstPassword = this.data.firstPassword;
+    if(password == ""){
         wx.showToast({
           icon:'none',
           title: '请再次确认密码',
         })
-    }else{
-
+    }else if(password == firstPassword){
+       let json = {
+        payPassword:password,
+        access_token:wx.getStorageSync('access_token')
+       }
+       api("/merchant/updatePayPwd",json,"POST",1).then(t => {
+          if(t.code == 200){
+              wx.showToast({
+                icon: 'success',
+                title: '设置成功',
+              })
+              setTimeout(function(){
+                  wx.navigateBack({
+                      delta: 2
+                  })
+              }, 1500)
+          }
+       })
+    }else {
+      wx.showToast({
+        icon:'none',
+        title: '两次密码不一致',
+      })
+      var str = 'inputData.input_value';
+      var str1 = "inputData.value_length";
+      this.setData({
+        [str]:"",
+        [str1]:0,
+        password:""
+      })
     }
-    console.log(this.data.password);
   },
   // 当组件输入数字6位数时的自定义函数
   valueSix(e) {
-    console.log(e);
     this.setData({
       password: e.detail
     })
-    // 模态交互效果
-    // wx.showToast({
-    //   title: '支付成功',
-    //   icon: 'success',
-    //   duration: 2000
-    // })
   }
 })

@@ -1,13 +1,13 @@
 {
     "pages": [
         "pages/login/login",
+        "pages/withdraw/withdraw",
         "pages/storeDetail/storeDetail",
         "pages/wallet/wallet",
         "pages/transactionQuery/transactionQuery",
         "pages/storeList/storeList",
         "pages/walletDetail/walletDetail",
         "pages/succeed/succeed",
-        "pages/withdraw/withdraw",
         "pages/statement/statement",
         "pages/recharge/recharge",
         "pages/personal/personal",
