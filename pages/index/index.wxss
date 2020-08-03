@@ -56,6 +56,9 @@ page{
   height: 110rpx;
   margin-right: 20rpx;
 }
+.my_header .logo image{
+  border-radius: 100%;
+}
 .info .name{
   font-size: 34rpx;
   font-weight: 500;
@@ -85,6 +88,7 @@ page{
   border-radius: 12rpx;
   /* box-shadow: 0 5px 5px 0 rgba(236,236,236,1); */
   box-shadow:0px 5px 10px 0px rgba(235,235,235,1);
+  min-height: 156rpx;
 }
 .model .title{
   text-align: center;
@@ -158,7 +162,7 @@ page{
   right: 0px;
   bottom: 0px;
   text-align: center;
-  background:rgba(0,0,0,.3);
+  background:rgba(0,0,0,.4);
   z-index: 99;
 }
 .child{
@@ -208,9 +212,11 @@ page{
   color: rgb(16, 202, 248)
 }
 
-.mt-60{
-  margin-top: 60rpx;
+.mt-title{
+  padding: 40rpx 0 20rpx 0;
   padding-bottom: 5rpx;
+  font-size: 34rpx;
+  font-weight: 500;
 }
 .content{
   font-size: 28rpx;
@@ -225,17 +231,21 @@ page{
   width: 50%;
   background: #EDEDED;
   color: #57BF6A;
-  font-size: 30rpx;
+  font-size: 32rpx;
   height: 90rpx;
   line-height: 90rpx;
   border-bottom-left-radius: 16rpx;
+}
+.child2 .title{
+  padding: 40rpx 0 30rpx 0;
+  font-size: 34rpx;
 }
 .btn_yes{
   width: 50% !important;
   background: #57BF6A;
   color: #fff;
   font-weight: 500;
-  font-size: 30rpx;
+  font-size: 32rpx;
   height: 90rpx;
   line-height: 90rpx;
   border-radius: 0;

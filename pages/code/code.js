@@ -1,4 +1,6 @@
 // pages/code/code.js
+const api = require("../../utils/ajax.js");
+const common = require("../../utils/common.js");
 const drawQrcode = require("../../utils/weapp.qrcode.js");
 const W = wx.getSystemInfoSync().windowWidth;
 const rate = 750.0 / W;
@@ -12,34 +14,76 @@ Page({
      * 页面的初始数据
      */
     data: {
-        qrcode_w:qrcode_w
+        qrcode_w: qrcode_w,
+        receiptCodeNo: '',
+        urlAddress: '',
+        merchantName: '',
+        storeNo: '',
+        clerkNo: '',
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-       
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-        
+        let json = {
+            receiptCodeNo: options.code,
+            access_token: wx.getStorageSync('access_token')
+        }
+        api("/merchantReceiptCode/getCode", json, 'POST', 1).then(t => {
+            if (t.code == 200) {
+                this.setData({
+                    urlAddress: t.data.urlAddress,
+                    merchantName: t.data.merchantName,
+                    receiptCodeNo: t.data.receiptCodeNo,
+                    storeNo: t.data.storeNo,
+                    clerkNo: t.data.clerkNo
+                })
+                drawQrcode({
+                    width: qrcode_w,
+                    height: qrcode_w,
+                    canvasId: 'canvas',
+                    text: t.data.urlAddress
+                })
+            }
+        })
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        drawQrcode({
-            width: qrcode_w,
-            height: qrcode_w,
-            canvasId: 'canvas',
-            text: 'https://baidu.com'
+
+    },
+    // 解绑二维码
+    unbind: function () {
+        let _this = this;
+        wx.showModal({
+            title: "提示",
+            content: "您确定解绑二维码?",
+            success(res) {
+                if (res.confirm) {
+                    let json = {
+                        receiptCodeNo: _this.data.receiptCodeNo,
+                        access_token: wx.getStorageSync('access_token')
+                    }
+                    api("/merchantReceiptCode/unbindStore", json, "POST", 1)
+                        .then(t => {
+                            wx.showToast({
+                                icon: 'success',
+                                title: '解绑成功',
+                            })
+                            setTimeout(function () {
+                                wx.navigateBack({
+                                    delta: 1
+                                })
+                            }, 1500)
+                        })
+                }
+            }
         })
     },
+
 
     /**
      * 生命周期函数--监听页面隐藏

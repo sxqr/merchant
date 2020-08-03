@@ -5,21 +5,21 @@
 <view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
 <view class="we_page">
     <view class="top_bg">
-        <view class="my_header flex">
+        <view class="my_header flex" bindtap="personal">
             <view class="logo">
-                <image src="../../images/index-logo.png"></image>
+                <image src="{{headUrl ? headUrl : '../../images/index-logo.png'}}"></image>
             </view>
             <view class="info">
-                <view class="name"><text>用户名</text> <image src="../../images/index_right.png"></image></view>
-                <view class="card">ID：123456</view>
+                <view class="name"><text>{{nickname}}</text> <image src="../../images/index_right.png"></image></view>
+                <view class="card">ID：{{userId}}</view>
             </view>
         </view>
     </view>
     <!-- 中间悬浮部分 -->
     <view class="model">
         <view class="content">
-            <view class="title">余额(元)</view>
-            <view class="monney">10.00</view>
+            <!-- <view class="title">余额(元)</view>
+            <view class="monney">10.00</view> -->
             <view class="monney_btm flex">
                 <view class="item">
                     <text class="title">可提现金额</text>
@@ -69,7 +69,7 @@
 <!--授权登录弹出层-->
 <view class='write' hidden='{{loginFlag}}'>
   <view class='child2' catchtap='rf' style="background-color: #fff;">
-    <view class="mt-60">授权获取用户信息</view>
+    <view class="title">授权获取用户信息</view>
     <view class="content">将获得您的公开信息 （昵称和头像等）</view>
     <view class="accredit_btn">
       <view class="btn_no" bindtap='hidden'>暂不登录</view>

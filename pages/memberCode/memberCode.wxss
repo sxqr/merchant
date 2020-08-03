@@ -18,6 +18,28 @@ page{
     padding-top: 100rpx;
     padding-bottom: 120rpx;
 }
+.code_img .code_bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    pointer-events: none;
+}
+.clerk_phone{
+    align-items: center;
+    text-align: center;
+    font-size: 26rpx;
+    padding-top: 20rpx;
+}
+.clerk_phone image{
+    width: 26rpx;
+    height: 26rpx;
+    margin-right: 8rpx;
+    margin-bottom: -1px;
+}
 .code_mode .logo{
     width: 180rpx;
     height: 180rpx;
@@ -85,4 +107,12 @@ page{
 .code_img .corner.rit_btm{
     right: 0;
     bottom: 0;
+}
+.addCode{
+    text-align: center;
+    width: 100%;
+    height: 360rpx;
+}
+.addCode image{
+    width: 360rpx;
 }

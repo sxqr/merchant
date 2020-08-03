@@ -1,14 +1,14 @@
 <!--pages/bankCard/bankCard.wxml-->
 <view class="we_page">
-    <view class="banck_list">
-        <view class="list_cell" wx:for="{{bankCard}}" data-id="{{item.id}}" data-bankname="{{item.bankName}}" data-bankno="{{item.bankNo}}" bindtap="editBankCard">
-            <view class="banck_logo flex">
-                <image src="../../images/ly_logo.png"></image>
-                <text class="title">{{item.bankName}}</text>
-            </view>
-            <view class="card">{{item.bankNo}}</view>
-        </view>
-    </view>
-    <view class="add_btn" bindtap="addBankCard">新增银行卡</view>
-    
+	<view class="banck_list">
+		<view class="list_cell" wx:for="{{bankCard}}" data-id="{{item.id}}" data-bankname="{{item.bankName}}" data-bankno="{{item.bankNo}}" bindtap="editBankCard">
+			<view class="banck_logo flex">
+				<image src="../../images/ly_logo.png"></image>
+				<text class="title">{{item.bankName}}</text>
+			</view>
+			<view class="card">{{item.bankNo}}</view>
+		</view>
+	</view>
+	<view class="add_btn" bindtap="addBankCard">新增银行卡</view>
+
 </view>

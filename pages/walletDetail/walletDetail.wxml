@@ -8,7 +8,7 @@
 <view class="we_page">
     <view class="ht_20"></view>
     <view class="page_list">
-        <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 89vh; min-height: 0px;">
+        <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 98vh; min-height: 0px;">
             <view class="list_cell flex" wx:for="{{dataList}}">
                 <view class="list_lt">
                     <view class="item">

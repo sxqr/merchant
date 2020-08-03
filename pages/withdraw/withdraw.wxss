@@ -295,25 +295,25 @@ page{
   }
   .toolbar .close{
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
     width: 120rpx;
-    height: 90rpx;
-    line-height: 90rpx;
+    height: 100rpx;
+    line-height: 100rpx;
   }
   .toolbar .close image{
     width: 26rpx;
     height: 26rpx;
+    margin-bottom: -2rpx;
   }
   .picker_list{
     text-align: left;
-    padding-left: 30rpx;
   }
   .picker_list .cell{
     display: flex;
     align-items: center;
-    padding: 30rpx 0;
-    border-bottom: 1rpx solid #EBEBEB;
+    padding: 30rpx;
+    border-bottom: 1rpx solid #F3F3F3;
   }
   .picker_list .cell image{
     width: 50rpx;

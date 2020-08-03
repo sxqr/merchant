@@ -8,12 +8,12 @@ Page({
      * 页面的初始数据
      */
     data: {
-        dataList:[],
+        dataList: [],
         page: 1,
         limit: 10,
         count: 0,
     },
-    onLoad: function(option){
+    onLoad: function (option) {
 
     },
     /**
@@ -24,17 +24,16 @@ Page({
             page: 1,
             limit: 10,
             storeList: []
-          })
-          let that = this;
-          let json = {
+        })
+        let that = this;
+        let json = {
             access_token: wx.getStorageSync("access_token"),
             page: 1,
             limit: 10
-          };
-          console.log("显示");
-          storeList(that, json);
+        };
+        storeList(that, json);
     },
-      //到达底部
+    //到达底部
     scrollToLower: function (e) {
         let that = this;
         let page = that.data.page;
@@ -61,18 +60,19 @@ Page({
 
     }
 })
+
 function storeList(that, json) {
-    api("/merchantWithdraw/applet/wdView", json, "POST",1)
-      .then(t => {
-        var dataList = that.data.dataList;
-        var newList = t.data;
-        for (var i = 0; i < newList.length; i++) {
-            dataList.push(newList[i]);
-        }
-        console.log(dataList);
-        that.setData({
-            dataList: dataList,
-            count: t.count
+    api("/merchantWithdraw/applet/wdView", json, "POST", 1)
+        .then(t => {
+            var dataList = that.data.dataList;
+            var newList = t.data;
+            for (var i = 0; i < newList.length; i++) {
+                dataList.push(newList[i]);
+            }
+            console.log(dataList);
+            that.setData({
+                dataList: dataList,
+                count: t.count
+            })
         })
-      })
-  }
+}

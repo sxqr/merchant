@@ -1,23 +1,20 @@
 <!--pages/code/code.wxml-->
 <view class="we_page">
-    <view class="ht"></view>
-    <view class="code_mode">
-        <view class="logo">
-            <image src="../../images/login-logo.png"></image>
-        </view>
-        <view class="shop_name">商户名称</view>
-        <!-- 二维码 -->
-        <view class="code_img">
-            <view class="can_code"></view>
-            <view class="corner let_top"><image src="../../images/lt_top.png"></image></view>
-            <view class="corner rit_top"><image src="../../images/rt_top.png"></image></view>
-            <view class="corner let_btm"><image src="../../images/lt_btm.png"></image></view>
-            <view class="corner rit_btm"><image src="../../images/rt_btm.png"></image></view>
-            <canvas class='canvas' style="width:{{qrcode_w}}px; height:{{qrcode_w}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
-        </view>
-        <view class="number">
-            编号：4564564151
-        </view>
-    </view>
-    <view class="relieve">解绑二维码</view>
+	<view class="ht"></view>
+	<view class="code_mode">
+		<view class="logo">
+			<image src="../../images/login-logo.png"></image>
+		</view>
+		<view class="shop_name">{{merchantName}}</view>
+		<!-- 二维码 -->
+		<view class="code_img">
+			<view class="can_code"></view>
+			<image src="../../images/code_bg.png" class="code_bg"></image>
+			<canvas class='canvas' style="width:{{qrcode_w}}px; height:{{qrcode_w}}px;" canvas-id='canvas'></canvas>
+		</view>
+		<view class="number">
+			编号：{{receiptCodeNo}}
+		</view>
+	</view>
+	<view class="relieve" wx:if="{{storeNo || clerkNo}}" bindtap="unbind">解绑二维码</view>
 </view>

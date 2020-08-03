@@ -8,8 +8,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        usableAmount:'',//可用余额
-        bankCardlengh:0,
+        usableAmount: '', //可用余额
+        bankCardlengh: 0,
     },
 
     /**
@@ -23,45 +23,49 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        api("/merchantAccount/getAmount",{access_token:wx.getStorageSync('access_token')},"POST",1)
-        .then(t => {
-          if(t.code == 200){
-            var usableAmount = (t.data.usableAmount / 100).toFixed(2);
-            this.setData({
-              usableAmount:usableAmount,
-            })
-          }
-        });
+        api("/merchantAccount/getAmount", {
+                access_token: wx.getStorageSync('access_token')
+            }, "POST", 1)
+            .then(t => {
+                if (t.code == 200) {
+                    var usableAmount = (t.data.usableAmount / 100).toFixed(2);
+                    this.setData({
+                        usableAmount: usableAmount,
+                    })
+                }
+            });
 
-        api("/merchantBank/getMerBanks",{access_token:wx.getStorageSync('access_token')},"POST",1).then(t => {
-            if(t.code == 200){
+        api("/merchantBank/getMerBanks", {
+            access_token: wx.getStorageSync('access_token')
+        }, "POST", 1).then(t => {
+            if (t.code == 200) {
                 this.setData({
-                    bankCardlengh:t.data.length,
+                    bankCardlengh: t.data.length,
                 })
             }
         });
     },
     // 提现
-    withdraw: function() {
-        if(this.data.bankCardlengh > 0){
+    withdraw: function () {
+        if (this.data.bankCardlengh > 0) {
             common.go('../withdraw/withdraw?amount=' + this.data.usableAmount)
         } else {
             wx.showToast({
-                icon:'none',
+                icon: 'none',
                 title: '请先绑定银行卡号'
             })
         }
     },
     // 充值
-    recharge: function() {
+    recharge: function () {
         common.go('../recharge/recharge')
     },
     // 钱包明细
-    walletDetail: function(){
+    walletDetail: function () {
         common.go('../walletDetail/walletDetail')
     },
     // 银行卡
-    bankCard: function(){
+    bankCard: function () {
         common.go('../bankCard/bankCard')
     },
     /**

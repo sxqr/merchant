@@ -37,3 +37,7 @@ page{
     font-size: 34rpx;
     font-weight: 500;
 }
+.page_list .list_cell.pointer_events{
+    /* pointer-events: none; */
+    background: #E5E5E5;
+}

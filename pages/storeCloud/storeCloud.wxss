@@ -1,0 +1,48 @@
+/* pages/cloudDetail/cloudDetail.wxss */
+page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.cloud{
+    background: #fff;
+    padding-top: 20rpx;
+    margin-bottom: 30rpx;
+    padding-bottom: 25rpx;
+}
+.cloud .cloud_logo{
+    width: 240rpx;
+    height: 240rpx;
+    margin:0 auto;
+}
+.cloud .cloud_number{
+    color: #999;
+    text-align: center;
+    padding: 30rpx 0;
+    font-size: 28rpx;
+}
+.del_cloud{
+    margin: 0 30rpx;
+    height: 90rpx;
+    font-size: 34rpx;
+    font-weight: 500;
+    line-height: 90rpx;
+    background: #fff;
+    color: #FF2443;
+    border-radius: 90rpx;
+    text-align: center;
+}
+.slider_box{
+    align-items: center;
+    padding: 0 30rpx;
+}
+.slider_box .slider{
+    flex: 1;
+}
+.slider_box image{
+    width: 38rpx;
+    height: 38rpx;
+}
+.store_name{
+    text-align: center;
+    font-size: 30rpx;
+}

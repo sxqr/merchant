@@ -15,7 +15,7 @@
             <text>{{detailAddr}}</text>
         </view>
         <view class="grop">
-            <view class="item">       
+            <view class="item" bindtap="relevanceCloud">       
                 <block wx:if="{{isFixing}}">
                     <image class="show_img" src="../../images/yinxiang-b.png"></image>
                      <text>云音响</text>
@@ -25,7 +25,7 @@
                     <text>关联云音响</text>
                 </block>
             </view>
-            <view class="item">
+            <view class="item" bindtap="relevanceCode">
                 <block wx:if="{{isReceiptCode}}">
                     <image class="show_img" src="../../images/code-icon-b.png"></image>
                     <text>二维码</text>
@@ -43,7 +43,8 @@
     </view>
     <view class="store_list">
         <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 54vh; min-height: 0px;">
-            <view class="list_cell flex" wx:for="{{storeClerk}}">
+            <view class="list_cell flex" wx:for="{{storeClerk}}" data-clerkno="{{item.clerkNo}}" data-phone="{{item.phone}}" 
+            data-clerkname="{{item.clerkName}}" catchtap="clerkCode">
                 <view class="list_lt">
                     <view class="title">{{item.clerkName}}</view>
                     <view class="phone flex">
@@ -51,8 +52,8 @@
                         <text>{{item.phone}}</text>
                     </view>
                 </view>
-                <view class="list_rt">
-                    <view class="code">
+                <view class="list_rt" style="padding-left:30rpx">
+                    <view class="code" wx:if="{{item.bandCode}}">
                         <image src="../../images/code-icon.png"></image>
                         <text>二维码</text>
                     </view>

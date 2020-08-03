@@ -77,6 +77,16 @@ page,.we_page{
     display: inline-block;
 }
 .slect_checkbox image{
-    vertical-align: text-top;
+    margin-bottom: -4rpx;
 }
-  
+.wx_login button{
+    font-size: 30rpx;
+    color: #6AC63C;
+    font-weight: 500;
+    width: auto !important;
+    margin: 0;
+    padding: 20rpx 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}  

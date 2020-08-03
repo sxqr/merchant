@@ -58,13 +58,15 @@
             <view class="title">选择到账银行卡</view>
             <view class="close" bindtap="closeBanck"><image src="../../images/close.png"></image></view>
         </view>
-        <view class="picker_list">
-            <view class="cell" wx:for="{{backNameList}}" data-card="{{item.bankNo}}" data-name="{{item.bankName}}" bindtap="slectBanck">
-                <image src="../../images/ly_logo.png"></image>
-                <text>{{item.bankName}}</text>
-                <text>储蓄卡</text>
-                <text>({{count.num(item.bankNo)}})</text>
+        <scroll-view scroll-y style="height: 41.5vh; min-height: 0px;">
+            <view class="picker_list">
+                <view class="cell" wx:for="{{backNameList}}" data-card="{{item.bankNo}}" data-name="{{item.bankName}}" bindtap="slectBanck">
+                    <image src="../../images/ly_logo.png"></image>
+                    <text>{{item.bankName}}</text>
+                    <text>储蓄卡</text>
+                    <text>({{count.num(item.bankNo)}})</text>
+                </view>
             </view>
-        </view>
+        </scroll-view>
     </view>
 </view>

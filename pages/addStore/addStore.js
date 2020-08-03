@@ -7,8 +7,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        storeName:"",
-        detailAddr:"",
+        storeName: "",
+        detailAddr: "",
         provinces: [],
         citys: [],
         countys: [],
@@ -20,32 +20,32 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
+
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        
+
     },
-    storeName:function(e){
+    storeName: function (e) {
         this.setData({
-            storeName:e.detail.value
+            storeName: e.detail.value
         })
     },
     // 添加门店
-    addStore:function(){
+    addStore: function () {
         var detailAddr = "湖南省长沙市岳麓区麓谷信息港B座";
         var storeName = this.data.storeName;
-        if(storeName == ""){
+        if (storeName == "") {
             wx.showToast({
                 icon: 'none',
                 title: '请输入门店名称'
             })
             return false;
         }
-        if(detailAddr == ""){
+        if (detailAddr == "") {
             wx.showToast({
                 icon: 'none',
                 title: '请选择门店地址'
@@ -53,17 +53,17 @@ Page({
             return false;
         }
         var json = {
-            detailAddr:detailAddr,
-            storeName:storeName,
-            access_token:wx.getStorageSync('access_token')
+            detailAddr: detailAddr,
+            storeName: storeName,
+            access_token: wx.getStorageSync('access_token')
         }
-        api("/mercStore/add",json,"POST",1).then(t => {
-            if(t.code == 200){
+        api("/mercStore/add", json, "POST", 1).then(t => {
+            if (t.code == 200) {
                 wx.showToast({
                     icon: 'success',
                     title: '添加成功',
                 })
-                setTimeout(function(){
+                setTimeout(function () {
                     wx.navigateBack({
                         delta: 1
                     })
@@ -72,17 +72,17 @@ Page({
         })
     },
     //获取三级联动
-    bindRegionChange: function(e){
+    bindRegionChange: function (e) {
         console.log('picker发送选择改变，携带值为', e.detail.value)
         var region = e.detail.value;
         this.setData({
-          region: region,
-          address: region[0]+region[1]+region[2]
+            region: region,
+            address: region[0] + region[1] + region[2]
         })
         // api("/area/getProvinceList",{},"POST",1).then(t => {
         //     console.log(t);
         //     if(t.code == 200){
-                
+
         //     }
         // })    
     },

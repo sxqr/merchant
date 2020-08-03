@@ -1,8 +1,10 @@
 <!--index.wxml-->
 <view class="statement">
-  <view class="time">
-    <text>2020.07.14-2020.07.20</text>
-  </view>
+ <picker mode="date" value="{{appleDate}}" fields="day" bindchange="dayDateChange">
+    <view class="time">
+      <text>{{startTime}}-{{endTime}}</text>
+    </view>
+ </picker>
   <view class="page_title">
     交易统计
   </view>
@@ -18,15 +20,15 @@
     <view class="list_cell">
       <view class="item" style="width:100%;">
         <text class="title">总金额</text>
-        <text class="num">10.00</text>
+        <text class="num">{{totalAmount}}</text>
       </view>
       <view class="item">
         <text class="title">微信收款</text>
-        <text class="num">10.00</text>
+        <text class="num">{{wxMoney}}</text>
       </view>
       <view class="item">
         <text class="title">支付宝收款</text>
-        <text class="num">10.00</text>
+        <text class="num">{{alipayMoney}}</text>
       </view>
     </view>
   </view>

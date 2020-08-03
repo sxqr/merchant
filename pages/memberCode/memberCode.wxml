@@ -5,19 +5,23 @@
         <view class="logo">
             <image src="../../images/login-logo.png"></image>
         </view>
-        <view class="shop_name">商户名称</view>
+        <view class="shop_name">{{clerkName}}</view>
+        <view class="clerk_phone">
+            <image src="../../images/phone-icon.png"></image>
+            <text>{{phone}}</text>
+        </view>
         <!-- 二维码 -->
         <view class="code_img">
             <view class="can_code"></view>
-            <view class="corner let_top"><image src="../../images/lt_top.png"></image></view>
-            <view class="corner rit_top"><image src="../../images/rt_top.png"></image></view>
-            <view class="corner let_btm"><image src="../../images/lt_btm.png"></image></view>
-            <view class="corner rit_btm"><image src="../../images/rt_btm.png"></image></view>
-            <canvas class='canvas' style="width:{{qrcode_w}}px; height:{{qrcode_w}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
+            <canvas hidden="{{!flagCode}}" class='canvas' style="width:{{qrcode_w}}px; height:{{qrcode_w}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
+            <view wx:if="{{!flagCode}}" class="addCode" bindtap="addCodeImg">
+                <image src="../../images/addCode.png"></image>    
+            </view>
+            <image src="../../images/code_bg.png" class="code_bg"></image>
         </view>
-        <view class="number">
-            编号：4564564151
+        <view class="number" style="{{flagCode ? 'opacity:1;' : 'opacity:0;'}}">
+            编号：{{receiptCodeNo}}
         </view>
     </view>
-    <view class="relieve">解绑二维码</view>
+    <view wx:if="{{flagCode}}" class="relieve" bindtap="unbind">解绑二维码</view>
 </view>

@@ -15,16 +15,22 @@
             </view>
             
         </form>
-        <view class="login_btn" bindtap="login">登录</view>
+        <view class="login_btn" bindtap="userLogin">登录</view>
     </view>
-    <view class="wx_login flex">
-        <image src="../../images/weixin-icon.png"></image>
-        <text>微信授权登录</text>
+    <view class="wx_login flex" wx:if="{{isAuthorization}}">
+        <button class="btn_yes" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+            <image src="../../images/weixin-icon.png"></image>
+            <text>微信授权登录</text>
+        </button>
+        <!-- <text></text> -->
     </view>
     <view class="consent">
         <label class="checkbox">
-            <view class="slect_checkbox">
-                <image src="../../images/juxing.png"></image>
+            <view class="slect_checkbox" hidden="{{isType}}" data-type="no" bindtap="isConsent">
+                <image src="../../images/tongyi-n.png"></image>
+            </view>
+            <view class="slect_checkbox" hidden="{{isType1}}" data-type="yes" bindtap="isConsent">
+                <image src="../../images/tongyi-u.png"></image>
             </view>
             <view style="display:inline-block;">我已阅读并同意</view>
             <text>《用户加盟协议》</text>

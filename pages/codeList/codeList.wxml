@@ -1,32 +1,17 @@
 <!--pages/codeList/codeList.wxml-->
 <view class="we_page">
-    <view class="code_list">
-        <view class="list_cell flex"  bindtap="goCode">
-            <view class="code_logo">
-                <image src="../../images/code.png"></image>
-            </view>
-            <view class="code_rt">
-                <view class="title">编号1234544</view>
-                <text>xxx门店</text>
-            </view>
-        </view>
-        <view class="list_cell flex">
-            <view class="code_logo">
-                <image src="../../images/code.png"></image>
-            </view>
-            <view class="code_rt">
-                <view class="title">编号1234544</view>
-                <text>xxx门店</text>
-            </view>
-        </view>
-        <view class="list_cell flex">
-            <view class="code_logo">
-                <image src="../../images/code.png"></image>
-            </view>
-            <view class="code_rt">
-                <view class="title">编号1234544</view>
-                <text>xxx门店</text>
-            </view>
-        </view>
-    </view>
+	<view class="code_list">
+		<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 98vh; min-height: 0px;">
+			<view class="list_cell flex {{item.storeNo || item.clerkNo &&  clerkType ? 'pointer_events' : ''}} {{item.storeNo || item.clerkNo &&  slectType ? 'pointer_events' : ''}}" wx:for="{{codeList}}" data-storeno="{{item.storeNo}}" data-clerkno="{{item.clerkNo}}" data-code="{{item.receiptCodeNo}}" bindtap="goCode">
+				<view class="code_logo">
+					<image src="../../images/code.png"></image>
+				</view>
+				<view class="code_rt">
+					<view class="title">编号{{item.receiptCodeNo}}</view>
+					<text wx:if="{{item.storeNo != ''}}">门店编号：{{item.storeNo}}</text>
+					<text wx:if="{{item.clerkNo != ''}}">店员编号：{{item.clerkNo}}</text>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
 </view>

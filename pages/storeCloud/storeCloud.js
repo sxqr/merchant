@@ -16,6 +16,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        console.log(options);
         this.setData({
             cloudHornId: options.id,
             fixingVol: options.fixingVol,
@@ -85,23 +86,23 @@ Page({
         setCloudHornVol(that, json)
         console.log(fixingVol);
     },
-    // 商户解绑云音响
+    // 门店解绑云音响
     unbindCloudHorn: function () {
         var _this = this;
         wx.showModal({
             title: "提示",
-            content: "您确定删除设备?",
+            content: "您确定解绑设备?",
             success(res) {
                 if (res.confirm) {
                     let json = {
                         cloudHornId: _this.data.cloudHornId,
                         access_token: wx.getStorageSync('access_token')
                     }
-                    api("/merchantFixing/sound/unbindCloudHorn", json, "POST", 1)
+                    api("/merchantFixing/sound/unbindStore", json, "POST", 1)
                         .then(t => {
                             wx.showToast({
                                 icon: 'success',
-                                title: '删除成功',
+                                title: '解绑成功',
                             })
                             setTimeout(function () {
                                 wx.navigateBack({

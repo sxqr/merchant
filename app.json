@@ -28,7 +28,8 @@
         "pages/index/index",
         "pages/editBankCard/editBankCard",
         "pages/adrSelet/index",
-        "pages/modelTest/modelTest"
+        "pages/modelTest/modelTest",
+        "pages/storeCloud/storeCloud"
     ],
     "window": {
         "backgroundTextStyle": "light",

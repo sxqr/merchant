@@ -1,18 +1,20 @@
 <!--pages/cloudSound/cloudSound.wxml-->
 <view class="we_page">
-    <view class="ht_20"></view>
-    <view class="page_list">
-        <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 89vh; min-height: 0px;">
-            <view class="list_cell flex" wx:for="{{fixingList}}" data-id="{{item.cloudHornId}}" data-fixingvol="{{item.fixingVol}}" data-storename="{{item.storeName}}"  bindtap="cloudDetail">
-                <view class="logo"><image src="../../images/yingxiang.png"></image></view>
-                <view class="item">
-                    <view class="title_number">编号{{item.cloudHornId}}</view>
-                    <view class="store_number">{{item.storeName}}</view>
-                </view>
-            </view>
-        </scroll-view>
-    </view>
-    <view class="btm_menu" bindtap="advDevice">
-        +新增设备
-    </view>
+	<view class="ht_20"></view>
+	<view class="page_list">
+		<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 89vh; min-height: 0px;">
+			<view class="list_cell flex {{item.storeNo &&  slectType? 'pointer_events' : ''}}" wx:for="{{fixingList}}" data-id="{{item.cloudHornId}}" data-fixingvol="{{item.fixingVol}}" data-storeno="{{item.storeNo}}" data-storename="{{item.storeName}}" bindtap="cloudDetail">
+				<view class="logo">
+					<image src="../../images/yingxiang.png"></image>
+				</view>
+				<view class="item">
+					<view class="title_number">编号{{item.cloudHornId}}</view>
+					<view class="store_number">{{item.storeName}}</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+	<view class="btm_menu" bindtap="advDevice">
+		+新增设备
+	</view>
 </view>

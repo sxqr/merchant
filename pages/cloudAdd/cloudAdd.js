@@ -7,7 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        cloudHornId:""
+        cloudHornId: ""
     },
 
     /**
@@ -23,16 +23,16 @@ Page({
     onShow: function () {
 
     },
-    cloudHornId:function(e){
+    cloudHornId: function (e) {
         this.setData({
-            cloudHornId:e.detail.value
+            cloudHornId: e.detail.value
         });
     },
-    addCloud:function(){
+    addCloud: function () {
         var cloudHornId = this.data.cloudHornId;
-        if(cloudHornId == ""){
+        if (cloudHornId == "") {
             wx.showToast({
-                icon: 'none',  
+                icon: 'none',
                 title: '请输入云音响编号',
             })
             return false;
@@ -42,25 +42,25 @@ Page({
             mask: true
         })
         var json = {
-            cloudHornId:cloudHornId,
-            access_token:wx.getStorageSync('access_token')
+            cloudHornId: cloudHornId,
+            access_token: wx.getStorageSync('access_token')
         }
-        api("/merchantFixing/sound/bindCloudHorn",json,"POST",1).then(t => {
-            if(t.code == 200){
+        api("/merchantFixing/sound/bindCloudHorn", json, "POST", 1).then(t => {
+            if (t.code == 200) {
                 wx.showToast({
                     icon: 'success',
                     title: '添加成功',
                 })
-                setTimeout(function(){
+                setTimeout(function () {
                     wx.navigateBack({
                         delta: 1
                     })
                 }, 1500)
             }
-        }).catch((response)=>{
+        }).catch((response) => {
             wx.showToast({
-              icon: 'none',
-              title: response.msg
+                icon: 'none',
+                title: response.msg
             })
         });
     },

@@ -6,35 +6,58 @@ const app = getApp()
 Page({
   data: {
     loginFlag: true,
-    usableAmount:'',//可用余额
-    interestAmount:'',//利息
-    nickname:'',
+    usableAmount: '', //可用余额
+    interestAmount: '', //利息
+    nickname: '',
+    headUrl: '',
+    userId: '',
     statusBarHeight: app.globalData.statusBarHeight,
-    facility: app.globalData.facility
+    facility: app.globalData.facility,
+    isAuthorization: true,
   },
-  onShow: function (){
+  onLoad: function () {
+    this.setData({
+      isAuthorization: wx.getStorageSync('isAuthorization')
+    })
+  },
+  onShow: function () {
     wx.stopPullDownRefresh();
     wx.hideHomeButton();
     // 判断是否授权
-    // let isLoginOverdue = wx.getStorageSync("isLoginOverdue");
-    let isLoginOverdue = true;
-    console.log(isLoginOverdue,"111");
-    if(isLoginOverdue){
+    if (!this.data.isAuthorization) {
       this.setData({
-        loginFlag:false
+        loginFlag: false
       })
     }
-    api("/merchantAccount/getAmount",{access_token:wx.getStorageSync('access_token')},"POST",1)
+    // 获取金额
+    api("/merchantAccount/getAmount", {
+        access_token: wx.getStorageSync('access_token')
+      }, "POST", 1)
       .then(t => {
-        if(t.code == 200){
+        if (t.code == 200) {
           var usableAmount = (t.data.usableAmount / 100).toFixed(2);
           var interestAmount = (t.data.interestAmount / 100).toFixed(2);
           this.setData({
-            usableAmount:usableAmount,
-            interestAmount:interestAmount
+            usableAmount: usableAmount,
+            interestAmount: interestAmount
           })
         }
-      })
+      });
+    // 获取用户信息
+    api("/merchant/getMerchant", {
+        access_token: wx.getStorageSync('access_token')
+      }, "POST", 1)
+      .then(t => {
+        if (t.code == 200) {
+          wx.setStorageSync('headUrl', t.data.headUrl);
+          wx.setStorageSync('userId', t.data.userId);
+          this.setData({
+            nickname: t.data.merchantShortName,
+            headUrl: t.data.headUrl,
+            userId: t.data.userId
+          })
+        }
+      });
   },
   //隐藏弹出层
   hidden: function () {
@@ -50,8 +73,8 @@ Page({
     if (!userInfo) {
       return;
     }
-    wx.setStorageSync("nickname", userInfo.nickName);
-    wx.setStorageSync("headImg", userInfo.avatarUrl);
+    // wx.setStorageSync("nickname", userInfo.nickName);
+    // wx.setStorageSync("headImg", userInfo.avatarUrl);
 
     wx.login({
       success: function (res) {
@@ -60,7 +83,6 @@ Page({
           let json = {
             access_token: wx.getStorageSync("access_token"),
             code: code,
-
           }
           that.login(json);
         }
@@ -70,10 +92,11 @@ Page({
   //登录
   login: function (json) {
     var that = this;
-    api("/login/wxLogin", json, "POST", 1)
+    api("/login/zhLogin", json, "POST", 1)
       .then(t => {
         if (t.code == 200) {
-          wx.setStorageSync("access_token", t.data.token.token);
+          wx.setStorageSync("access_token", t.data.token);
+          wx.setStorageSync('isAuthorization', true);
           that.setData({
             loginFlag: true
           })
@@ -82,57 +105,60 @@ Page({
   },
   //点击子层不去触发父层的隐藏事件
   rf: function (e) {
-      return;
+    return;
   },
   // 交易查询
-  transactionQuery: function(){
+  transactionQuery: function () {
     wx.navigateTo({
       url: '../transactionQuery/transactionQuery',
     })
   },
+  // 个人信息
+  personal: function () {
+    wx.navigateTo({
+      url: '../personal/personal',
+    })
+  },
   // 报表
-  statement: function(){
+  statement: function () {
     wx.navigateTo({
       url: '../statement/statement',
     })
   },
   // 门店管理
-  storeList: function(){
+  storeList: function () {
     wx.navigateTo({
       url: '../storeList/storeList',
     })
   },
   // 云音响
-  cloudSound: function(){
+  cloudSound: function () {
     wx.navigateTo({
       url: '../cloudSound/cloudSound',
     })
   },
   // 二维码
-  codeList: function(){
+  codeList: function () {
     wx.navigateTo({
       url: '../codeList/codeList',
     })
   },
   // 我的钱包
-  wallet: function(){
+  wallet: function () {
     wx.navigateTo({
       url: '../wallet/wallet',
     })
   },
   // 关于我们
-  about: function(){
+  about: function () {
     wx.navigateTo({
       url: '../about/about',
     })
   },
-  personal: function(){
+  personal: function () {
     wx.navigateTo({
       url: '../personal/personal',
     })
-  },
-  onLoad: function (){
-    
   }
 })
 

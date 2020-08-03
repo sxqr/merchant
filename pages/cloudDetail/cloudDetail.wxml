@@ -1,16 +1,16 @@
 <!--pages/cloudDetail/cloudDetail.wxml-->
 <view class="we_page">
-    <view class="cloud">
-        <view class="cloud_logo">
-            <image src="../../images/yingxiang.png"></image>
-        </view>
-        <view class="store_name">{{storeName}}</view>
-        <view class="cloud_number">编号：{{cloudHornId}}</view>
-        <view class="slider_box flex">
-            <image src="../../images/yinjian.png" bindtap="dec"></image>
-            <slider class="slider" value="{{fixingVol}}" bindchange="sliderValue" block-size="16"></slider>
-            <image src="../../images/yinjia.png" bindtap="add"></image>
-        </view>
-    </view>
-    <view class="del_cloud" bindtap="unbindCloudHorn">删除设备</view>
+	<view class="cloud">
+		<view class="cloud_logo">
+			<image src="../../images/yingxiang.png"></image>
+		</view>
+		<view class="store_name" wx:if="{{storeName != 'undefined'}}">{{storeName}}</view>
+		<view class="cloud_number">编号：{{cloudHornId}}</view>
+		<view class="slider_box flex">
+			<image src="../../images/yinjian.png" bindtap="dec"></image>
+			<slider class="slider" value="{{fixingVol}}" bindchange="sliderValue" block-size="16"></slider>
+			<image src="../../images/yinjia.png" bindtap="add"></image>
+		</view>
+	</view>
+	<view class="del_cloud" bindtap="unbindCloudHorn">删除设备</view>
 </view>

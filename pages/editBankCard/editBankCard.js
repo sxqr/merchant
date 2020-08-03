@@ -7,11 +7,11 @@ Page({
      * 页面的初始数据
      */
     data: {
-        bankName:"",
-        bankNo:"",
-        id:"",
-        bankFlag:true,
-        backNameList:[]
+        bankName: "",
+        bankNo: "",
+        id: "",
+        bankFlag: true,
+        backNameList: []
     },
 
     /**
@@ -20,10 +20,10 @@ Page({
     onLoad: function (options) {
         console.log(options);
         this.setData({
-            bankName:options.bankName,
-            bankNo:options.bankNo,
-            id:options.id
-        }) 
+            bankName: options.bankName,
+            bankNo: options.bankNo,
+            id: options.id
+        })
     },
 
     /**
@@ -31,20 +31,20 @@ Page({
      */
     onShow: function () {
         var json = {
-            access_token:wx.getStorageSync('access_token')
+            access_token: wx.getStorageSync('access_token')
         }
-        api("/bank/bankNames",json,"POST",1).then(t => {
-            if(t.code == 200){
+        api("/bank/bankNames", json, "POST", 1).then(t => {
+            if (t.code == 200) {
                 this.setData({
-                    backNameList:t.data
+                    backNameList: t.data
                 })
             }
         });
     },
     // 隐藏事件
-    hidden:function(){
+    hidden: function () {
         this.setData({
-            bankFlag:true
+            bankFlag: true
         })
     },
     //点击子层不去触发父层的隐藏事件
@@ -52,55 +52,55 @@ Page({
         return;
     },
     // 现在银行卡弹窗
-    openDialog:function(){
+    openDialog: function () {
         this.setData({
-            bankFlag:false
+            bankFlag: false
         })
     },
     // 选择银行卡
-    slectName:function(e){
+    slectName: function (e) {
         var name = e.currentTarget.dataset.name;
         this.setData({
-            bankName:name,
-            bankFlag:true
+            bankName: name,
+            bankFlag: true
         })
     },
-    bankNo:function(e){
+    bankNo: function (e) {
         this.setData({
-            bankNo:e.detail.value
+            bankNo: e.detail.value
         })
     },
     // 修改银行卡
-    editBank:function(){
+    editBank: function () {
         let bankNo = this.data.bankNo;
         let bankName = "中国银行";
-        if(bankNo == ""){
+        if (bankNo == "") {
             wx.showToast({
-              icon: 'none',  
-              title: '请输入银行卡号',
+                icon: 'none',
+                title: '请输入银行卡号',
             })
             return false;
         }
-        if(bankName == ""){
+        if (bankName == "") {
             wx.showToast({
-              icon: 'none',  
-              title: '请选择所属银行',
+                icon: 'none',
+                title: '请选择所属银行',
             })
             return false;
         }
         let json = {
-            id:this.data.id,
-            bankName:bankName,
-            bankNo:bankNo,
-            access_token:wx.getStorageSync('access_token')
+            id: this.data.id,
+            bankName: bankName,
+            bankNo: bankNo,
+            access_token: wx.getStorageSync('access_token')
         }
-        api("/merchantBank/update",json,"POST",1)
+        api("/merchantBank/update", json, "POST", 1)
             .then(t => {
                 wx.showToast({
                     icon: 'success',
                     title: '修改成功',
                 })
-                setTimeout(function(){
+                setTimeout(function () {
                     wx.navigateBack({
                         delta: 1
                     })
@@ -108,31 +108,31 @@ Page({
             })
     },
     // 删除银行卡
-    deleteBank:function(){
+    deleteBank: function () {
         var _this = this;
         wx.showModal({
-          title:"提示",
-          content:"您确认删除该银行卡?",
-          success(res){
-              if(res.confirm){  
-                let json = {
-                    id: _this.data.id,
-                    access_token: wx.getStorageSync('access_token')
-                }  
-                api("/merchantBank/del",json,"POST",1)
-                    .then(t => {
-                        wx.showToast({
-                            icon: 'success',
-                            title: '删除成功',
-                        })
-                        setTimeout(function(){
-                            wx.navigateBack({
-                                delta: 1
+            title: "提示",
+            content: "您确认删除该银行卡?",
+            success(res) {
+                if (res.confirm) {
+                    let json = {
+                        id: _this.data.id,
+                        access_token: wx.getStorageSync('access_token')
+                    }
+                    api("/merchantBank/del", json, "POST", 1)
+                        .then(t => {
+                            wx.showToast({
+                                icon: 'success',
+                                title: '删除成功',
                             })
-                        }, 1500)
-                    })
-              }
-          }
+                            setTimeout(function () {
+                                wx.navigateBack({
+                                    delta: 1
+                                })
+                            }, 1500)
+                        })
+                }
+            }
         })
     }
 })

@@ -27,3 +27,7 @@ page{
     color: #999;
     padding-top: 15rpx;
 }
+.code_list .list_cell.pointer_events{
+    /* pointer-events: none; */
+    background: #E5E5E5;
+}
