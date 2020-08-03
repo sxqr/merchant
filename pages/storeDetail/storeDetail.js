@@ -76,6 +76,10 @@ Page({
             }
         })
     },
+    // 编辑门店
+    editType:function(){
+        common.go("../addStore/addStore?editType=" + "edit");
+    },
     // 关联二维码
     relevanceCode: function () {
         if (this.data.isReceiptCode) {
@@ -94,14 +98,13 @@ Page({
     },
     // 查看店员二维码
     clerkCode: function (e) {
-        var clerkNo = e.currentTarget.dataset.clerkno;
-        var phone = e.currentTarget.dataset.phone;
-        var clerkname = e.currentTarget.dataset.clerkname;
-        common.go("../memberCode/memberCode?clerkNo=" + clerkNo + "&phone=" + phone + "&clerkName=" + clerkname);
+        let clerkNo = e.currentTarget.dataset.clerkno;
+        let id = e.currentTarget.dataset.id;
+        common.go("../memberCode/memberCode?clerkNo=" + clerkNo + "&id=" + id);
     },
     // 新增店员
     addStaff: function () {
-        common.go("../addStaff/addStaff?storeNo=" + this.data.storeNo);
+        common.go("../addStaff/addStaff?storeNo=" + this.data.storeNo + "&editType=" + "add");
     },
     //到达底部
     scrollToLower: function (e) {
@@ -133,6 +136,10 @@ Page({
 })
 
 function storeClerk(that, json) {
+    wx.showLoading({
+        title: '加载中...',
+        mask: true
+    })
     api("/storeClerk/list", json, "POST", 1)
         .then(t => {
             var storeList = that.data.storeClerk;

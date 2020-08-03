@@ -3,7 +3,7 @@
 	<view class="banck_list">
 		<view class="list_cell" wx:for="{{bankCard}}" data-id="{{item.id}}" data-bankname="{{item.bankName}}" data-bankno="{{item.bankNo}}" bindtap="editBankCard">
 			<view class="banck_logo flex">
-				<image src="../../images/ly_logo.png"></image>
+				<image src="{{'data:image/png;base64,'+ item.fileStr}}"></image>
 				<text class="title">{{item.bankName}}</text>
 			</view>
 			<view class="card">{{item.bankNo}}</view>

@@ -14,8 +14,7 @@ page,.we_page{
 }
 .login_model .cell{
     align-items: center;
-    margin: 40rpx 0;
-    padding: 20rpx 0;
+    margin: 50rpx 0;
     border-bottom: 1px solid #DDDDDD;
 }
 .login_model .cell image{
@@ -26,11 +25,12 @@ page,.we_page{
 .login_model .cell input{
     flex: 1;
     font-size: 30rpx;
+    padding: 20rpx 0;
 }
 .login_btn{
     height: 90rpx;
     width: 100%;
-    margin-top:80rpx; 
+    margin-top:90rpx; 
     margin-bottom: 100rpx;
     line-height: 90rpx;
     text-align: center;
@@ -49,8 +49,8 @@ page,.we_page{
     align-items: center;
 }
 .wx_login image{
-    width: 50rpx;
-    height: 50rpx;
+    width: 46rpx;
+    height: 46rpx;
     margin-right: 20rpx;
 }
 .consent{
@@ -80,7 +80,7 @@ page,.we_page{
     margin-bottom: -4rpx;
 }
 .wx_login button{
-    font-size: 30rpx;
+    font-size: 28rpx;
     color: #6AC63C;
     font-weight: 500;
     width: auto !important;

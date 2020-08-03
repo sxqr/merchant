@@ -1,7 +1,8 @@
 <!--pages/storeList/storeList.wxml-->
 <view class="we_page">
     <view class="store_list">
-        <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 89vh; min-height: 0px;">
+        <scroll-view scroll-y bindscrolltolower="scrollToLower" style="height: calc(100vh - 120rpx);">
+            <view class="ht_20"></view>
             <view class="list_cell" wx:for="{{storeList}}" data-storeno="{{item.storeNo}}" data-id="{{item.id}}" bindtap="storeDetail">
                 <view class="title">{{item.storeName}}</view>
                 <view class="addr flex">

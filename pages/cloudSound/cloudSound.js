@@ -117,6 +117,10 @@ Page({
 })
 
 function getSound(that, json) {
+  wx.showLoading({
+    title: '加载中...',
+    mask: true
+  })
   api("/merchantFixing/sound/getMerchantFixingList", json, "POST", 1)
     .then(t => {
       var storeList = that.data.fixingList;

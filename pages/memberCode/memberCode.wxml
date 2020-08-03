@@ -2,6 +2,10 @@
 <view class="we_page">
     <view class="ht"></view>
     <view class="code_mode">
+        <!-- 编辑店员 -->
+        <view class="edit_member" bindtap="editMember">
+            <image src="../../images/edit_name.png"></image>
+        </view>
         <view class="logo">
             <image src="../../images/login-logo.png"></image>
         </view>

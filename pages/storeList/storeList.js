@@ -67,7 +67,7 @@ Page({
     },
     // 新增门店
     addStore: function () {
-        common.go('../addStore/addStore');
+        common.go('../addStore/addStore?editType=' + "add");
     },
     // 门店详情
     storeDetail: function (e) {
@@ -78,6 +78,10 @@ Page({
 })
 
 function storeList(that, json) {
+    wx.showLoading({
+        title: '加载中...',
+        mask: true
+    })
     api("/mercStore/list", json, "POST", 1)
         .then(t => {
             var storeList = that.data.storeList;

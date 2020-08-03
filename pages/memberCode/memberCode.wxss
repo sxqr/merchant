@@ -116,3 +116,12 @@ page{
 .addCode image{
     width: 360rpx;
 }
+.edit_member{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.edit_member{
+    height: 93rpx;
+    width: 94rpx;
+}

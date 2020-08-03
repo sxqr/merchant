@@ -3,8 +3,9 @@ page{
     background: #efefef;
     height: 100%;
 }
-.store_list{
-    padding-top: 20rpx;
+.ht_20{
+    height: 20rpx;
+    background: #efefef;
 }
 .btm_menu{
     position: fixed;

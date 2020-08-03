@@ -1,8 +1,8 @@
 <!--pages/cloudSound/cloudSound.wxml-->
 <view class="we_page">
-	<view class="ht_20"></view>
 	<view class="page_list">
-		<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 89vh; min-height: 0px;">
+		<scroll-view scroll-y bindscrolltolower="scrollToLower" style="height: calc(100% - 120rpx);">
+            <view class="ht_20"></view>
 			<view class="list_cell flex {{item.storeNo &&  slectType? 'pointer_events' : ''}}" wx:for="{{fixingList}}" data-id="{{item.cloudHornId}}" data-fixingvol="{{item.fixingVol}}" data-storeno="{{item.storeNo}}" data-storename="{{item.storeName}}" bindtap="cloudDetail">
 				<view class="logo">
 					<image src="../../images/yingxiang.png"></image>

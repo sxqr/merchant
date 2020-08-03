@@ -103,6 +103,7 @@ page{
     /* height: 90rpx;
     line-height: 90rpx; */
     font-size: 30rpx;
+    border-bottom: 1px solid #F6F6F6;
 }
 .shopclerk .lt{
     padding: 30rpx;
@@ -115,7 +116,7 @@ page{
 .store_list .list_cell{
     background: #fff;
     padding: 30rpx;
-    border-top: 1px solid #F6F6F6;
+    border-bottom: 1px solid #F6F6F6;
     align-items: center;
 }
 .store_list .list_lt .phone{

@@ -3,8 +3,9 @@ page{
     background: #EFEFEF;
     height: 100%;
 }
-.code_list{
-    padding-top: 20rpx;
+.ht_20{
+    height: 20rpx;
+    background: #EFEFEF;
 }
 .code_list .list_cell{
     /* align-items: center; */

@@ -2,6 +2,7 @@
 <view class="we_page">
     <view class="code_list">
         <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 98vh; min-height: 0px;">
+            <view class="ht_20"></view>
             <view class="list_cell flex {{(item.storeNo || item.clerkNo) &&  clerkType ? 'pointer_events' : ''}} {{(item.storeNo || item.clerkNo) &&  slectType ? 'pointer_events' : ''}}" wx:for="{{codeList}}" data-storeno="{{item.storeNo}}" data-clerkno="{{item.clerkNo}}" data-code="{{item.receiptCodeNo}}"
               bindtap="goCode">
                 <view class="code_logo">

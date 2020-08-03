@@ -8,7 +8,7 @@
     <view class="store_top">
         <view class="store_title">
             <text>{{storeName}}</text>
-            <view class="edit"><image src="../../images/edit-icon.png"></image></view>
+            <view class="edit" bindtap="editType"><image src="../../images/edit-icon.png"></image></view>
         </view>
         <view class="addr flex">
             <image src="../../images/loction-b-icon.png"></image>
@@ -44,7 +44,7 @@
     <view class="store_list">
         <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 54vh; min-height: 0px;">
             <view class="list_cell flex" wx:for="{{storeClerk}}" data-clerkno="{{item.clerkNo}}" data-phone="{{item.phone}}" 
-            data-clerkname="{{item.clerkName}}" catchtap="clerkCode">
+            data-clerkname="{{item.clerkName}}" data-id="{{item.id}}" catchtap="clerkCode">
                 <view class="list_lt">
                     <view class="title">{{item.clerkName}}</view>
                     <view class="phone flex">

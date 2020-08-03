@@ -2,6 +2,7 @@
 page{
     height: 100%;
     background: #EFEFEF;
+    overflow: hidden;
 }
 .add_staff{
     margin-top: 20rpx;

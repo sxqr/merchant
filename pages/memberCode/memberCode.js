@@ -19,17 +19,16 @@ Page({
         flagCode: false,
         phone: "",
         clerkName: "",
+        clerkId:""
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log(options);
         this.setData({
             clerkNo: options.clerkNo,
-            phone: options.phone,
-            clerkName: options.clerkName
+            clerkId:options.id
         })
     },
     /**
@@ -38,6 +37,25 @@ Page({
     onShow: function () {
         let that = this
         getCode(that);
+        // 获取店员信息
+        api("/storeClerk/getClerk",{
+            id:that.data.clerkId,
+            access_token: wx.getStorageSync('access_token')
+        },"POST",1).then(t => {
+            if(t.code == 200){
+                that.setData({
+                    phone: t.data.phone,
+                    clerkName: t.data.clerkName,
+                })
+            }
+        })
+    },
+    // 修改店员信息
+    editMember:function(){
+        let clerkId = this.data.clerkId;
+        let phone = this.data.phone;
+        let clerkName = this.data.clerkName;
+        common.go("../addStaff/addStaff?editType=" + "edit" + "&clerkId=" + clerkId + "&phone=" + phone + "&clerkName=" + clerkName);
     },
     // 解绑二维码
     unbind: function () {
@@ -47,6 +65,10 @@ Page({
             content: "您确定解绑二维码?",
             success(res) {
                 if (res.confirm) {
+                    wx.showLoading({
+                        title: '加载中...',
+                        mask: true
+                    })
                     let json = {
                         receiptCodeNo: _this.data.receiptCodeNo,
                         access_token: wx.getStorageSync('access_token')
@@ -76,6 +98,10 @@ Page({
 })
 
 function getCode(that) {
+    wx.showLoading({
+        title: '加载中...',
+        mask: true
+    })
     let json = {
         clerkNo: that.data.clerkNo,
         access_token: wx.getStorageSync('access_token')

@@ -9,15 +9,33 @@ Page({
     data: {
         storeNo:"",
         clerkName:"",
-        phone:""
+        phone:"",
+        editType:"",
+        clerkId:"",
+        phone:"",
+        clerkName:""
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let editType = options.editType;
+        if(editType == 'edit'){
+            wx.setNavigationBarTitle({
+              title: '编辑店员',
+            })
+        } else {
+            wx.setNavigationBarTitle({
+                title: '新增店员',
+            })
+        }
         this.setData({
-            storeNo:options.storeNo
+            storeNo:options.storeNo,
+            editType:editType,
+            clerkId:options.clerkId,
+            phone:options.phone,
+            clerkName:options.clerkName
         })
     },
 
@@ -41,6 +59,7 @@ Page({
     addStaff:function(){
         var clerkName = this.data.clerkName;
         var phone = this.data.phone;
+        let editType = this.data.editType;
         if(clerkName == ""){
             wx.showToast({
                 icon: 'none',  
@@ -59,25 +78,49 @@ Page({
             title: '加载中...',
             mask: true
         })
-        var json = {
-            clerkName:clerkName,
-            phone:phone,
-            storeNo:this.data.storeNo,
-            access_token:wx.getStorageSync('access_token')
-        }
-        api("/storeClerk/add",json,"POST",1).then(t => {
-            if(t.code == 200){
-                wx.showToast({
-                    icon: 'success',
-                    title: '添加成功',
-                })
-                setTimeout(function(){
-                    wx.navigateBack({
-                        delta: 1
-                    })
-                }, 1500)
+        if(editType == "add"){
+            // 新增
+            var json = {
+                clerkName:clerkName,
+                phone:phone,
+                storeNo:this.data.storeNo,
+                access_token:wx.getStorageSync('access_token')
             }
-        })
+            api("/storeClerk/add",json,"POST",1).then(t => {
+                if(t.code == 200){
+                    wx.showToast({
+                        icon: 'success',
+                        title: '添加成功',
+                    })
+                    setTimeout(function(){
+                        wx.navigateBack({
+                            delta: 1
+                        })
+                    }, 1500)
+                }
+            })
+        } else {
+            // 修改
+            var json = {
+                clerkName:clerkName,
+                phone:phone,
+                id:this.data.clerkId,
+                access_token:wx.getStorageSync('access_token')
+            }
+            api("/storeClerk/update",json,"POST",1).then(t => {
+                if(t.code == 200){
+                    wx.showToast({
+                        icon: 'success',
+                        title: '修改成功',
+                    })
+                    setTimeout(function(){
+                        wx.navigateBack({
+                            delta: 1
+                        })
+                    }, 1500)
+                }
+            })
+        }
     },
     /**
      * 生命周期函数--监听页面隐藏

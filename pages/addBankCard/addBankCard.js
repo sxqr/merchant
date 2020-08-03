@@ -36,17 +36,18 @@ Page({
             }
         });
     },
-    // 隐藏事件
-    hidden: function () {
+    // 关闭弹窗
+    closeBanck: function () {
         this.setData({
             bankFlag: true
         })
     },
+    
     //点击子层不去触发父层的隐藏事件
     rf: function (e) {
         return;
     },
-    // 现在银行卡弹窗
+    // 选择银行卡弹窗
     openDialog: function () {
         this.setData({
             bankFlag: false

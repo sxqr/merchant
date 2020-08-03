@@ -3,11 +3,11 @@
 	<view class="add_staff">
 		<view class="inpt_cell flex">
 			<text>姓名</text>
-			<input placeholder="请输入店员姓名" bindinput="clerkName" placeholder-class="phcolor"></input>
+			<input placeholder="请输入店员姓名" value="{{clerkName}}" bindinput="clerkName" placeholder-class="phcolor"></input>
 		</view>
 		<view class="inpt_cell flex">
 			<text>电话</text>
-			<input placeholder="请输入店员联系电话" bindinput="phone" placeholder-class="phcolor"></input>
+			<input placeholder="请输入店员联系电话" value="{{phone}}" maxlength="11" bindinput="phone" placeholder-class="phcolor"></input>
 		</view>
 	</view>
 	<view class="add_btn" bindtap="addStaff">确定</view>

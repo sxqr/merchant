@@ -9,6 +9,7 @@ Page({
     data: {
         storeName: "",
         detailAddr: "",
+        editType:"",
         provinces: [],
         citys: [],
         countys: [],
@@ -20,7 +21,19 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        let editType = options.editType;
+        if(editType == "edit"){
+            wx.setNavigationBarTitle({
+              title: '编辑门店',
+            })
+        } else {
+            wx.setNavigationBarTitle({
+                title: '添加门店',
+            })
+        }
+        this.setData({
+            
+        })
     },
 
     /**
@@ -52,6 +65,10 @@ Page({
             })
             return false;
         }
+        wx.showLoading({
+            title: '加载中...',
+            mask: true
+        })
         var json = {
             detailAddr: detailAddr,
             storeName: storeName,
