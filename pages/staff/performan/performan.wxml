@@ -1,0 +1,59 @@
+<!--pages/performance/performance.wxml-->
+<wxs module="filters" src="../../../utils/filter.wxs"></wxs>
+
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <view class="back" bindtap="back"><image src="../../../images/staff/fanhui@3x.png"></image></view>
+  <view class="{{facility?'back_title iphone' : 'back_title'}}">业绩</view>
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
+<view class="we_page">
+    <view class="transaction">
+        <!-- 两个按钮 -->
+        <view class="btn_menu flex">
+            <view class="cut">
+                <view class="item {{active1 ? 'active' : ''}}" data-id="1" bindtap="choose">日</view>
+                <view class="item {{active2 ? 'active' : ''}}" data-id="2" bindtap="choose">月</view>
+            </view>
+            <!-- 时间选择 -->
+            <view class="time_menu">
+                <picker mode="date" value="{{todayTime}}" fields="{{active1 ? 'day' : 'month'}}" start="2015-09-01" end="2100-12-31" bindchange="bindDateChange">
+                    <view class="select_time">
+                        <text>{{todayTime}}</text>
+                        <view class="line"></view>
+                        <image src="../../../images/staff/date-icon.png"></image>
+                    </view>
+                </picker>    
+            </view>
+        </view>
+        <view class="deal_item flex">
+            <view class="cell">
+                <view class="money">{{totalAmount}}</view>
+                <view class="title">商户交易总额</view>
+            </view>
+            <view class="cell">
+                <view class="money">{{totalCount}}</view>
+                <view class="title">商户交易笔数</view>
+            </view>
+        </view> 
+    </view>
+    <view class="deal_grop flex">
+        <image src="../../../images/staff/shop-icon.png"></image>
+        <text>商户交易统计</text>
+    </view>
+    <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: {{height}}vh;">
+        <view class="page_list">
+            <view class="cell" wx:for="{{performanceList}}">
+                <view class="title">{{item.merchantName}}<text class="txt">（{{item.merchantShortName}}）</text></view>
+                <view class="gross_cell flex">
+                    <view class="gross_lt">交易总额</view>
+                    <view class="gross_rt"><text class="money">{{filters.toFix(item.amount/100)}}</text>元</view>
+                </view>
+                <view class="gross_cell flex">
+                    <view class="gross_lt">交易笔数</view>
+                    <view class="gross_rt"><text class="money">{{item.count}}</text>笔</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>    
+</view>
+

@@ -3,6 +3,9 @@
     <view class="login_icon">
         <image src="../../images/login-logo.png"></image>
     </view>
+    <view class="staff_login" bindtap="goStaffLogin">
+        工作人员登录
+    </view>
     <view class="login_model">
         <form>
             <view class="cell flex">

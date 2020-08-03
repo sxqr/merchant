@@ -1,0 +1,55 @@
+/* pages/statisticsList/statisticsList.wxss */
+page{
+    height: 100%;
+}
+.we_page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.page_list .cell{
+    background: #fff;
+    margin-bottom: 20rpx;
+    padding: 10rpx 30rpx 0 30rpx;
+}
+.page_list .cell .addr{
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    padding-bottom: 30rpx;
+}
+.cell .addr image{
+    width: 18rpx;
+    height: 22rpx;
+    margin-right: 10rpx;
+}
+.page_list .cell .title{
+    font-size: 32rpx;
+    font-weight: 500;
+    padding: 20rpx 0;
+}
+.page_list .cell .title .txt{
+    font-weight: normal;
+    font-size: 26rpx;
+    color: #666;
+}
+.page_list .btn_item{
+    border-top: 1rpx solid #DDDDDD;
+}
+.btn_item .item{
+    width: 50%;
+    text-align: center;
+    margin: 20rpx 0;
+    border-right: 1rpx solid #DDDDDD;
+}
+.btn_item .item:last-child{
+    border: none;
+}
+.btn_item .item .num{
+    font-size: 34rpx;
+    font-weight: 500;
+    padding-bottom: 10rpx;
+}
+.btn_item .item_txt{
+    font-size: 28rpx;
+    color: #666;
+}

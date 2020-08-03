@@ -90,3 +90,18 @@ page,.we_page{
     display: flex;
     align-items: center;
 }  
+
+.staff_login{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 40rpx;
+    color: #fff;
+    background: linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
+    height: 60rpx;
+    width: 200rpx;
+    line-height: 60rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+}

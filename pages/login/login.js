@@ -189,4 +189,11 @@ Page({
       }
     })
   },
+
+  // 去工作人员登录页面
+  goStaffLogin: function(){
+    wx.reLaunch({
+      url: '../staff/login/login'
+    })
+  } 
 })

@@ -1,0 +1,40 @@
+<!--pages/checkList/checkList.wxml-->
+<view class="we_page">
+    <view class="page_menu flex">
+        <view class="cell {{active1 ? 'active' : ''}}" data-status="" bindtap="choose">
+            <text>全部</text>
+        </view>
+        <view class="cell {{active2 ? 'active' : ''}}" data-status="1" bindtap="choose">
+            <text>审核中</text>
+        </view>
+        <view class="cell {{active3 ? 'active' : ''}}" data-status="2" bindtap="choose">
+            <text>已完成</text>
+        </view>
+        <view class="cell {{active4 ? 'active' : ''}}" data-status="3" bindtap="choose">
+            <text>驳回</text>
+        </view>
+    </view>
+    <!-- 列表 -->
+    <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: {{height}}vh;">
+        <view style="height: 20rpx;"></view>
+        <view class="checkList">
+            <view class="list_cell" wx:for="{{checkList}}">
+                <view class="title flex">
+                    <view class="cell_lt">{{item.merchantName}}<text class="txt">({{item.merchantShortName}})</text></view>
+                    <view class="cell_rt"><text class="{{item.merchantStatus == 1 ? 'color1' : item.merchantStatus == 2 ? 'color2' : 'color3'}}">{{item.merchantStatus == 1 ? "审核中" : item.merchantStatus == 2 ? "已完成" : "已驳回"}}</text></view>
+                </view>
+                <view class="addr"><image src="../../../images/staff/loction-icon.png"></image><text>{{item.address}}</text></view>
+                <view class="mr-lt">
+                    <view class="img_list clearfix">
+                        <image class="img_cell" src="{{item.legalPersonCardFrontUrl}}" data-img="{{item.legalPersonCardFrontUrl}}" bindtap="preview"></image>
+                        <image class="img_cell" src="{{item.legalPersonCardReverseUrl}}" data-img="{{item.legalPersonCardReverseUrl}}" bindtap="preview"></image>
+                        <image class="img_cell" src="{{item.businessLicenseUrl}}" data-img="{{item.businessLicenseUrl}}" bindtap="preview"></image>
+                    </view>
+                </view>
+                <view class="cause" hidden="{{item.merchantStatus != 3}}">
+                    驳回原因：<text class="cause_txt">{{item.failExplain}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>    
+</view>

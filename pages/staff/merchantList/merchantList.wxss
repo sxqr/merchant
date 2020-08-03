@@ -1,0 +1,58 @@
+/* pages/addMerchant/addMerchant.wxss */
+page{
+    height: 100%;
+}
+.we_page{
+    background: #EFEFEF;
+    height: 100%;
+    position: relative;
+}
+.cell{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 26rpx 30rpx;
+    background: #fff;
+    margin-bottom: 10rpx;
+    box-sizing: border-box;
+}
+.cell .right_icon{
+    width: 7px;
+    height: 12px;
+    /* position: absolute; */
+    margin-left: 10px;
+}
+.page_list .title{
+    flex: 1;
+    font-size: 32rpx;
+}
+.page_list .txt{
+    color: #999;
+    font-size: 30rpx;
+}
+.preview{
+    width: 100%;
+    padding: 20rpx 0;
+    text-align: center;
+    position: absolute;
+    bottom: 100rpx;
+    font-size: 32rpx;
+}
+.btn{
+    width: 40%;
+    color: #fff;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 8rpx;
+    font-size: 36rpx;
+}
+.save{
+    background: red;
+    float: left;
+    margin-left: 40rpx;
+}
+.preview_info{
+    background: green;
+    float: right;
+    margin-right: 40rpx;
+}

@@ -1,0 +1,77 @@
+<!--pages/storeDetail/storeDetail.wxml-->
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="checkList">
+        <view class="list_cell">
+            <view class="title flex">
+                <view class="cell_lt">{{merchants.merchantName}}<text class="txt">({{merchants.merchantShortName}})</text></view>
+                <view class="cell_rt"><text class="color1">审核中</text></view>
+            </view>
+            <view class="addr"><image src="../../../images/staff/loction-icon.png"></image><text>{{ssqAdr}}{{merchants.address}}</text></view>
+            <view class="mr-lt">
+                <view class="img_list clearfix">
+                    <image class="img_cell" src="{{merchants.merchantDoorPhotoUrl ? merchants.merchantDoorPhotoUrl : '../../../images/staff/add_img.png'}}" data-img="{{merchants.merchantDoorPhotoUrl ? merchants.merchantDoorPhotoUrl : '../../../images/staff/add_img.png'}}" bindtap="preview"></image>
+                    <image class="img_cell" src="{{merchants.merchantBusinessUrl ? merchants.merchantBusinessUrl : '../../../images/staff/add_img.png'}}" data-img="{{merchants.merchantBusinessUrl ? merchants.merchantBusinessUrl : '../../../images/staff/add_img.png'}}" bindtap="preview"></image>
+                    <image class="img_cell" src="{{merchants.merchantCashierDeskPhotoUrl ? merchants.merchantCashierDeskPhotoUrl : '../../../images/staff/add_img.png'}}" data-img="{{merchants.merchantCashierDeskPhotoUrl ? merchants.merchantCashierDeskPhotoUrl : '../../../images/staff/add_img.png'}}" bindtap="preview"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="ht_20"></view>
+    <!-- 联系人信息 -->
+    <view class="linkman_info">
+        <view class="title_icon">
+            <image src="../../../staff/images/link_icon.png"></image>
+            <text>联系人信息</text>
+        </view>
+        <view class="linkman_list">
+            <view class="cell">姓名：{{merchants.contactName}}</view>
+            <view class="cell">电话：{{merchants.contactMobile}}</view>
+        </view>
+    </view>
+    <view class="ht_20"></view>
+    <!-- 证照信息 -->
+    <view class="license_info">
+        <view class="title_icon">
+            <image src="../../../images/staff/license.png" style="height:44rpx;"></image>
+            <text>证照信息</text>
+        </view>
+        <view class="license_list clearfix">
+            <view class="cell">
+                <view class="item">
+                    <image src="{{merchants.legalPersonCardFrontUrl ? merchants.legalPersonCardFrontUrl : '../../../images/staff/card_u.png'}}" data-img="{{merchants.legalPersonCardFrontUrl ? merchants.legalPersonCardFrontUrl : '../../../images/staff/card_u.png'}}" bindtap="preview"></image>
+                    <view class="txt">身份证正面</view>
+                </view>
+            </view>
+            <view class="cell">
+                <view class="item">
+                    <image src="{{merchants.legalPersonCardReverseUrl ? merchants.legalPersonCardReverseUrl : '../../../images/staff/card_n.png'}}" data-img="{{merchants.legalPersonCardReverseUrl ? merchants.legalPersonCardReverseUrl : '../../../images/staff/card_n.png'}}" bindtap="preview"></image>
+                    <view class="txt">身份证反面</view>
+                </view>
+            </view>
+            <view class="cell">
+                <view class="item">
+                    <image src="{{merchants.businessLicenseUrl ? merchants.businessLicenseUrl : '../../../staff/images/secret.png'}}" data-img="{{merchants.businessLicenseUrl ? merchants.businessLicenseUrl : '../../../images/staff/secret.png'}}" bindtap="preview"></image>
+                    <view class="txt">营业执照</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 结算信息 -->
+     <view class="ht_20"></view>
+     <view class="title_icon">
+        <image src="../../../images/staff/info_icon.png"></image>
+        <text>结算信息</text>
+    </view>
+     <view class="close_list">
+        <view class="cell">结算人姓名：{{merchants.settleName}}</view>
+        <view class="cell">结算人身份证：{{merchants.settleNo}}</view>
+     </view>
+     <!-- 驳回原因 -->
+     <!-- <view class="ht_20"></view>
+     <view class="cause">
+            驳回原因：<text class="cause_txt">证照模糊</text>
+    </view> -->
+    <!-- 重新编辑 -->
+    <view class="pd_30"><view class="anewEdit" bindtap="edit">重新编辑</view></view>
+</view>

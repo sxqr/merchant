@@ -1,0 +1,160 @@
+/* pages/performance/performance.wxss */
+.custom{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 44px;
+    background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
+    /* background: #000; */
+    background-size: 100% 100%;
+    z-index: 999;
+  }
+  .custom .back_title{
+    float: left;
+    color: #fff;
+    font-size: 36rpx;
+    font-weight: 500;
+    width: calc(100% - 88px);
+    line-height: 44px;
+    text-align: left;
+    margin:0 auto;
+  }
+  .custom .iphone{
+      text-align: center;
+  }
+  .custom .back{
+    width: 40px;
+    height: 44px;
+    float: left;
+    display: flex;
+    align-items: center;
+  }
+  .custom .back image{
+      width: 32rpx;
+      height: 32rpx;
+      margin-left: 30rpx;
+  }
+  .empty_custom{
+    height: 44px;
+    width: 100%;
+  }
+page{
+    height: 100%;
+    background: #efefef;
+}
+.transaction{
+    padding: 20rpx 30rpx 30rpx 30rpx;
+    background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
+}
+.transaction .cut{
+    display: flex;
+}
+.cut .item{
+    background: rgba(255,255,255,.2);
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 60rpx;
+    text-align: center;
+    color: #fff;
+    margin-right: 30rpx;
+}
+.cut .item.active{
+    background: rgba(255,255,255,0.6);
+}
+.btn_menu{
+    align-items: center;
+}
+.btn_menu .time_menu{
+    flex: 1;
+    text-align: right;
+}
+.select_time{
+    float: right;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    display: flex;
+    align-items: center;
+    padding-right: 10rpx;
+}
+.select_time text{
+    display: inline-block;
+    padding: 0 20rpx;
+    position: relative;
+    font-size: 28rpx;
+}
+.select_time .line{
+    width: 2rpx;
+    height: 40rpx;
+    background: #C0E6BC;
+    margin-right: 20rpx;
+}
+.select_time image{
+    height: 30rpx;
+    width: 30rpx;
+    padding-right: 10rpx;
+}
+.deal_item .cell{
+    width: 50%;
+    color: #fff;
+}
+.deal_item .cell .money{
+    font-size: 48rpx;
+    padding: 50rpx 0 30rpx 0;
+}
+.deal_item .cell .title{
+    font-size: 28rpx;
+    padding-bottom: 10rpx;
+}
+.deal_grop{
+    align-items: center;
+    background: #fff;
+    padding: 0 28rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 1rpx solid #F7F5F7;
+}
+.deal_grop image{
+    width: 42rpx;
+    height: 42rpx;
+    margin-right: 10rpx;
+}
+.deal_grop text{
+    font-size: 30rpx;
+    font-weight: 500;
+}
+.page_list .cell{
+    background: #fff;
+    padding: 30rpx;
+    border-bottom: 1rpx solid #F8F6F8;
+}
+.page_list .cell .title{
+    font-size: 32rpx;
+    font-weight: 500;
+    padding-bottom: 20rpx;
+}
+.page_list .cell .title .txt{
+    font-weight: normal;
+    font-size: 26rpx;
+    color: #666;
+}
+.page_list .gross_cell{
+    align-items: center;
+    padding-bottom: 5rpx;
+}
+.page_list .gross_cell .gross_lt{
+    flex: 1;
+    font-size: 30rpx;
+    color: #666;
+}
+.gross_cell .gross_rt .money{
+    font-size: 34rpx;
+    color: #333;
+    display: inline-block;
+    padding-right: 10rpx;
+}

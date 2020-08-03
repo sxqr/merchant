@@ -1,0 +1,31 @@
+<!--pages/licenseInfo/licenseInfo.wxml-->
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="license">
+        <view class="title">法人身份证照片（原件拍照）</view>
+        <view class="card flex">
+            <view class="cell" bindtap="legalPersonCardFrontUrl">
+                <view class="item">
+                    <image src="{{legalPersonCardFrontUrl ? legalPersonCardFrontUrl : '../../../images/staff/card_u.png'}}"></image>
+                    <text>点击上传身份证正面照</text>
+                </view>
+            </view>
+            <view class="cell" bindtap="legalPersonCardReverseUrl">
+                <view class="item">
+                    <image src="{{legalPersonCardReverseUrl ? legalPersonCardReverseUrl : '../../../images/staff/card_n.png'}}"></image>
+                    <text>点击上传身份证反面照</text>
+                </view>
+            </view>
+        </view>
+        <view class="title">商户营业执照（原件拍照）</view>
+        <view class="business">
+            <view class="cell" bindtap="businessLicenseUrl">
+                <view class="item">
+                    <image src="{{businessLicenseUrl ? businessLicenseUrl : '../../../images/staff/secret.png'}}"></image>
+                    <text>点击上传营业执照</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="confirm" bindtap="confirm">完成</view>
+</view>

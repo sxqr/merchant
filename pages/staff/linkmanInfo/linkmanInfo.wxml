@@ -1,0 +1,15 @@
+<!--pages/linkmanInfo/linkmanInfo.wxml-->
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="balance_info">
+        <view class="inpt_cell flex">
+            <text>姓名</text>
+            <input placeholder="请输入联系人姓名" bindinput="contactName" value="{{merchants.contactName}}" placeholder-class="phcolor"></input>
+        </view>
+        <view class="inpt_cell flex">
+            <text>电话</text>
+            <input placeholder="请输入联系人电话" type="number" bindinput="contactMobile" value="{{merchants.contactMobile}}" placeholder-class="phcolor"></input>
+        </view>
+        <view class="confirm" bindtap="confirm">完成</view>
+    </view>
+</view>

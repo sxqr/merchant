@@ -21,3 +21,7 @@ image {
     overflow:hidden;
     _zoom:1;
 }
+.ht_20{
+    height: 20rpx;
+    background: #EFEFEF;
+}
