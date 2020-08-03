@@ -123,6 +123,7 @@ page{
     width: 50rpx;
     height: 50rpx;
     margin-right: 20rpx;
+    border-radius: 100%;
   }
   .picker_list .cell text{
     padding-right: 10rpx;

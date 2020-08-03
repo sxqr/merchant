@@ -27,6 +27,10 @@ Page({
           _this.setData({
             code:code
           })
+          wx.showLoading({
+            title: '',
+            mask: true
+          })
           api("/login/isAuthorization", {
             code: code
           }, "POST", 1).then(t => {
@@ -92,6 +96,10 @@ Page({
         title: '请先同意用户协议',
       })
     } else {
+      wx.showLoading({
+        title: '登录中...',
+        mask: true
+      })
       api("/login/wxLogin", json, "POST", 1)
       .then(t => {
         if (t.code == 200) {

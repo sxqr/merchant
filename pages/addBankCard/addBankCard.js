@@ -9,6 +9,7 @@ Page({
     data: {
         bankName: "",
         bankNo: "",
+        bankId:"",
         bankFlag: true,
         backNameList: []
     },
@@ -54,8 +55,10 @@ Page({
     // 选择银行卡
     slectName: function (e) {
         var name = e.currentTarget.dataset.name;
+        var bankId = e.currentTarget.dataset.id;
         this.setData({
             bankName: name,
+            bankId: bankId,
             bankFlag: true
         })
     },
@@ -67,7 +70,7 @@ Page({
     // 添加银行卡
     addBank: function () {
         let bankNo = this.data.bankNo;
-        let bankName = this.data.bankName;
+        let bankId = this.data.bankId;
         if (bankNo == "") {
             wx.showToast({
                 icon: 'none',
@@ -75,7 +78,7 @@ Page({
             })
             return false;
         }
-        if (bankName == "") {
+        if (bankId == "") {
             wx.showToast({
                 icon: 'none',
                 title: '请选择所属银行',
@@ -83,7 +86,7 @@ Page({
             return false;
         }
         let json = {
-            bankName: bankName,
+            bankId: bankId,
             bankNo: bankNo,
             access_token: wx.getStorageSync('access_token')
         }

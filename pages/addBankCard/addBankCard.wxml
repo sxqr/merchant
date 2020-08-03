@@ -47,7 +47,7 @@
         </view>
         <scroll-view scroll-y style="height: 41.5vh; min-height: 0px;">
             <view class="picker_list">
-                <view class="cell" wx:for="{{backNameList}}" data-card="{{item.bankNo}}" data-name="{{item.bankName}}" bindtap="slectBanck">
+                <view class="cell" wx:for="{{backNameList}}" data-id="{{item.id}}" data-card="{{item.bankNo}}" data-name="{{item.bankName}}" bindtap="slectBanck">
                     <image src="{{'data:image/png;base64,'+ item.fileStr}}"></image>
                     <text>{{item.name}}</text>
                 </view>
