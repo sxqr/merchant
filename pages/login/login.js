@@ -121,56 +121,64 @@ Page({
   },
   //登录
   userLogin: function () {
-    var username = this.data.username;
-    var password = this.data.password;
-    if (username == "") {
-      wx.showToast({
-        icon: 'none',
-        title: '请输入用户账号'
-      })
-      return false;
-    }
-    if (password == "") {
-      wx.showToast({
-        icon: 'none',
-        title: '请输入密码'
-      })
-      return false;
-    }
-    if (this.data.isType1) {
-      wx.showToast({
-        icon: 'none',
-        title: '请先同意用户协议'
-      })
-      return false;
-    }
-    wx.showLoading({
-      title: '登录中...',
-      mask: true
-    })
-    var json = {
-      username: username,
-      password: password,
-      code:this.data.code
-    }
-    api("/user/login/merchant", json, "POST", 1)
-      .then(t => {
-        if (t.code == 200) {
-          wx.setStorageSync('access_token', t.data)
-          wx.reLaunch({
-            url: '../index/index'
+    var that = this;
+    wx.login({
+      success: function (res) {
+        console.log(res);
+        if (res.code) {
+          var username = that.data.username;
+          var password = that.data.password;
+          if (username == "") {
+            wx.showToast({
+              icon: 'none',
+              title: '请输入用户账号'
+            })
+            return false;
+          }
+          if (password == "") {
+            wx.showToast({
+              icon: 'none',
+              title: '请输入密码'
+            })
+            return false;
+          }
+          if (that.data.isType1) {
+            wx.showToast({
+              icon: 'none',
+              title: '请先同意用户协议'
+            })
+            return false;
+          }
+          wx.showLoading({
+            title: '登录中...',
+            mask: true
           })
-        } else {
-          wx.showToast({
-            icon: 'none',
-            title: t.msg
-          })
+          var json = {
+            username: username,
+            password: password,
+            code:res.code
+          }
+          api("/user/login/merchant", json, "POST", 1)
+            .then(t => {
+              if (t.code == 200) {
+                wx.setStorageSync('access_token', t.data)
+                wx.reLaunch({
+                  url: '../index/index'
+                })
+              } else {
+                wx.showToast({
+                  icon: 'none',
+                  title: t.msg
+                })
+              }
+            }).catch((response) => {
+              wx.showToast({
+                icon: 'none',
+                title: response.msg
+              })
+            });
         }
-      }).catch((response) => {
-        wx.showToast({
-          icon: 'none',
-          title: response.msg
-        })
-      });
+      }
+    })
   },
 })
