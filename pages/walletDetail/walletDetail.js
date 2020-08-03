@@ -23,7 +23,7 @@ Page({
         this.setData({
             page: 1,
             limit: 10,
-            storeList: []
+            dataList: []
         })
         let that = this;
         let json = {
@@ -35,6 +35,7 @@ Page({
     },
     //到达底部
     scrollToLower: function (e) {
+        console.log("---------到达底部----------");
         let that = this;
         let page = that.data.page;
         let limit = that.data.limit;
@@ -62,6 +63,9 @@ Page({
 })
 
 function storeList(that, json) {
+    wx.showLoading({
+        title: '加载中...',
+    })
     api("/merchantWithdraw/applet/wdView", json, "POST", 1)
         .then(t => {
             var dataList = that.data.dataList;

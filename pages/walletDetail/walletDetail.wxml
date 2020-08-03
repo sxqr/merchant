@@ -6,9 +6,9 @@
   module.exports.money = money;
 </wxs>
 <view class="we_page">
-    <view class="ht_20"></view>
     <view class="page_list">
-        <scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 98vh;">
+        <scroll-view scroll-y bindscrolltolower="scrollToLower" style="height: 100vh;">
+            <view class="ht_20"></view>
             <view class="list_cell flex" wx:for="{{dataList}}">
                 <view class="list_lt">
                     <view class="item">
