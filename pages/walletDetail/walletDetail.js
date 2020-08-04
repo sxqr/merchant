@@ -35,7 +35,6 @@ Page({
     },
     //到达底部
     scrollToLower: function (e) {
-        console.log("---------到达底部----------");
         let that = this;
         let page = that.data.page;
         let limit = that.data.limit;
@@ -73,7 +72,6 @@ function storeList(that, json) {
             for (var i = 0; i < newList.length; i++) {
                 dataList.push(newList[i]);
             }
-            console.log(dataList);
             that.setData({
                 dataList: dataList,
                 count: t.count

@@ -115,25 +115,25 @@ Page({
         var id = e.currentTarget.dataset.id;
         var startTime = this.data.startTime;
         var endTime = this.data.endTime;
-        let y = new Date(getCurTime()).getFullYear();
-        let m = new Date(getCurTime()).getMonth()+1;
+        let y = new Date(date.getCurTime()).getFullYear();
+        let m = new Date(date.getCurTime()).getMonth()+1;
         if(id == 1){
             this.setData({
                 active1: true,
                 active2: false,
-                todayTime: getCurTime()
+                todayTime: date.getCurTime()
             })
-            let d = new Date(getCurTime()).getDate();
-            startTime = getZero(new Date(y+"-"+m+"-"+d));
-            endTime = getTwentyThree(new Date(y+"-"+m+"-"+d));
+            let d = new Date(date.getCurTime()).getDate();
+            startTime = date.getZero(new Date(y+"-"+m+"-"+d));
+            endTime = date.getTwentyThree(new Date(y+"-"+m+"-"+d));
         }else if(id == 2){
             this.setData({
                 active1: false,
                 active2: true,
-                todayTime: new Date(getCurTime()).getFullYear()+"."+(new Date(getCurTime()).getMonth()+1)
+                todayTime: new Date(date.getCurTime()).getFullYear()+"."+(new Date(date.getCurTime()).getMonth()+1)
             })
-            startTime = getZero(new Date(y+"-"+m+"-"+"01"));
-            endTime = getTwentyThree(new Date(y+"-"+m+"-"+getLastDay(y, m)));
+            startTime = date.getZero(new Date(y+"-"+m+"-"+"01"));
+            endTime = date.getTwentyThree(new Date(y+"-"+m+"-"+date.getLastDay(y, m)));
         }
         this.setData({
             startTime: startTime,
@@ -169,12 +169,12 @@ Page({
         let startTime = this.data.startTime;
         let endTime = this.data.endTime;
         if(this.data.active2){ //月
-            startTime = getZero(new Date(y+"-"+m+"-"+"01"));
-            endTime = getTwentyThree(new Date(y+"-"+m+"-"+getLastDay(y, m)));
+            startTime = date.getZero(new Date(y+"-"+m+"-"+"01"));
+            endTime = date.getTwentyThree(new Date(y+"-"+m+"-"+date.getLastDay(y, m)));
         }else{
             let d = new Date(chooseTime).getDate();
-            startTime = getZero(new Date(y+"-"+m+"-"+d));
-            endTime = getTwentyThree(new Date(y+"-"+m+"-"+d));
+            startTime = date.getZero(new Date(y+"-"+m+"-"+d));
+            endTime = date.getTwentyThree(new Date(y+"-"+m+"-"+d));
         }
         this.setData({
             startTime: startTime,

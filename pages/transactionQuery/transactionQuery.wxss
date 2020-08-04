@@ -153,8 +153,6 @@ page{
     text-align: right;
     color: #FF8554;
     font-weight: 500;
-    font-size: 36rpx;
-    padding-top: 10rpx;
 }
 .list_lt .item text{
     font-size: 32rpx;
@@ -174,4 +172,8 @@ page{
 .picker{
     font-size: 28rpx;
     padding: 0 20rpx;
+}
+
+.status{
+    color: #5BB844;
 }

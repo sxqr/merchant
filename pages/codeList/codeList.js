@@ -22,7 +22,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log(options);
         this.setData({
             slectType: options.slectType,
             storeNo: options.storeNo,
@@ -71,7 +70,6 @@ Page({
         var receiptCodeNo = e.currentTarget.dataset.code;
         var storeNo = e.currentTarget.dataset.storeno;
         var clerkNo = e.currentTarget.dataset.clerkno;
-        console.log(storeNo);
         if (this.data.slectType) {
             // 二维码绑定到门店
             if (clerkNo || storeNo) {

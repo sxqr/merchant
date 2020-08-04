@@ -83,7 +83,6 @@ Page({
             access_token: wx.getStorageSync('access_token')
         }
         setCloudHornVol(that, json)
-        console.log(fixingVol);
     },
     // 商户解绑云音响
     unbindCloudHorn: function () {

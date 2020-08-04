@@ -79,6 +79,13 @@ Page({
             })
             return false;
         }
+        if (bankNo.length != 16 && bankNo.length != 17 && bankNo.length != 19) {
+            wx.showToast({
+                icon: 'none',
+                title: '请正确输入银行卡号！',
+            })
+            return false;
+        }
         if (bankId == "") {
             wx.showToast({
                 icon: 'none',

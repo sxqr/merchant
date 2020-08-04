@@ -78,7 +78,10 @@ Page({
     },
     // 编辑门店
     editType:function(){
-        common.go("../addStore/addStore?editType=" + "edit");
+        let storeName = this.data.storeName;
+        let detailAddr = this.data.detailAddr;
+        let id = this.data.id;
+        common.go("../addStore/addStore?editType=edit&id="+id+"&storeName="+storeName+"&detailAddr="+detailAddr);
     },
     // 关联二维码
     relevanceCode: function () {

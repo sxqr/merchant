@@ -8,7 +8,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        usableAmount: '', //可用余额
+        usableAmount: 0, //可用余额
         bankCardlengh: 0,
     },
 

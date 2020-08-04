@@ -21,7 +21,7 @@
     <!-- 联系人信息 -->
     <view class="linkman_info">
         <view class="title_icon">
-            <image src="../../../staff/images/link_icon.png"></image>
+            <image src="../../../images/staff/link_icon.png"></image>
             <text>联系人信息</text>
         </view>
         <view class="linkman_list">

@@ -9,7 +9,7 @@
 		</view>
 		<view class="inpt_cell flex">
 			<text>银行卡号</text>
-			<input placeholder="请输入银行卡号" bindinput="bankNo" placeholder-class="phcolor"></input>
+			<input placeholder="请输入银行卡号" type="number" bindinput="bankNo" placeholder-class="phcolor"></input>
 		</view>
 		<view class="inpt_cell flex" bindtap="openDialog">
 			<text>所属银行</text>

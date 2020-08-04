@@ -77,7 +77,7 @@
     </block>
     <block wx:if="{{isType1}}">
         <view class="gathering_num" style="padding-bottom:30rpx;border-bottom:1px solid #E9E9E9">
-        <text style="color:#999">收款 </text><text>{{count.money(totalAmount2)}}</text>元 <text style="padding-left:10rpx">{{totalCount2}}笔</text>
+        <text style="color:#999">提现 </text><text>{{count.money(totalAmount2)}}</text>元 <text style="padding-left:10rpx">{{totalCount2}}笔</text>
         </view>
         <view class="page_list">
             <scroll-view scroll-y lower-threshold="100" bindscrolltolower="withdrawScrollToLower" style="height: 65vh; min-height: 0px;">
@@ -91,7 +91,15 @@
                         </view>
                     </view>
                     <view class="list_rt">
-                        -{{count.money(item.amount)}}
+                        <view class="item">
+                            <text class="status" wx:if="{{item.auditStatus == 0}}">待审核</text>
+                            <text class="status" wx:if="{{item.auditStatus != 0 && item.status == 0}}">处理中</text>
+                            <text class="status" wx:if="{{item.auditStatus != 0 && item.status == 1}}">提现成功</text>
+                            <text class="status" wx:if="{{item.auditStatus != 0 && item.status == 2}}">提现失败</text>
+                        </view>
+                        <view class="time">
+                            -{{count.money(item.amount)}}
+                        </view>
                     </view>
                 </view>
             </scroll-view>

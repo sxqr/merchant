@@ -66,6 +66,10 @@ Page({
                         success(res) {
                             if (res.confirm) {
                                 common.go("../payPassword/payPassword");
+                            }else{
+                                wx.navigateBack({
+                                  delta: 1
+                                })
                             }
                         }
                     })
@@ -98,6 +102,11 @@ Page({
                 wx.showToast({
                     icon: 'none',
                     title: '可提现金额不足'
+                })
+            } else if(!(/^[3-9]|[1-9]\d+$/.test(amount))) {
+                wx.showToast({
+                    icon: 'none',
+                    title: '提现金额必须是大于2正整数'
                 })
             } else {
                 this.setData({

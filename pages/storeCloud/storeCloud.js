@@ -16,7 +16,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log(options);
         this.setData({
             cloudHornId: options.id,
             fixingVol: options.fixingVol,
@@ -84,7 +83,6 @@ Page({
             access_token: wx.getStorageSync('access_token')
         }
         setCloudHornVol(that, json)
-        console.log(fixingVol);
     },
     // 门店解绑云音响
     unbindCloudHorn: function () {

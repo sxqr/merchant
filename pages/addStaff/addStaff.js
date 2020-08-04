@@ -12,8 +12,6 @@ Page({
         phone:"",
         editType:"",
         clerkId:"",
-        phone:"",
-        clerkName:""
     },
 
     /**
@@ -34,8 +32,8 @@ Page({
             storeNo:options.storeNo,
             editType:editType,
             clerkId:options.clerkId,
-            phone:options.phone,
-            clerkName:options.clerkName
+            phone:options.phone == undefined ? "" : options.phone,
+            clerkName:options.clerkName == undefined ? "" : options.clerkName
         })
     },
 
@@ -71,6 +69,13 @@ Page({
             wx.showToast({
                 icon: 'none',  
                 title: '请输入店员联系电话',
+            })
+            return false;
+        }
+        if(!(/^1(3|4|5|7|8)\d{9}$/.test(phone))){
+            wx.showToast({
+                icon:'none',
+                title: '联系电话格式错误',
             })
             return false;
         }

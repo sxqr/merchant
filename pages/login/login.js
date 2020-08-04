@@ -67,7 +67,6 @@ Page({
   },
   //微信授权
   bindGetUserInfo: function (e) {
-    console.log(e);
     // 获得最新的用户信息
     let that = this;
     let userInfo = e.detail.userInfo;
@@ -76,7 +75,6 @@ Page({
     }
     wx.login({
       success: function (res) {
-        console.log(res);
         if (res.code) {
           let code = res.code;
           let json = {
@@ -132,7 +130,6 @@ Page({
     var that = this;
     wx.login({
       success: function (res) {
-        console.log(res);
         if (res.code) {
           var username = that.data.username;
           var password = that.data.password;

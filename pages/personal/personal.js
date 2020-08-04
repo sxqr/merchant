@@ -51,7 +51,6 @@ Page({
                 }
                 api("/merchant/updateHead", json, "POST", 1)
                   .then(t => {
-                    console.log(t);
                     if(t.code == 200){
                         wx.showToast({
                             icon:'none',
