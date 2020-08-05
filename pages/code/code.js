@@ -26,6 +26,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        
+    },
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
         let json = {
             receiptCodeNo: options.code,
             access_token: wx.getStorageSync('access_token')
@@ -47,13 +54,6 @@ Page({
                 })
             }
         })
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
     },
     // 解绑二维码
     unbind: function () {

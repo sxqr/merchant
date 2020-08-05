@@ -130,6 +130,7 @@ Page({
     var that = this;
     wx.login({
       success: function (res) {
+        console.log(res);
         if (res.code) {
           var username = that.data.username;
           var password = that.data.password;

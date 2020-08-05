@@ -11,7 +11,8 @@ Page({
         bankNo: "",
         bankId:"",
         bankFlag: true,
-        backNameList: []
+        backNameList: [],
+        nickname: ""
     },
 
     /**
@@ -35,6 +36,9 @@ Page({
                 })
             }
         });
+        this.setData({
+            nickname: wx.getStorageSync('nickname')
+        })
     },
     // 关闭弹窗
     closeBanck: function () {

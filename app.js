@@ -1,6 +1,8 @@
 //app.js
 App({
   data: {
+    // url: "https://pay.klch.cn/v1/admin",
+    // imgUrl:"https://pay.klch.cn/v1",
     url: "http://192.168.0.132:9000/v1/admin",
     imgUrl:"http://192.168.0.132:9000/v1",
   },

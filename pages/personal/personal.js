@@ -11,7 +11,8 @@ Page({
     data: {
       url: app.data.url,
       headUrl: "",
-      userId: ""
+      userId: "",
+      nickname: '',
     },
 
     /**
@@ -27,7 +28,8 @@ Page({
     onShow: function () {
       this.setData({
         headUrl: wx.getStorageSync("headUrl"),
-        userId: wx.getStorageSync("userId")
+        userId: wx.getStorageSync("userId"),
+        nickname: wx.getStorageSync('nickname')
       })
     },
     // 上传头像

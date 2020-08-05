@@ -8,7 +8,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        usableAmount: 0, //可用余额
+        usableAmount: "0.00", //可用余额
         bankCardlengh: 0,
     },
 
@@ -32,10 +32,12 @@ Page({
             }, "POST", 1)
             .then(t => {
                 if (t.code == 200) {
-                    var usableAmount = (t.data.usableAmount / 100).toFixed(2);
-                    this.setData({
-                        usableAmount: usableAmount,
-                    })
+                    if(t.data != ""){
+                        var usableAmount = (t.data.usableAmount / 100).toFixed(2);
+                        this.setData({
+                            usableAmount: usableAmount,
+                        })
+                    }
                 }
             });
 

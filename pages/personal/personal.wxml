@@ -12,9 +12,8 @@
         <view class="cell">
             <view class="title">用户名</view>
             <view class="txt">
-                用户名
+                {{nickname}}
             </view>
-            <image src="../../images/right.png" class="right_icon"></image>
         </view>
         <view class="cell">
             <view class="title">用户ID</view>
