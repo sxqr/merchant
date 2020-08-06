@@ -58,20 +58,25 @@ Page({
             count: 1,
             success: (res) => {
                 wx.showLoading({
-                    title: '图片上传中',
+                    title: '图片上传中...',
                 })
                 wx.uploadFile({
                     filePath: res.tempFilePaths[0],
                     name: 'file',
                     url: that.data.url + '/file/upload',
                     success(res){
+                        wx.hideLoading()
                         var data = JSON.parse(res.data);
                         if(data.code == 200){
                             var merchantDoorPhotoUrl = data.data;
                             that.setData({
                                 merchantDoorPhotoUrl: merchantDoorPhotoUrl
                             })
-                            wx.hideLoading()
+                        }else{
+                            wx.showToast({
+                                icon:'none',
+                                title: data.msg,
+                            })
                         }
                     }
                 })
@@ -86,20 +91,25 @@ Page({
             count: 1,
             success: (res) => {
                 wx.showLoading({
-                    title: '图片上传中',
+                    title: '图片上传中...',
                 })
                 wx.uploadFile({
                     filePath: res.tempFilePaths[0],
                     name: 'file',
                     url: that.data.url + '/file/upload',
                     success(res){
+                        wx.hideLoading()
                         var data = JSON.parse(res.data);
                         if(data.code == 200){
                             var merchantBusinessUrl = data.data;
                             that.setData({
                                 merchantBusinessUrl: merchantBusinessUrl
                             })
-                            wx.hideLoading()
+                        }else{
+                            wx.showToast({
+                                icon:'none',
+                                title: data.msg,
+                            })
                         }
                     }
                 })
@@ -114,20 +124,25 @@ Page({
             count: 1,
             success: (res) => {
                 wx.showLoading({
-                    title: '图片上传中',
+                    title: '图片上传中...',
                 })
                 wx.uploadFile({
                     filePath: res.tempFilePaths[0],
                     name: 'file',
                     url: that.data.url + '/file/upload',
                     success(res){
+                        wx.hideLoading()
                         var data = JSON.parse(res.data);
                         if(data.code == 200){
                             var merchantCashierDeskPhotoUrl = data.data;
                             that.setData({
                                 merchantCashierDeskPhotoUrl: merchantCashierDeskPhotoUrl
                             })
-                            wx.hideLoading()
+                        }else{
+                            wx.showToast({
+                                icon:'none',
+                                title: data.msg,
+                            })
                         }
                     }
                 })

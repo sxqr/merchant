@@ -37,11 +37,15 @@ Page({
       wx.chooseImage({
         count: 1,
         success: (res) => {
+          wx.showLoading({
+            title: '图片上传中...',
+          })
           wx.uploadFile({
             filePath: res.tempFilePaths[0],
             name: 'file',
             url: that.data.url + '/file/upload',
             success(res){
+              wx.hideLoading()
               var data = JSON.parse(res.data);
               if(data.code == 200){
                 var headUrl = data.data;
@@ -60,6 +64,11 @@ Page({
                       })
                     }
                   })
+              }else{
+                wx.showToast({
+                    icon:'none',
+                    title: data.msg,
+                })
               }
             }
           })

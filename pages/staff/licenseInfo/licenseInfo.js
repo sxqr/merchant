@@ -58,20 +58,25 @@ Page({
             count: 1,
             success: (res) => {
                 wx.showLoading({
-                    title: '图片上传中',
+                    title: '图片上传中...',
                 })
                 wx.uploadFile({
                     filePath: res.tempFilePaths[0],
                     name: 'file',
                     url: that.data.url + '/file/upload',
                     success(res){
+                        wx.hideLoading()
                         var data = JSON.parse(res.data);
                         if(data.code == 200){
                             var legalPersonCardFrontUrl = data.data;
                             that.setData({
                                 legalPersonCardFrontUrl: legalPersonCardFrontUrl
                             })
-                            wx.hideLoading()
+                        }else{
+                            wx.showToast({
+                                icon:'none',
+                                title: data.msg,
+                            })
                         }
                     }
                 })
@@ -86,20 +91,25 @@ Page({
             count: 1,
             success: (res) => {
                 wx.showLoading({
-                    title: '图片上传中',
+                    title: '图片上传中...',
                 })
                 wx.uploadFile({
                     filePath: res.tempFilePaths[0],
                     name: 'file',
                     url: that.data.url + '/file/upload',
                     success(res){
+                        wx.hideLoading()
                         var data = JSON.parse(res.data);
                         if(data.code == 200){
                             var legalPersonCardReverseUrl = data.data;
                             that.setData({
                                 legalPersonCardReverseUrl: legalPersonCardReverseUrl
                             })
-                            wx.hideLoading()
+                        }else{
+                            wx.showToast({
+                                icon:'none',
+                                title: data.msg,
+                            })
                         }
                     }
                 })
@@ -114,20 +124,25 @@ Page({
             count: 1,
             success: (res) => {
                 wx.showLoading({
-                    title: '图片上传中',
+                    title: '图片上传中...',
                 })
                 wx.uploadFile({
                     filePath: res.tempFilePaths[0],
                     name: 'file',
                     url: that.data.url + '/file/upload',
                     success(res){
+                        wx.hideLoading()
                         var data = JSON.parse(res.data);
                         if(data.code == 200){
                             var businessLicenseUrl = data.data;
                             that.setData({
                                 businessLicenseUrl: businessLicenseUrl
                             })
-                            wx.hideLoading()
+                        }else{
+                            wx.showToast({
+                                icon:'none',
+                                title: data.msg,
+                            })
                         }
                     }
                 })
