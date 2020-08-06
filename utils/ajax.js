@@ -107,15 +107,15 @@ function api(url, form, method, type, that) {
         } else if (res.data.code == 501) {//校验错误
           resolve(res.data);
         } else if (res.data.code == 502) {//登录失效
-          // wx.showToast({
-          //   icon: 'none',
-          //   title: '请登录',
-          // })
-          // setTimeout(function () {
-          //   wx.switchTab({
-          //     url: '../mine/mine',
-          //   })
-          // }, 1000);
+          wx.showToast({
+            icon: 'none',
+            title: '请登录',
+          })
+          setTimeout(function () {
+            wx.reLaunch({
+              url: '../login/login',
+            })
+          }, 1000);
         } else {
           console.log(res);
           reject(res.data);

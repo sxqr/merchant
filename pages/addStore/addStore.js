@@ -56,9 +56,14 @@ Page({
             storeName: e.detail.value
         })
     },
+    addr: function(e){
+        this.setData({
+            detailAddr: e.detail.value
+        })
+    },
     // 添加门店
     addStore: function () {
-        var detailAddr = "湖南省长沙市岳麓区麓谷信息港B座";
+        var detailAddr = this.data.detailAddr;
         var storeName = this.data.storeName;
         if (storeName == "") {
             wx.showToast({
@@ -70,7 +75,7 @@ Page({
         if (detailAddr == "") {
             wx.showToast({
                 icon: 'none',
-                title: '请选择门店地址'
+                title: '请输入详细地址'
             })
             return false;
         }
