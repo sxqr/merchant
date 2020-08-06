@@ -1,0 +1,33 @@
+/* pages/linkmanInfo/linkmanInfo.wxss */
+page{
+    height: 100%;
+}
+.we_page{
+    background: #EFEFEF;
+    height: 100%;
+}
+.we_page .inpt_cell{
+    align-items: center;
+    background: #fff;
+    padding: 16rpx 30rpx;
+    border-bottom: 1px solid #f8f8f8;
+}
+.inpt_cell text{
+    /* padding-right: 30rpx; */
+    font-size: 32rpx;
+    min-width: 150rpx;
+}
+.inpt_cell input{
+    flex: 1;
+    padding: 10rpx 0;
+    font-size: 30rpx;
+}
+.confirm{
+    width: 100%;
+    line-height: 90rpx;
+    color: #6AC63C;
+    font-size: 34rpx;
+    text-align: center;
+    background: #fff;
+    margin-top: 80rpx;
+}

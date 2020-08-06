@@ -1,0 +1,54 @@
+/* pages/licenseInfo/licenseInfo.wxss */
+page{
+    height: 100%;
+}
+.we_page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.license{
+    background: #fff;
+    padding: 0 30rpx 60rpx;
+}
+.license .title{
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 28rpx;
+    font-weight: 500;
+}
+.card, .business{
+    margin: 0 -16rpx;
+}
+.card .cell{
+  padding: 0 16rpx;
+   width: 50%;
+}
+.business .cell{
+    /* padding: 0 16rpx; */
+    padding-left: 16rpx;
+    width: calc(50% - 32rpx);
+}
+.card .cell .item,.business .cell .item{
+    background: #F6F8FE;
+    padding: 40rpx 30rpx 20rpx 30rpx;
+}
+.card .cell .item image,.business image{
+    width: 100%;
+    height: 180rpx;
+}
+.card .cell text,.business .cell text{
+    display: block;
+    font-size: 26rpx;
+    text-align: center;
+    color: #999;
+    padding-top: 10rpx;
+}
+.confirm{
+    width: 100%;
+    line-height: 90rpx;
+    color: #6AC63C;
+    font-size: 34rpx;
+    text-align: center;
+    background: #fff;
+    margin-top: 80rpx;
+}

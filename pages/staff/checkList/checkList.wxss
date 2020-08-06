@@ -1,0 +1,88 @@
+/* pages/checkList/checkList.wxss */
+page{
+    height: 100%;
+}
+.we_page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.page_menu{
+    background: #fff;
+}
+.page_menu .cell{
+    flex: 1;
+    text-align: center;
+}
+.page_menu .cell text{
+    display: inline-block;
+    font-size: 30rpx;
+    padding: 20rpx 0;
+    color: #666;
+}
+.page_menu .cell.active text{
+    color: #6AC63C;
+    border-bottom: 2px solid #64C43C;
+}
+
+
+
+.mr-lt{
+    margin: 0 -10rpx;
+}
+.img_cell{
+    width: 216rpx;
+    height: 140rpx;
+    padding: 10rpx;
+    float: left;
+}
+.checkList .list_cell{
+    padding: 30rpx;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+.checkList .list_cell .addr{
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    padding: 10rpx 0 30rpx;
+}
+.list_cell .addr image{
+    width: 18rpx;
+    height: 22rpx;
+    margin-right: 10rpx;
+}
+.list_cell .title{
+    align-items: center;
+    padding: 0 0 10rpx;
+}
+.list_cell .title .cell_lt{
+    font-size: 32rpx;
+    font-weight: 500;
+    flex: 1;
+}
+.list_cell .cell_lt .txt{
+    font-weight: normal;
+    font-size: 26rpx;
+    color: #666;
+}
+.list_cell .cell_rt{
+    font-size: 28rpx;
+}
+.cause{
+    font-size: 26rpx;
+    color: #999;
+    padding-top: 20rpx;
+}
+.cause .cause_txt{
+    color: #333;
+}
+.color1{
+    color: #6AC63C;
+}
+.color2{
+    color: #019EF2;
+}
+.color3{
+    color: #FF2443;
+}
+

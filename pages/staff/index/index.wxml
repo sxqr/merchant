@@ -1,0 +1,56 @@
+<!-- 顶部导航 -->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <view class="{{facility?'custom_title iphone' : 'custom_title'}}">首页</view>
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
+<view class="we_page">
+    <view class="top_bg">
+        <view class="my_header flex">
+            <view class="logo">
+                <image src="{{headUrl != '' ? headUrl : ' ../../../images/staff/index-logo.png'}}"></image>
+            </view>
+            <view class="info" bindtap="personal">
+                <view class="name"><text>{{accountName}}</text> <image src="../../../images/staff/index_right.png"></image></view>
+                <view class="card">ID：{{id}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 中间悬浮部分 -->
+    <view class="model">
+        <view class="content">
+            <view class="title">用户总数</view>
+            <view class="monney">{{merCount}}</view>
+            <view class="monney_btm flex">
+                <view class="item">
+                    <text class="title">今日商户交易额</text>
+                    <text class="num">{{todayTxAmount}}</text>
+                </view>
+                <view class="item">
+                    <text class="title">昨日商户交易额</text>
+                    <text class="num">{{yesTxAmount}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 下面菜单 -->
+    <view class="grid_menu">
+        <view class="list_cell">
+            <view class="item" bindtap="merchantList">
+                <image src="../../../images/staff/xinzeng.png"></image>
+                <text>新增商户</text>
+            </view>
+            <view class="item" bindtap="checkList">
+                <image src="../../../images/staff/jinjian.png"></image>
+                <text>进件状态</text>
+            </view>
+            <view class="item" bindtap="performan">
+                <image src="../../../images/staff/yeji.png"></image>
+                <text>业绩</text>
+            </view>
+            <view class="item" bindtap="notification">
+                <image src="../../../images/staff/tongzhi.png"></image>
+                <text>消息通知</text>
+            </view>
+        </view>
+    </view>
+</view>

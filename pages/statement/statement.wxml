@@ -10,7 +10,7 @@
   </view>
   <view class="chart_page1">
     <view class="container">
-      <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
+      <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecLine }}"></ec-canvas>
     </view>
   </view>
   <view class="deal">

@@ -1,0 +1,47 @@
+/* pages/addStorePhotos/addStorePhotos.wxss */
+page{
+    height: 100%;
+}
+.we_page{
+    background: #EFEFEF;
+    height: 100%;
+}
+.tips{
+    background: #fff;
+    font-size: 24rpx;
+    color: #FF8554;
+    line-height: 40rpx;
+    padding: 10rpx 30rpx 0;
+    text-align: justify;
+}
+.mr-lt{
+    margin: 0 -10rpx;
+}
+.store_photos{
+    padding: 30rpx 30rpx 40rpx;
+    overflow: hidden;
+    background: #fff;
+    box-sizing: border-box;
+}
+.upload{
+    width: 216rpx;
+    height: 216rpx;
+    padding: 10rpx;
+    float: left;
+}
+.confirm{
+    width: 100%;
+    line-height: 90rpx;
+    color: #6AC63C;
+    font-size: 34rpx;
+    text-align: center;
+    background: #fff;
+    margin-top: 80rpx;
+}
+.photos_upload{
+    width: 33.3%;
+    float: left;
+}
+.title{
+    text-align: center;
+}

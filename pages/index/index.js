@@ -16,13 +16,14 @@ Page({
     isAuthorization: true,
   },
   onLoad: function () {
-    this.setData({
-      isAuthorization: wx.getStorageSync('isAuthorization')
-    })
+    
   },
   onShow: function () {
     wx.stopPullDownRefresh();
     wx.hideHomeButton();
+    this.setData({
+      isAuthorization: wx.getStorageSync('isAuthorization')
+    })
     // 判断是否授权
     if (!this.data.isAuthorization) {
       this.setData({
@@ -35,8 +36,12 @@ Page({
       }, "POST", 1)
       .then(t => {
         if (t.code == 200) {
-          var usableAmount = (t.data.usableAmount / 100).toFixed(2);
-          var interestAmount = (t.data.interestAmount / 100).toFixed(2);
+          var usableAmount = "0.00";
+          var interestAmount = "0.00";
+          if(t.data != ""){
+            usableAmount = (t.data.usableAmount / 100).toFixed(2);
+            interestAmount = (t.data.interestAmount / 100).toFixed(2);
+          }
           this.setData({
             usableAmount: usableAmount,
             interestAmount: interestAmount
@@ -50,7 +55,8 @@ Page({
       .then(t => {
         if (t.code == 200) {
           wx.setStorageSync('headUrl', t.data.headUrl);
-          wx.setStorageSync('userId', t.data.userId);
+          wx.setStorageSync('headUrl', t.data.headUrl);
+          wx.setStorageSync('nickname', t.data.merchantShortName);
           this.setData({
             nickname: t.data.merchantShortName,
             headUrl: t.data.headUrl,

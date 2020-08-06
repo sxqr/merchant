@@ -1,0 +1,21 @@
+<!--pages/notification/notification.wxml-->
+<view class="we_page">
+    <view class="page_list">
+        <view class="cell">
+            <view class="time">2020-07-13  12:13:12</view>
+            <view class="item">
+                <view class="title">审核情况</view>
+                <view class="content">您的进件XXX商户因资料提供不全审核未通过，请重新核对后再提交</view>
+                <view class="chek">查看详情>></view>
+            </view>
+        </view>
+        <view class="cell">
+            <view class="time">2020-07-13  12:13:12</view>
+            <view class="item">
+                <view class="title">审核情况</view>
+                <view class="content">您的进件XXX商户因资料提供不全审核未通过，请重新核对后再提交</view>
+                <view class="chek">查看详情>></view>
+            </view>
+        </view>
+    </view>
+</view>

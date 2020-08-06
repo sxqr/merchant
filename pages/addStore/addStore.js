@@ -23,6 +23,14 @@ Page({
     onLoad: function (options) {
         let editType = options.editType;
         if(editType == "edit"){
+            let id = options.id;
+            let storeName = options.storeName;
+            let detailAddr = options.detailAddr;
+            this.setData({
+                id: id,
+                storeName: storeName,
+                detailAddr: detailAddr
+            })
             wx.setNavigationBarTitle({
               title: '编辑门店',
             })
@@ -32,8 +40,9 @@ Page({
             })
         }
         this.setData({
-            
+            editType: editType
         })
+        
     },
 
     /**
@@ -74,11 +83,25 @@ Page({
             storeName: storeName,
             access_token: wx.getStorageSync('access_token')
         }
-        api("/mercStore/add", json, "POST", 1).then(t => {
+        let editType = this.data.editType
+        let msg = '添加成功';
+        let url = '/mercStore/add';
+        if(editType == "edit"){
+            let id = this.data.id;
+            msg = '修改成功';
+            url = '/mercStore/update';
+            json = {
+                id: id,
+                detailAddr: detailAddr,
+                storeName: storeName,
+                access_token: wx.getStorageSync('access_token')
+            }
+        }
+        api(url, json, "POST", 1).then(t => {
             if (t.code == 200) {
                 wx.showToast({
                     icon: 'success',
-                    title: '添加成功',
+                    title: msg,
                 })
                 setTimeout(function () {
                     wx.navigateBack({
@@ -90,18 +113,11 @@ Page({
     },
     //获取三级联动
     bindRegionChange: function (e) {
-        console.log('picker发送选择改变，携带值为', e.detail.value)
         var region = e.detail.value;
         this.setData({
             region: region,
             address: region[0] + region[1] + region[2]
-        })
-        // api("/area/getProvinceList",{},"POST",1).then(t => {
-        //     console.log(t);
-        //     if(t.code == 200){
-
-        //     }
-        // })    
+        }) 
     },
 
     /**

@@ -11,7 +11,8 @@ Page({
         bankNo: "",
         bankId:"",
         bankFlag: true,
-        backNameList: []
+        backNameList: [],
+        nickname: ""
     },
 
     /**
@@ -35,6 +36,9 @@ Page({
                 })
             }
         });
+        this.setData({
+            nickname: wx.getStorageSync('nickname')
+        })
     },
     // 关闭弹窗
     closeBanck: function () {
@@ -76,6 +80,13 @@ Page({
             wx.showToast({
                 icon: 'none',
                 title: '请输入银行卡号',
+            })
+            return false;
+        }
+        if (bankNo.length != 16 && bankNo.length != 17 && bankNo.length != 19) {
+            wx.showToast({
+                icon: 'none',
+                title: '请正确输入银行卡号！',
             })
             return false;
         }

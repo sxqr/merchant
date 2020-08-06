@@ -294,7 +294,6 @@ Page({
     // 选择状态
     slectType: function (e) {
         var statusName = e.currentTarget.dataset.status;
-        console.log(statusName);
         if (statusName == "") {
             this.setData({
                 isChoose: true,
@@ -411,7 +410,6 @@ function appletList(that, json) {
             for (var i = 0; i < newStoreList.length; i++) {
                 appletList.push(newStoreList[i]);
             }
-            console.log(appletList);
             that.setData({
                 appletList: appletList,
                 count: t.count
@@ -427,7 +425,6 @@ function withdrawList(that, json) {
             for (var i = 0; i < newList.length; i++) {
                 withdrawList.push(newList[i]);
             }
-            console.log(withdrawList);
             that.setData({
                 withdrawList: withdrawList,
                 count: t.count

@@ -10,8 +10,8 @@
                 </view>
                 <view class="code_rt">
                     <view class="title">编号{{item.receiptCodeNo}}</view>
-                    <text wx:if="{{item.storeNo != ''}}">门店编号：{{item.storeNo}}</text>
-                    <text wx:if="{{item.clerkNo != ''}}">店员编号：{{item.clerkNo}}</text>
+                    <text wx:if="{{item.storeName != ''}}">门店：{{item.storeName}}</text>
+                    <text wx:if="{{item.clerkName != ''}}">店员：{{item.clerkName}}</text>
                 </view>
             </view>
         </scroll-view>

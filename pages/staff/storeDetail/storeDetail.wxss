@@ -1,0 +1,133 @@
+/* pages/storeDetail/storeDetail.wxss */
+page{
+    height: 100%;
+}
+.we_page{
+    height: 100%;
+    background: #fff;
+}
+.mr-lt{
+    margin: 0 -10rpx;
+}
+.img_cell{
+    width: 216rpx;
+    height: 140rpx;
+    padding: 10rpx;
+    float: left;
+}
+.checkList .list_cell{
+    padding: 30rpx;
+    background: #fff;
+}
+.checkList .list_cell .addr{
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    padding: 10rpx 0 30rpx;
+}
+.list_cell .addr image{
+    width: 18rpx;
+    height: 22rpx;
+    margin-right: 10rpx;
+}
+.list_cell .title{
+    align-items: center;
+    padding: 0 0 10rpx;
+}
+.list_cell .title .cell_lt{
+    font-size: 32rpx;
+    font-weight: 500;
+    flex: 1;
+}
+.list_cell .cell_lt .txt{
+    font-weight: normal;
+    font-size: 26rpx;
+    color: #666;
+}
+.list_cell .cell_rt{
+    font-size: 28rpx;
+}
+.cause{
+    font-size: 26rpx;
+    color: #999;
+    padding-top: 20rpx;
+}
+.cause .cause_txt{
+    color: #333;
+}
+.color1{
+    color: #6AC63C;
+}
+.color2{
+    color: #019EF2;
+}
+.color3{
+    color: #FF2443;
+}
+.title_icon{
+    display: flex;
+    align-items: center;
+    padding: 0 30rpx;
+    line-height: 80rpx;
+    border-bottom: 1rpx solid #DDD;
+    font-size: 30rpx;
+    font-weight: 500;
+}
+.title_icon image{
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 10rpx;
+}
+.linkman_list,.close_list{
+    padding: 20rpx 30rpx;
+}
+.linkman_list .cell,.close_list .cell{
+    font-size: 28rpx;
+    line-height: 50rpx;
+}
+.license_list{
+    padding: 30rpx;
+    margin: 0 -10rpx;
+}
+.license_list .cell image{
+    width: 100%;
+    height: 190rpx;
+    background: #F4F8FE;
+}
+.license_list .cell .item{
+    padding: 10rpx;
+}
+.license_list .cell .item .txt{
+    font-size: 26rpx;
+    color: #999;
+    padding: 20rpx 0 10rpx;
+}
+.license_list .cell{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.cause{
+    font-size: 26rpx;
+    color: #999;
+    padding: 20rpx 30rpx;
+}
+.cause .cause_txt{
+    color: #333;
+}
+.pd_30{
+    padding: 0 30rpx;
+}
+.anewEdit {
+    height: 90rpx;
+    width: 100%;
+    margin-top:80rpx; 
+    margin-bottom: 100rpx;
+    line-height: 90rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 34rpx;
+    font-weight: 500;
+    border-radius: 10rpx;
+    background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
+}

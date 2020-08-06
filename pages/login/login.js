@@ -67,7 +67,6 @@ Page({
   },
   //微信授权
   bindGetUserInfo: function (e) {
-    console.log(e);
     // 获得最新的用户信息
     let that = this;
     let userInfo = e.detail.userInfo;
@@ -76,7 +75,6 @@ Page({
     }
     wx.login({
       success: function (res) {
-        console.log(res);
         if (res.code) {
           let code = res.code;
           let json = {
@@ -189,4 +187,11 @@ Page({
       }
     })
   },
+
+  // 去工作人员登录页面
+  goStaffLogin: function(){
+    wx.reLaunch({
+      url: '../staff/login/login'
+    })
+  } 
 })

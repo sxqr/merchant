@@ -89,7 +89,6 @@ function storeList(that, json) {
             for (var i = 0; i < newStoreList.length; i++) {
                 storeList.push(newStoreList[i]);
             }
-            console.log(storeList);
             that.setData({
                 storeList: storeList,
                 count: t.count

@@ -1,0 +1,40 @@
+/* pages/notification/notification.wxss */
+page{
+    height: 100%;
+}
+.we_page{
+    height: 100%;
+    background: #EFEFEF;
+}
+.page_list{
+    padding: 0 30rpx;
+}
+.page_list .time{
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+.page_list .cell .item{
+    background: #fff;
+    border:1px solid rgba(230,230,230,1);
+    box-shadow:0px 8rpx 13rpx 2rpx rgba(199,199,199,0.56);
+    border-radius:20rpx;
+    margin-bottom: 20rpx;
+    padding-bottom: 20rpx;
+}
+.cell .item .title{
+    font-size: 26rpx;
+    padding:22rpx 24rpx;
+    border-bottom: 1rpx solid #E6E6E6;
+}
+.cell .item .content{
+    font-size: 28rpx;
+    padding: 15rpx 24rpx 10rpx;
+    line-height: 40rpx;
+}
+.cell .chek{
+    color: #6AC63C;
+    font-size: 28rpx;
+    padding: 0 24rpx;
+}

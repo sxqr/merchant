@@ -1,0 +1,26 @@
+<!--pages/merchantInfo/merchantInfo.wxml-->
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="merchant_list">
+        <view class="inpt_cell flex">
+            <text>商户全称</text>
+            <input placeholder="按照营业执照来填写" bindinput="merchantName" value="{{merchants.merchantName}}" placeholder-class="phcolor"></input>
+        </view>
+        <view class="inpt_cell flex">
+            <text>简称</text>
+            <input placeholder="简称可以缩写或填招牌" bindinput="merchantShortName" value="{{merchants.merchantShortName}}" placeholder-class="phcolor"></input>
+        </view>
+        <picker mode="multiSelector" bindchange="func_changeCitysChange" bindcolumnchange="func_changeCitysChangeColumn" value="{{citysIndex}}" range="{{cityArray}}" custom-item="{{customItem}}">
+            <view class="inpt_cell flex">
+                <text>经营地址</text>
+                <input placeholder="请选择" value="{{ssqAdr}}" disabled placeholder-class="phcolor" style="text-align: right;"></input>
+                <image src="../../../images/staff/right.png"></image>
+            </view>
+        </picker>    
+        <view class="inpt_cell tarea">
+            <text>详细地址</text>
+            <textarea disable-default-padding="{{true}}" placeholder="请输入详细地址" bindinput="address" value="{{merchants.address}}" placeholder-class="phcolor"></textarea>
+        </view>
+        <view class="confirm" bindtap="confirm">完成</view>
+    </view>
+</view>

@@ -4,12 +4,12 @@
 	<view class="add_bank">
 		<view class="inpt_cell flex" style="margin-bottom:10rpx;padding: 26rpx 30rpx">
 			<text>姓名</text>
-			<view class="name">商户姓名</view>
+			<view class="name">{{nickname}}</view>
 			<view class="tips">(注：不能修改)</view>
 		</view>
 		<view class="inpt_cell flex">
 			<text>银行卡号</text>
-			<input placeholder="请输入银行卡号" bindinput="bankNo" placeholder-class="phcolor"></input>
+			<input placeholder="请输入银行卡号" type="number" bindinput="bankNo" placeholder-class="phcolor"></input>
 		</view>
 		<view class="inpt_cell flex" bindtap="openDialog">
 			<text>所属银行</text>

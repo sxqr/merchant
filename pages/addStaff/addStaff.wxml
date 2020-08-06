@@ -7,7 +7,7 @@
 		</view>
 		<view class="inpt_cell flex">
 			<text>电话</text>
-			<input placeholder="请输入店员联系电话" value="{{phone}}" maxlength="11" bindinput="phone" placeholder-class="phcolor"></input>
+			<input placeholder="请输入店员联系电话" type="number" value="{{phone}}" maxlength="11" bindinput="phone" placeholder-class="phcolor"></input>
 		</view>
 	</view>
 	<view class="add_btn" bindtap="addStaff">确定</view>

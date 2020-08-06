@@ -16,7 +16,7 @@
         <view class="title">提现金额</view>
         <view class="recharge_ipt flex">
             <text>¥</text>
-            <input value="{{amount}}" bindinput="amountChange"></input>
+            <input value="{{amount}}" type="number" bindinput="amountChange"></input>
         </view>
         <view class="hint flex">
             <text>可提现余额{{usableAmount}}</text>

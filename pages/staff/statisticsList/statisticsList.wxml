@@ -1,0 +1,34 @@
+<!--pages/statisticsList/statisticsList.wxml-->
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="page_list">
+        <view class="cell">
+            <view class="title">商户简称<text class="txt">(简称)</text></view>
+            <view class="addr"><image src="../../../images/staff/loction-icon.png"></image><text>湖南省-长沙市-岳麓区-麓谷信息港B座3楼B001</text></view>
+            <view class="btn_item flex">
+                <view class="item">
+                    <view class="num">322</view>
+                    <view class="item_txt">交易总额</view>
+                </view>
+                <view class="item">
+                    <view class="num">322</view>
+                    <view class="item_txt">交易总额</view>
+                </view>
+            </view>
+        </view>
+        <view class="cell">
+            <view class="title">商户简称<text class="txt">(简称)</text></view>
+            <view class="addr"><image src="../../../images/staff/loction-icon.png"></image><text>湖南省-长沙市-岳麓区-麓谷信息港B座3楼B001</text></view>
+            <view class="btn_item flex">
+                <view class="item">
+                    <view class="num">322</view>
+                    <view class="item_txt">交易总额</view>
+                </view>
+                <view class="item">
+                    <view class="num">322</view>
+                    <view class="item_txt">交易总额</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

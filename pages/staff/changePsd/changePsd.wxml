@@ -1,0 +1,18 @@
+<!--pages/changePsd/changePsd.wxml-->
+<view class="we_page">
+    <view class="balance_info">
+        <view class="inpt_cell flex">
+            <text>旧密码</text>
+            <input placeholder="请输入旧密码" password bindinput="getOldPsw" placeholder-class="phcolor"></input>
+        </view>
+        <view class="inpt_cell flex">
+            <text>新密码</text>
+            <input placeholder="请输入密码" password bindinput="getNewPsw" placeholder-class="phcolor"></input>
+        </view>
+        <view class="inpt_cell flex">
+            <text>确认密码</text>
+            <input placeholder="请再次输入密码" password bindinput="getConfirmPsw" placeholder-class="phcolor"></input>
+        </view>
+        <view class="confirm" bindtap="confirm">确认修改</view>
+    </view>
+</view>

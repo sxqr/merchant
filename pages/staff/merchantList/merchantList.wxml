@@ -1,0 +1,45 @@
+<!--pages/addMerchant/addMerchant.wxml-->
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="page_list">
+        <view class="cell" bindtap="merchantInfo">
+            <view class="title">商户信息</view>
+            <view class="txt">
+                {{merchantInfoPerfect ? "已完善" : "请完善"}}
+            </view>
+            <image src="../../../images/staff/right.png" class="right_icon"></image>
+        </view>
+        <view class="cell" bindtap="linkmanInfo">
+            <view class="title">联系人信息</view>
+            <view class="txt">
+                {{linkmanInfoPerfect ? "已完善" : "请完善"}}
+            </view>
+            <image src="../../../images/staff/right.png" class="right_icon"></image>
+        </view>
+        <view class="cell" bindtap="licenseInfo">
+            <view class="title">证照信息</view>
+            <view class="txt">
+                {{licenseInfoPerfect ? "已完善" : "请完善"}}
+            </view>
+            <image src="../../../images/staff/right.png" class="right_icon"></image>
+        </view>
+        <view class="cell" bindtap="balanceInfo">
+            <view class="title">结算信息</view>
+            <view class="txt">
+                {{balanceInfoPerfect ? "已完善" : "请完善"}}
+            </view>
+            <image src="../../../images/staff/right.png" class="right_icon"></image>
+        </view>
+        <view class="cell" bindtap="addStorePhotos">
+            <view class="title">门店照片</view>
+            <view class="txt">
+                {{addStorePhotosPerfect ? "已完善" : "请完善"}}
+            </view>
+            <image src="../../../images/staff/right.png" class="right_icon"></image>
+        </view>
+    </view>
+    <view class="preview">
+        <view class="save btn" bindtap="save">保存</view>
+        <view class="preview_info btn" bindtap="storeDetail">预览信息</view>
+    </view>
+</view>
