@@ -278,7 +278,7 @@ const formatNumber = n => {
 }
 
 const getTime = s => {
-    var myDate = new Date(s);
+    var myDate = new Date(s.replace(/-/g, "/"))
     var sevenDate = new Date(myDate.getTime() - (6 * 24 * 60 * 60 * 1000)).toLocaleDateString();
     var year = new Date(sevenDate).getFullYear();
     var month = new Date(sevenDate).getMonth() + 1;
