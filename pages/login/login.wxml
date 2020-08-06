@@ -3,21 +3,20 @@
     <view class="login_icon">
         <image src="../../images/login-logo.png"></image>
     </view>
-    <view class="staff_login" bindtap="goStaffLogin">
-        工作人员登录
-    </view>
     <view class="login_model">
-        <form>
-            <view class="cell flex">
-                <image src="../../images/account-icon.png"></image>
-                <input placeholder-class="phcolor" maxlength="11" bindinput="username" placeholder="请输入用户账号"></input>
-            </view>
-            <view class="cell flex" style="margin-bottom:20rpx;">
-                <image style="width:42rpx;height:42rpx;" src="../../images/psd-icon.png"></image>
-                <input placeholder-class="phcolor" maxlength="16" bindinput="password" password placeholder="请输入密码"></input>
-            </view>
-            
-        </form>
+        <view class="cell flex">
+            <image src="../../images/account-icon.png"></image>
+            <input placeholder-class="phcolor" maxlength="11" bindinput="username" placeholder="请输入用户账号"></input>
+        </view>
+        <view class="cell flex" style="margin-bottom:0rpx;">
+            <image style="width:42rpx;height:42rpx;" src="../../images/psd-icon.png"></image>
+            <input placeholder-class="phcolor" maxlength="16" bindinput="password" password placeholder="请输入密码"></input>
+        </view>
+        <view class="staff_login_view">
+            <text class="staff_login" bindtap="goStaffLogin">
+                工作人员登录
+            </text>
+        </view>
         <view class="login_btn" bindtap="userLogin">登录</view>
     </view>
     <view class="wx_login flex" wx:if="{{isAuthorization}}">

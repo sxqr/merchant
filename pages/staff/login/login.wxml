@@ -3,9 +3,6 @@
 <view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
   <view class="{{facility?'custom_title iphone' : 'custom_title'}}">登录</view>
 </view>
-<view class="merchant_login" bindtap="goMerchantLogin">
-    商户登录
-</view>
 <view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
 <view class="we_page">
     <image class="login_bg" src="../../../images/staff/login_bg.png"></image>
@@ -14,17 +11,19 @@
             <image src="../../../images/staff/staff.png"></image>
         </view>
         <view class="login_model">
-            <form>
-                <view class="cell flex">
-                    <image src="../../../images/account-icon.png"></image>
-                    <input placeholder-class="phcolor" bindinput="getUsername" placeholder="请输入用户账号"></input>
-                </view>
-                <view class="cell flex" style="margin-bottom:20rpx;">
-                    <image style="width:42rpx;height:42rpx;" src="../../../images/staff/psd-icon.png"></image>
-                    <input placeholder-class="phcolor" password bindinput="getPassword" placeholder="请输入密码"></input>
-                </view>
-                
-            </form>
+            <view class="cell flex">
+                <image src="../../../images/account-icon.png"></image>
+                <input placeholder-class="phcolor" bindinput="getUsername" placeholder="请输入用户账号"></input>
+            </view>
+            <view class="cell flex" style="margin-bottom:0rpx;">
+                <image style="width:42rpx;height:42rpx;" src="../../../images/staff/psd-icon.png"></image>
+                <input placeholder-class="phcolor" password bindinput="getPassword" placeholder="请输入密码"></input>
+            </view>
+            <view class="merchant_login_view">
+                <text class="merchant_login" bindtap="goMerchantLogin">
+                    商户登录
+                </text>
+            </view>
             <view class="login_btn" bindtap="login">登录</view>
         </view>
     </view> 
