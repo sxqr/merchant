@@ -97,5 +97,5 @@ page,.we_page{
 .staff_login{
     color: #6AC63C;
     font-size: 28rpx;
-    border-bottom: 1rpx solid;
+    border-bottom: 1px solid;
 }

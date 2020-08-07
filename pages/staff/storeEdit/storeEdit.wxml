@@ -103,5 +103,8 @@
             
         </view> 
     </view>
-    <view class="confirm" bindtap="confirm">提交</view>
+    <view style="{{isIphoneX ? 'height: 80px' : ''}}"></view>
+    <view class="{{isIphoneX ? 'iPhoneX' : ''}}" >
+        <view class="confirm" bindtap="confirm">提交</view>
+    </view>
 </view>

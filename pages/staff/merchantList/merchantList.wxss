@@ -47,12 +47,12 @@ page{
     font-size: 36rpx;
 }
 .save{
-    background: red;
+    background: #FF0000;
     float: left;
     margin-left: 40rpx;
 }
 .preview_info{
-    background: green;
+    background: #3EB232;
     float: right;
     margin-right: 40rpx;
 }

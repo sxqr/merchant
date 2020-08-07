@@ -19,6 +19,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let isIphoneX = app.globalData.isIphoneX;
+    this.setData({
+      isIphoneX: isIphoneX
+    })
     var merchantNo = options.merchantNo;
     if(merchantNo){
       // 查询商户

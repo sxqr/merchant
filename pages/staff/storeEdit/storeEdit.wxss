@@ -54,11 +54,10 @@ page{
 .confirm{
   width: 100%;
   line-height: 90rpx;
-  color: #6AC63C;
+  color: #fff;
   font-size: 34rpx;
   text-align: center;
-  background: #fff;
-  margin-top: 20rpx;
+  background: #6AC63C;
 }
 
 .we_page .inpt_cell{

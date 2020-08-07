@@ -25,3 +25,13 @@ image {
     height: 20rpx;
     background: #EFEFEF;
 }
+.iPhoneX{
+    padding-bottom: 34px;
+    background: #fff;
+    z-index: 999;
+    position: fixed;
+    /* height: 34px !important; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
