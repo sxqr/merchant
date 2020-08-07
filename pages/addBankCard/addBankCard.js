@@ -83,7 +83,7 @@ Page({
             })
             return false;
         }
-        if (bankNo.length != 16 && bankNo.length != 17 && bankNo.length != 19) {
+        if (bankNo.length != 16 && bankNo.length != 17 && bankNo.length != 19 || bankNo.substring(0, 2) != "62") {
             wx.showToast({
                 icon: 'none',
                 title: '请正确输入银行卡号！',
