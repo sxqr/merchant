@@ -44,7 +44,8 @@ Page({
         var json = {
             access_token: wx.getStorageSync("token"),
             page: 1,
-            limit: 10
+            limit: 10,
+            status: this.data.status
         }
         getCheckList(json, that, 0);
     },
