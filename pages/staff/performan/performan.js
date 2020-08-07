@@ -223,20 +223,10 @@ function getView(json, that){
     api("/txnOrder/workPerformance/view", json, "POST", 1)
         .then(t => {
             if(t.code == 200){
-                that.setData({
-                    performanceList: t.data
-                })
-            }
-
-            if(t.code == 200){
-                var performanceList = that.data.checkList;
+                var performanceList = that.data.performanceList;
                 var newPerformanceList = t.data;
-                if(type == 0){
-                    checkList = newPerformanceList;
-                }else if(type == 1){
-                    for (var i = 0; i < newPerformanceList.length; i++) {
-                        performanceList.push(newPerformanceList[i]);
-                    }
+                for (var i = 0; i < newPerformanceList.length; i++) {
+                    performanceList.push(newPerformanceList[i]);
                 }
                 that.setData({
                     performanceList: performanceList,
