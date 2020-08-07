@@ -55,7 +55,7 @@ Page({
       .then(t => {
         if (t.code == 200) {
           wx.setStorageSync('headUrl', t.data.headUrl);
-          wx.setStorageSync('headUrl', t.data.headUrl);
+          wx.setStorageSync('userId', t.data.userId);
           wx.setStorageSync('nickname', t.data.merchantShortName);
           this.setData({
             nickname: t.data.merchantShortName,
@@ -157,9 +157,13 @@ Page({
   },
   // 关于我们
   about: function () {
-    wx.navigateTo({
-      url: '../about/about',
+    wx.showToast({
+      icon: 'none',
+      title: '开发中',
     })
+    // wx.navigateTo({
+    //   url: '../about/about',
+    // })
   },
   personal: function () {
     wx.navigateTo({

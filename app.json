@@ -41,7 +41,8 @@
         "pages/staff/balanceInfo/balanceInfo",
         "pages/staff/merchantList/merchantList",
         "pages/staff/index/index",
-        "pages/staff/personal/personal"
+        "pages/staff/personal/personal",
+        "pages/staff/storeEdit/storeEdit"
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -86,3 +86,10 @@ page{
     color: #FF2443;
 }
 
+.edit_view{
+    text-align: right;
+}
+.edit{
+    color: #6AC63C;
+    border-bottom: 1px solid #6AC63C;
+}

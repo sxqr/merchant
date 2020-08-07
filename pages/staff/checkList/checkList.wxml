@@ -34,6 +34,9 @@
                 <view class="cause" hidden="{{item.merchantStatus != 3}}">
                     驳回原因：<text class="cause_txt">{{item.failExplain}}</text>
                 </view>
+                <view class="edit_view" hidden="{{item.merchantStatus != 3}}">
+                    <text class="edit" data-no="{{item.merchantNo}}" bindtap="edit">编辑</text>
+                </view>
             </view>
         </view>
     </scroll-view>    

@@ -10,7 +10,8 @@
             <text>简称</text>
             <input placeholder="简称可以缩写或填招牌" bindinput="merchantShortName" value="{{merchants.merchantShortName}}" placeholder-class="phcolor"></input>
         </view>
-        <picker mode="multiSelector" bindchange="func_changeCitysChange" bindcolumnchange="func_changeCitysChangeColumn" value="{{citysIndex}}" range="{{cityArray}}" custom-item="{{customItem}}">
+        <!-- bindcolumnchange="func_changeCitysChangeColumn" -->
+        <picker mode="region" bindchange="func_changeCitysChange" value="{{adrDetail}}" custom-item="{{customItem}}">
             <view class="inpt_cell flex">
                 <text>经营地址</text>
                 <input placeholder="请选择" value="{{ssqAdr}}" disabled placeholder-class="phcolor" style="text-align: right;"></input>

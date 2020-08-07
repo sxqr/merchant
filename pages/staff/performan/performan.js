@@ -138,6 +138,8 @@ Page({
         this.setData({
             startTime: startTime,
             endTime: endTime,
+            page: 1,
+            limit: 10,
             performanceList: []
         })
         // 查询业绩
@@ -177,6 +179,9 @@ Page({
             endTime = date.getTwentyThree(new Date(y+"-"+m+"-"+d));
         }
         this.setData({
+            performanceList: [],
+            page: 1,
+            limit: 10,
             startTime: startTime,
             endTime: endTime
         })
@@ -193,8 +198,7 @@ Page({
             page: 1,
             limit: 10,
             startTime: startTime,
-            endTime: endTime,
-            performanceList: []
+            endTime: endTime
         }
         getView(json, this)
     },
@@ -218,6 +222,22 @@ function getView(json, that){
             if(t.code == 200){
                 that.setData({
                     performanceList: t.data
+                })
+            }
+
+            if(t.code == 200){
+                var performanceList = that.data.checkList;
+                var newPerformanceList = t.data;
+                if(type == 0){
+                    checkList = newPerformanceList;
+                }else if(type == 1){
+                    for (var i = 0; i < newPerformanceList.length; i++) {
+                        performanceList.push(newPerformanceList[i]);
+                    }
+                }
+                that.setData({
+                    performanceList: performanceList,
+                    count: t.count
                 })
             }
         })

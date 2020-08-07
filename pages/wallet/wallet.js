@@ -64,7 +64,11 @@ Page({
     },
     // 充值
     recharge: function () {
-        common.go('../recharge/recharge')
+        wx.showToast({
+          icon: 'none',
+          title: '开发中',
+        })
+        // common.go('../recharge/recharge')
     },
     // 钱包明细
     walletDetail: function () {

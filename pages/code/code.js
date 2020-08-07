@@ -26,7 +26,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
+        this.setData({
+            receiptCodeNo: options.code,
+        })
     },
 
     /**
@@ -34,7 +36,7 @@ Page({
      */
     onShow: function () {
         let json = {
-            receiptCodeNo: options.code,
+            receiptCodeNo: this.data.receiptCodeNo,
             access_token: wx.getStorageSync('access_token')
         }
         api("/merchantReceiptCode/getCode", json, 'POST', 1).then(t => {

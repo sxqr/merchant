@@ -115,11 +115,8 @@ Page({
                         })
                         wx.setStorageSync("merchants", "");
                         wx.setStorageSync("citysIndex", "");
-                        wx.setStorageSync("cityArray", "");
+                        wx.setStorageSync("adrDetail", "");
                         wx.setStorageSync("ssqAdr", "");
-                        wx.setStorageSync("provinces", "");
-                        wx.setStorageSync("citys", "");
-                        wx.setStorageSync("areas", "");
                         that.setData({
                             merchants: {}
                         })

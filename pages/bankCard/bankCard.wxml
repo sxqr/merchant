@@ -9,6 +9,6 @@
 			<view class="card">{{item.bankNo}}</view>
 		</view>
 	</view>
-	<view class="add_btn" bindtap="addBankCard">新增银行卡</view>
-
+	<!-- <view class="add_btn" bindtap="addBankCard">新增银行卡</view> -->
+	<view class="btm_menu" bindtap="addBankCard">+新增银行卡</view>
 </view>

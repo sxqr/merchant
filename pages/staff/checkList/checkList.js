@@ -1,5 +1,6 @@
 // pages/checkList/checkList.js
 const api = require("../../../utils/ajax.js")
+const common = require("../../../utils/common.js")
 
 Page({
 
@@ -24,12 +25,6 @@ Page({
      */
     onLoad: function (options) {
         var that = this;
-        var json = {
-            access_token: wx.getStorageSync("token"),
-            page: 1,
-            limit: 10
-        }
-        getCheckList(json, that);
         var phoneInfo=wx.getSystemInfoSync();
         var pHeight=phoneInfo.windowHeight;//高
         let query = wx.createSelectorQuery();
@@ -45,7 +40,13 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        
+        var that = this;
+        var json = {
+            access_token: wx.getStorageSync("token"),
+            page: 1,
+            limit: 10
+        }
+        getCheckList(json, that, 0);
     },
 
     //到达底部
@@ -65,7 +66,7 @@ Page({
                 limit: limit,
                 status: that.data.status
             };
-            getCheckList(json, that);
+            getCheckList(json, that, 1);
         }
     },
 
@@ -112,7 +113,7 @@ Page({
             limit: 10,
             status: status
         }
-        getCheckList(json, that)
+        getCheckList(json, that, 0)
     },
     // 预览图片
     preview: function(e){
@@ -126,17 +127,26 @@ Page({
             }
         })
     },
+
+    //编辑商户
+    edit: function(e){
+        var merchantNo = e.currentTarget.dataset.no;
+        common.go("../storeEdit/storeEdit?merchantNo="+merchantNo);
+    }
 })
 
-function getCheckList(json, that){
+function getCheckList(json, that, type){
     api("/merchant/status/list", json, "POST", 1)
         .then(t => {
-            console.log(t);
             if(t.code == 200){
                 var checkList = that.data.checkList;
                 var newCheckList = t.data;
-                for (var i = 0; i < newCheckList.length; i++) {
-                    checkList.push(newCheckList[i]);
+                if(type == 0){
+                    checkList = newCheckList;
+                }else if(type == 1){
+                    for (var i = 0; i < newCheckList.length; i++) {
+                        checkList.push(newCheckList[i]);
+                    }
                 }
                 that.setData({
                     checkList: checkList,

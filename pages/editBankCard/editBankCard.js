@@ -39,6 +39,9 @@ Page({
                 })
             }
         });
+        this.setData({
+            nickname: wx.getStorageSync('nickname')
+        })
     },
     // 隐藏事件
     hidden: function () {

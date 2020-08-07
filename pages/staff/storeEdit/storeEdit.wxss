@@ -1,0 +1,165 @@
+/* pages/staff/storeEdit/storeEdit.wxss */
+page{
+  height: 100%;
+  background: #EFEFEF;
+}
+.merchant_list .inpt_cell image{
+  width: 20rpx;
+  height: 26rpx;
+  margin-left: 20rpx;
+}
+.we_page .inpt_cell{
+  align-items: center;
+  background: #fff;
+  padding: 16rpx 30rpx;
+  border-bottom: 1px solid #f8f8f8;
+}
+.inpt_cell text{
+  font-size: 32rpx;
+  min-width: 200rpx;
+}
+.inpt_cell input{
+  flex: 1;
+  padding: 10rpx 0;
+  font-size: 30rpx;
+}
+.add_btn{
+  height: 90rpx;
+  margin: 60rpx 60rpx 0 60rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 500;
+  border-radius: 10rpx;
+  background:linear-gradient(-90deg,rgba(61,178,50,1),rgba(106,198,60,1));
+}
+.we_page .merchant_list .tarea{
+  height: 130rpx;
+  display: flex;
+  align-items: initial;
+}
+.tarea text{
+  width: 140rpx;
+  float: left;
+}
+.tarea textarea{
+  width: calc(100% - 170rpx);
+  font-size: 30rpx;
+  height: 130rpx;
+  margin-top: 4rpx;
+  padding: 0;
+  line-height: 30rpx;
+}
+.confirm{
+  width: 100%;
+  line-height: 90rpx;
+  color: #6AC63C;
+  font-size: 34rpx;
+  text-align: center;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.we_page .inpt_cell{
+  align-items: center;
+  background: #fff;
+  padding: 16rpx 30rpx;
+  border-bottom: 1px solid #f8f8f8;
+}
+.inpt_cell text{
+  /* padding-right: 30rpx; */
+  font-size: 32rpx;
+  min-width: 150rpx;
+}
+.inpt_cell input{
+  flex: 1;
+  padding: 10rpx 0;
+  font-size: 30rpx;
+}
+
+.license{
+  background: #fff;
+  padding: 0 30rpx 60rpx;
+}
+.license .title{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.card, .business{
+  margin: 0 -16rpx;
+}
+.card .cell{
+padding: 0 16rpx;
+ width: 50%;
+}
+.business .cell{
+  /* padding: 0 16rpx; */
+  padding-left: 16rpx;
+  width: calc(50% - 32rpx);
+}
+.card .cell .item,.business .cell .item{
+  background: #F6F8FE;
+  padding: 40rpx 30rpx 20rpx 30rpx;
+}
+.card .cell .item image,.business image{
+  width: 100%;
+  height: 180rpx;
+}
+.card .cell text,.business .cell text{
+  display: block;
+  font-size: 26rpx;
+  text-align: center;
+  color: #999;
+  padding-top: 10rpx;
+}
+
+.we_page .inpt_cell{
+  align-items: center;
+  background: #fff;
+  padding: 16rpx 30rpx;
+  border-bottom: 1px solid #f8f8f8;
+}
+.inpt_cell text{
+  /* padding-right: 30rpx; */
+  font-size: 32rpx;
+  min-width: 200rpx;
+}
+.inpt_cell input{
+  flex: 1;
+  padding: 10rpx 0;
+  font-size: 30rpx;
+}
+
+.tips{
+  background: #fff;
+  font-size: 24rpx;
+  color: #FF8554;
+  line-height: 40rpx;
+  padding: 10rpx 30rpx 0;
+  text-align: justify;
+}
+.mr-lt{
+  margin: 0 -10rpx;
+}
+.store_photos{
+  padding: 30rpx 30rpx 40rpx;
+  overflow: hidden;
+  background: #fff;
+  box-sizing: border-box;
+}
+.upload{
+  width: 216rpx;
+  height: 216rpx;
+  padding: 10rpx;
+  float: left;
+}
+.photos_upload{
+  width: 33.3%;
+  float: left;
+}
+.title{
+  text-align: center;
+}

@@ -77,6 +77,10 @@ Page({
   },
   // 消息通知
   notification: function(){
-    common.go("../notification/notification");
+    wx.showToast({
+      icon: 'none',
+      title: '开发中',
+    })
+    //common.go("../notification/notification");
   },
 })

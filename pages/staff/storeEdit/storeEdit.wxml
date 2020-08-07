@@ -1,0 +1,107 @@
+<!--pages/staff/storeEdit/storeEdit.wxml-->
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="merchant_list">
+        <view class="inpt_cell flex">
+            <text>商户全称</text>
+            <input placeholder="按照营业执照来填写" bindinput="merchantName" value="{{merchants.merchantName}}" placeholder-class="phcolor"></input>
+        </view>
+        <view class="inpt_cell flex">
+            <text>简称</text>
+            <input placeholder="简称可以缩写或填招牌" bindinput="merchantShortName" value="{{merchants.merchantShortName}}" placeholder-class="phcolor"></input>
+        </view>
+        <!-- bindcolumnchange="func_changeCitysChangeColumn" -->
+        <picker mode="region" bindchange="func_changeCitysChange" value="{{adrDetail}}" custom-item="{{customItem}}">
+            <view class="inpt_cell flex">
+                <text>经营地址</text>
+                <input placeholder="请选择" value="{{ssqAdr}}" disabled placeholder-class="phcolor" style="text-align: right;"></input>
+                <image src="../../../images/staff/right.png"></image>
+            </view>
+        </picker>    
+        <view class="inpt_cell tarea">
+            <text>详细地址</text>
+            <textarea disable-default-padding="{{true}}" placeholder="请输入详细地址" bindinput="address" value="{{merchants.address}}" placeholder-class="phcolor"></textarea>
+        </view>
+    </view>
+</view>
+
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="balance_info">
+        <view class="inpt_cell flex">
+            <text>姓名</text>
+            <input placeholder="请输入联系人姓名" bindinput="contactName" value="{{merchants.contactName}}" placeholder-class="phcolor"></input>
+        </view>
+        <view class="inpt_cell flex">
+            <text>电话</text>
+            <input placeholder="请输入联系人电话" type="number" bindinput="contactMobile" value="{{merchants.contactMobile}}" placeholder-class="phcolor"></input>
+        </view>
+    </view>
+</view>
+
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="license">
+        <view class="title">法人身份证照片（原件拍照）</view>
+        <view class="card flex">
+            <view class="cell" bindtap="legalPersonCardFrontUrl">
+                <view class="item">
+                    <image src="{{merchants.legalPersonCardFrontUrl ? merchants.legalPersonCardFrontUrl : '../../../images/staff/card_u.png'}}"></image>
+                    <text>点击上传身份证正面照</text>
+                </view>
+            </view>
+            <view class="cell" bindtap="legalPersonCardReverseUrl">
+                <view class="item">
+                    <image src="{{merchants.legalPersonCardReverseUrl ? merchants.legalPersonCardReverseUrl : '../../../images/staff/card_n.png'}}"></image>
+                    <text>点击上传身份证反面照</text>
+                </view>
+            </view>
+        </view>
+        <view class="title">商户营业执照（原件拍照）</view>
+        <view class="business">
+            <view class="cell" bindtap="businessLicenseUrl">
+                <view class="item">
+                    <image src="{{merchants.businessLicenseUrl ? merchants.businessLicenseUrl : '../../../images/staff/secret.png'}}"></image>
+                    <text>点击上传营业执照</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="balance_info">
+        <view class="inpt_cell flex">
+            <text>结算人姓名</text>
+            <input placeholder="请输入结算人姓名" bindinput="settleName" value="{{merchants.settleName}}" placeholder-class="phcolor"></input>
+        </view>
+        <view class="inpt_cell flex">
+            <text>身份证号</text>
+            <input placeholder="请输入结算人身份证号" bindinput="settleNo" value="{{merchants.settleNo}}" placeholder-class="phcolor"></input>
+        </view>
+    </view>
+</view>
+
+<view class="we_page">
+    <view class="ht_20"></view>
+    <view class="tips">注：提交与营业执照商户名相符的门店照片（门头照、内景照、收银台照）</view>
+    <view class="mr-lt">
+        <view class="store_photos">
+            <view class="photos_upload" bindtap="merchantDoorPhotoUrl">
+                <image src="{{merchants.merchantDoorPhotoUrl ? merchants.merchantDoorPhotoUrl : '../../../images/staff/add_img.png'}}" class="upload"></image>
+                <view class="title">门头照</view>
+            </view>
+            <view class="photos_upload" bindtap="merchantBusinessUrl">
+                <image src="{{merchants.merchantBusinessUrl ? merchants.merchantBusinessUrl : '../../../images/staff/add_img.png'}}" class="upload"></image>
+                <view class="title">经营场所照</view>
+            </view>
+            <view class="photos_upload" bindtap="merchantCashierDeskPhotoUrl">
+                <image src="{{merchants.merchantCashierDeskPhotoUrl ? merchants.merchantCashierDeskPhotoUrl : '../../../images/staff/add_img.png'}}" class="upload"></image>
+                <view class="title">收银台照</view>
+            </view>
+            
+        </view> 
+    </view>
+    <view class="confirm" bindtap="confirm">提交</view>
+</view>
