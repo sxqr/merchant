@@ -17,6 +17,7 @@
 			<image src="../../images/right.png"></image>
 		</view>
 	</view>
+	<view class="prompt">提示：银行卡号必须是16、17、19位并且前两位必须是"62"</view>
 	<view class="add_btn" bindtap="addBank">添加</view>
 	<!-- 银行卡弹窗
 	<view class="bankNameList" hidden="{{bankFlag}}" bindtap="hidden">
