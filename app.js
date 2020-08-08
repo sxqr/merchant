@@ -7,6 +7,9 @@ App({
     // imgUrl:"http://192.168.0.132:9000/v1",
   },
   onLaunch: function () {
+    // wx.setEnableDebug({
+    //   enableDebug: true,
+    // })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -60,6 +63,8 @@ App({
       success: res => {
         // console.log('手机信息res'+res.model)
         let modelmes = res.model;
+        console.log(res);
+        console.log(res.model);
         if (modelmes.search('iPhone X') != -1) {
           that.globalData.isIphoneX = true
         }

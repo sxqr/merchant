@@ -44,6 +44,10 @@ Page({
             })
             return false;
         }
+        wx.showLoading({
+            title: '登录中...',
+            mask: true
+        })
         let json = {
             username: username,
             password: password

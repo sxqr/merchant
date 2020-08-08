@@ -124,16 +124,16 @@ Page({
                 todayTime: date.getCurTime()
             })
             let d = new Date().getDate();
-            startTime = date.getZero(new Date(y+"-"+m+"-"+d));
-            endTime = date.getTwentyThree(new Date(y+"-"+m+"-"+d));
+            startTime = date.getZero(new Date(y+"/"+m+"/"+d));
+            endTime = date.getTwentyThree(new Date(y+"/"+m+"/"+d));
         }else if(id == 2){
             this.setData({
                 active1: false,
                 active2: true,
-                todayTime: new Date().getFullYear()+"."+(new Date().getMonth()+1)
+                todayTime: new Date().getFullYear()+"-"+(new Date().getMonth()+1)
             })
-            startTime = date.getZero(new Date(y+"-"+m+"-"+"01"));
-            endTime = date.getTwentyThree(new Date(y+"-"+m+"-"+date.getLastDay(y, m)));
+            startTime = date.getZero(new Date(y+"/"+m+"/"+"01"));
+            endTime = date.getTwentyThree(new Date(y+"/"+m+"/"+date.getLastDay(y, m)));
         }
         this.setData({
             startTime: startTime,
@@ -168,15 +168,15 @@ Page({
         let startTime = this.data.startTime;
         let endTime = this.data.endTime;
         if(this.data.active2){ //月
-            startTime = date.getZero(new Date(y+"-"+m+"-"+"01"));
-            endTime = date.getTwentyThree(new Date(y+"-"+m+"-"+date.getLastDay(y, m)));
+            startTime = date.getZero(new Date(y+"/"+m+"/"+"01"));
+            endTime = date.getTwentyThree(new Date(y+"/"+m+"/"+date.getLastDay(y, m)));
             this.setData({
                 todayTime: y+"."+m
             })
         }else{
             let d = new Date(chooseTime).getDate();
-            startTime = date.getZero(new Date(y+"-"+m+"-"+d));
-            endTime = date.getTwentyThree(new Date(y+"-"+m+"-"+d));
+            startTime = date.getZero(new Date(y+"/"+m+"/"+d));
+            endTime = date.getTwentyThree(new Date(y+"/"+m+"/"+d));
             this.setData({
                 todayTime: y+"."+m+"."+d
             })

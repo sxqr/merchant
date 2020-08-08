@@ -45,7 +45,7 @@ function getCurTime(){
   let y = curTime.getFullYear();
   let m = curTime.getMonth()+1;
   let d = curTime.getDate();
-  return y+'.'+m+'.'+d
+  return y+'-'+m+'-'+d
 }
 
 // 获取0点

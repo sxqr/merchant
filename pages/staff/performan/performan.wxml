@@ -16,7 +16,7 @@
             </view>
             <!-- 时间选择 -->
             <view class="time_menu">
-                <picker mode="date" value="{{todayTime}}" fields="{{active1 ? 'day' : 'month'}}" start="2015-09-01" end="2100-12-31" bindchange="bindDateChange">
+                <picker mode="date" value="{{todayTime}}" fields="{{active1 ? 'day' : 'month'}}" start="2015-01-01" end="2100-12-31" bindchange="bindDateChange">
                     <view class="select_time">
                         <text>{{todayTime}}</text>
                         <view class="line"></view>
