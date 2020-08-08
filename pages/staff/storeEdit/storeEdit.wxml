@@ -23,9 +23,6 @@
             <textarea disable-default-padding="{{true}}" placeholder="请输入详细地址" bindinput="address" value="{{merchants.address}}" placeholder-class="phcolor"></textarea>
         </view>
     </view>
-</view>
-
-<view class="we_page">
     <view class="ht_20"></view>
     <view class="balance_info">
         <view class="inpt_cell flex">
@@ -37,9 +34,6 @@
             <input placeholder="请输入联系人电话" type="number" bindinput="contactMobile" value="{{merchants.contactMobile}}" placeholder-class="phcolor"></input>
         </view>
     </view>
-</view>
-
-<view class="we_page">
     <view class="ht_20"></view>
     <view class="license">
         <view class="title">法人身份证照片（原件拍照）</view>
@@ -67,9 +61,6 @@
             </view>
         </view>
     </view>
-</view>
-
-<view class="we_page">
     <view class="ht_20"></view>
     <view class="balance_info">
         <view class="inpt_cell flex">
@@ -81,9 +72,6 @@
             <input placeholder="请输入结算人身份证号" bindinput="settleNo" value="{{merchants.settleNo}}" placeholder-class="phcolor"></input>
         </view>
     </view>
-</view>
-
-<view class="we_page">
     <view class="ht_20"></view>
     <view class="tips">注：提交与营业执照商户名相符的门店照片（门头照、内景照、收银台照）</view>
     <view class="mr-lt">
