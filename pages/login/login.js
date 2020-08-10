@@ -193,5 +193,10 @@ Page({
     wx.reLaunch({
       url: '../staff/login/login'
     })
-  } 
+  }, 
+  //协议
+  protocol: function(e){
+    var type = e.currentTarget.dataset.type;
+    common.go("../protocol/protocol?type=" + type);
+  }
 })

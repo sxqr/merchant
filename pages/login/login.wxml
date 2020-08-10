@@ -35,8 +35,8 @@
                 <image src="../../images/tongyi-u.png"></image>
             </view>
             <view style="display:inline-block;">我已阅读并同意</view>
-            <text>《用户加盟协议》</text>
-            <text>《支付协议》</text>
+            <text data-type="one" bindtap="protocol">《服务协议》</text>
+            <text data-type="two" bindtap="protocol">《入网协议》</text>
         </label>
     </view>
 </view>
