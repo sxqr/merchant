@@ -65,6 +65,7 @@ page,.we_page{
 }
 .consent text{
     color: #6AC63C;
+    padding: 20rpx 0;
 }
 .checkbox{
     align-items: center;

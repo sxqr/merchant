@@ -42,7 +42,8 @@
         "pages/staff/merchantList/merchantList",
         "pages/staff/index/index",
         "pages/staff/personal/personal",
-        "pages/staff/storeEdit/storeEdit"
+        "pages/staff/storeEdit/storeEdit",
+        "pages/protocol/protocol"
     ],
     "window": {
         "backgroundTextStyle": "light",
