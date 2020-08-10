@@ -9,7 +9,7 @@
     <view class="ht_20"></view>
     <view class="slect_bank flex" bindtap="slectBankCard">
         <text>到银行卡</text>
-        <text class="card">{{bankName}} （{{count.num(bankNo)}}）</text>
+        <text class="card">{{bankName}} {{prefix}}{{count.num(bankNo)}}{{suffix}}</text>
         <image src="../../images/right.png"></image>
     </view>
     <view class="recharge_model">

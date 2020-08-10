@@ -14,7 +14,7 @@
 			</view>
 		</scroll-view>
 	</view>
-	<view class="btm_menu" bindtap="advDevice">
+	<view class="btm_menu ios" bindtap="advDevice">
 		+新增设备
 	</view>
 </view>

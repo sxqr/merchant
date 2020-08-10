@@ -28,7 +28,9 @@ Page({
         bankNo: "",
         bankName: "",
         amount: "",
-        usableAmount: ""
+        usableAmount: "",
+        prefix: "",
+        suffix: ""
     },
 
     /**
@@ -83,7 +85,9 @@ Page({
                 this.setData({
                     backNameList: t.data,
                     bankNo: t.data[0].bankNo,
-                    bankName: t.data[0].bankName
+                    bankName: t.data[0].bankName,
+                    prefix: "（",
+                    suffix: "）"
                 })
             }
         });
@@ -106,7 +110,7 @@ Page({
             } else if(!(/^[3-9]|[1-9]\d+$/.test(amount))) {
                 wx.showToast({
                     icon: 'none',
-                    title: '提现金额必须是大于2的正整数'
+                    title: '提现金额必须是大于2正整数'
                 })
             } else {
                 this.setData({
@@ -183,7 +187,9 @@ Page({
         this.setData({
             bankNo: e.currentTarget.dataset.card,
             bankName: e.currentTarget.dataset.name,
-            banckDialog: true
+            banckDialog: true,
+            prefix: "（",
+            suffix: "）"
         })
     }
 })
