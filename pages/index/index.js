@@ -157,13 +157,9 @@ Page({
   },
   // 关于我们
   about: function () {
-    wx.showToast({
-      icon: 'none',
-      title: '开发中',
+    wx.navigateTo({
+      url: '../about/about',
     })
-    // wx.navigateTo({
-    //   url: '../about/about',
-    // })
   },
   personal: function () {
     wx.navigateTo({

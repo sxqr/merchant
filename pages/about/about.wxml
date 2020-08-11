@@ -2,12 +2,12 @@
 <view class="we_page">
     <view class="ht_20"></view>
     <view class="page_list">
-        <view class="cell">
-            <view class="title">用户加盟协议</view>
+        <view class="cell" data-type="one" bindtap="protocol">
+            <view class="title">服务协议</view>
             <image src="../../images/right.png" class="right_icon"></image>
         </view>
-        <view class="cell">
-            <view class="title">支付协议</view>
+        <view class="cell" data-type="two" bindtap="protocol">
+            <view class="title">入网协议</view>
             <image src="../../images/right.png" class="right_icon"></image>
         </view>
     </view>
