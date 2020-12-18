@@ -39,7 +39,12 @@ Page({
             receiptCodeNo: this.data.receiptCodeNo,
             access_token: wx.getStorageSync('access_token')
         }
+        wx.showLoading({
+            title: '加载中...',
+            mask: true
+        })
         api("/merchantReceiptCode/getCode", json, 'POST', 1).then(t => {
+            wx.hideLoading();
             if (t.code == 200) {
                 this.setData({
                     urlAddress: t.data.urlAddress,
@@ -54,8 +59,18 @@ Page({
                     canvasId: 'canvas',
                     text: t.data.urlAddress
                 })
+            } else {
+                wx.showToast({
+                    icon: 'none',
+                    title: t.msg
+                })
             }
-        })
+        }).catch((response) => {
+            wx.showToast({
+              icon: 'none',
+              title: response.msg
+            })
+        });
     },
     // 解绑二维码
     unbind: function () {
