@@ -64,8 +64,10 @@
         <text>结算信息</text>
     </view>
      <view class="close_list">
+        <view class="cell">类型：{{merchants.merAccountType == 0 ? "对私" : "对公"}}</view>
         <view class="cell">结算人姓名：{{merchants.settleName}}</view>
-        <view class="cell">结算人身份证：{{merchants.settleNo}}</view>
+        <view class="cell" hidden="{{merchants.merAccountType == 1}}">结算人身份证：{{merchants.settleNo}}</view>
+        <view class="cell">交易费率：{{merchants.rate}}</view>
      </view>
      <!-- 驳回原因 -->
      <!-- <view class="ht_20"></view>

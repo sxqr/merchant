@@ -12,7 +12,7 @@ Page({
         bankId:"",
         bankFlag: true,
         backNameList: [],
-        nickname: ""
+        settleName: ""
     },
 
     /**
@@ -37,7 +37,7 @@ Page({
             }
         });
         this.setData({
-            nickname: wx.getStorageSync('nickname')
+            settleName: wx.getStorageSync('settleName')
         })
     },
     // 关闭弹窗
@@ -83,7 +83,7 @@ Page({
             })
             return false;
         }
-        if (bankNo.length != 16 && bankNo.length != 17 && bankNo.length != 19 || bankNo.substring(0, 2) != "62") {
+        if (!(/(^[0-9]*$)/.test(bankNo))) {
             wx.showToast({
                 icon: 'none',
                 title: '请输入正确的银行卡号！',

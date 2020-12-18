@@ -11,7 +11,8 @@ Page({
         bankNo: "",
         id: "",
         bankFlag: true,
-        backNameList: []
+        backNameList: [],
+        settleName: ""
     },
 
     /**
@@ -21,7 +22,8 @@ Page({
         this.setData({
             bankName: options.bankName,
             bankNo: options.bankNo,
-            id: options.id
+            id: options.id,
+            settleName: wx.getStorageSync('settleName')
         })
     },
 
@@ -75,11 +77,18 @@ Page({
     // 修改银行卡
     editBank: function () {
         let bankNo = this.data.bankNo;
-        let bankName = "中国银行";
+        let bankName = this.data.bankName;
         if (bankNo == "") {
             wx.showToast({
                 icon: 'none',
                 title: '请输入银行卡号',
+            })
+            return false;
+        }
+        if (!(/(^[0-9]*$)/.test(bankNo))) {
+            wx.showToast({
+                icon: 'none',
+                title: '请输入正确的银行卡号！',
             })
             return false;
         }

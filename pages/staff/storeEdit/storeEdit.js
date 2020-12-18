@@ -33,6 +33,7 @@ Page({
       api("/merchant/queryMerInfoByNo", json, "POST", 1)
         .then(t => {
           if(t.code == 200){
+            console.log("商户数据", t.data);
             let merchants = this.data.merchants;
             merchants.id = t.data.id;
             merchants.status = t.data.status;
@@ -47,8 +48,12 @@ Page({
             merchants.legalPersonCardFrontUrl = t.data.legalPersonCardFrontUrl;
             merchants.legalPersonCardReverseUrl = t.data.legalPersonCardReverseUrl;
             merchants.businessLicenseUrl = t.data.businessLicenseUrl;
+            merchants.merAccountType = t.data.merAccountType;
             merchants.settleName = t.data.settleName;
-            merchants.settleNo = t.data.settleNo;
+            if(merchants.merAccountType == 0){
+              merchants.settleNo = t.data.settleNo;
+            }
+            merchants.rate = t.data.rate;
             merchants.merchantDoorPhotoUrl = t.data.merchantDoorPhotoUrl;
             merchants.merchantBusinessUrl = t.data.merchantBusinessUrl;
             merchants.merchantCashierDeskPhotoUrl = t.data.merchantCashierDeskPhotoUrl;
@@ -264,6 +269,15 @@ Page({
     })
   },
 
+  //获取交易费率
+  rate: function(e){
+    let merchants = this.data.merchants;
+    merchants.rate = e.detail.value;
+    this.setData({
+      merchants: merchants
+    })
+  },
+
   //上传门头照
   merchantDoorPhotoUrl: function(){
     let merchants = this.data.merchants;
@@ -370,6 +384,128 @@ Page({
   confirm: function(){
     let merchants = this.data.merchants;
     merchants.access_token = wx.getStorageSync('token');
+    if(merchants.merchantName == ""){
+      wx.showToast({
+          icon: 'none',
+          title: '请输入商户全称',
+      })
+      return false;
+    }
+    if(merchants.merchantShortName == ""){
+        wx.showToast({
+            icon: 'none',
+            title: '请输入简称',
+        })
+        return false;
+    }
+    if(merchants.address == ""){
+        wx.showToast({
+            icon: 'none',
+            title: '请输入详细地址',
+        })
+        return false;
+    }
+    if(merchants.contactName == ""){
+      wx.showToast({
+          icon: 'none',
+          title: '请输入联系人姓名',
+      })
+      return false;
+    }
+    if(merchants.contactMobile == ""){
+        wx.showToast({
+            icon: 'none',
+            title: '请输入联系人电话',
+        })
+        return false;
+    }
+    if(!(/^1(3|4|5|7|8)\d{9}$/.test(merchants.contactMobile))){
+        wx.showToast({
+            icon:'none',
+            title: '联系电话格式错误',
+        })
+        return false;
+    }
+    if(merchants.legalPersonCardFrontUrl == ""){
+      wx.showToast({
+          icon: 'none',
+          title: '请上传身份证正面照',
+      })
+      return false;
+    }
+    if(merchants.legalPersonCardReverseUrl == ""){
+        wx.showToast({
+            icon: 'none',
+            title: '请上传身份证反面照',
+        })
+        return false;
+    }
+    if(merchants.businessLicenseUrl == ""){
+        wx.showToast({
+            icon: 'none',
+            title: '请上传营业执照',
+        })
+        return false;
+    }
+    if(merchants.settleName == ""){
+        wx.showToast({
+            icon: 'none',
+            title: '请输入结算人姓名',
+        })
+        return false;
+    }
+
+    if(merchants.merAccountType == "0"){
+      if(merchants.settleNo == ""){
+          wx.showToast({
+              icon: 'none',
+              title: '请输入结算人身份证号',
+          })
+          return false;
+      }
+      if(!(/^([1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}[0-9Xx])$/.test(merchants.settleNo))){
+          wx.showToast({
+              icon: 'none',
+              title: '身份证号格式错误',
+          })
+          return false;
+      }
+    }
+    if(merchants.rate == ""){
+        wx.showToast({
+            icon: 'none',
+            title: '请输入交易费率',
+        })
+        return false;
+    }
+    if(!(/^[0]+(\.[0-9]{1,5})?$/.test(merchants.rate))){
+        wx.showToast({
+            icon: 'none',
+            title: '交易费率格式错误',
+        })
+        return false;
+    }
+    if(merchants.merchantDoorPhotoUrl == ""){
+      wx.showToast({
+          icon: 'none',
+          title: '请上传门头照',
+      })
+      return false;
+    }
+    if(merchants.merchantBusinessUrl == ""){
+        wx.showToast({
+            icon: 'none',
+            title: '请上传经营场所照片',
+        })
+        return false;
+    }
+    if(merchants.merchantCashierDeskPhotoUrl == ""){
+        wx.showToast({
+            icon: 'none',
+            title: '请上传收银台照片',
+        })
+        return false;
+    }
     //修改商户
     api("/merchant/update", merchants, "POST", 1)
       .then(t => {

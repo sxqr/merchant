@@ -67,9 +67,13 @@
             <text>结算人姓名</text>
             <input placeholder="请输入结算人姓名" bindinput="settleName" value="{{merchants.settleName}}" placeholder-class="phcolor"></input>
         </view>
-        <view class="inpt_cell flex">
+        <view class="inpt_cell flex" hidden="{{merchants.merAccountType != '' && merchants.merAccountType == 1}}">
             <text>身份证号</text>
             <input placeholder="请输入结算人身份证号" bindinput="settleNo" value="{{merchants.settleNo}}" placeholder-class="phcolor"></input>
+        </view>
+        <view class="inpt_cell flex">
+            <text>交易费率</text>
+            <input placeholder="请输入交易费率" bindinput="rate" value="{{merchants.rate}}" placeholder-class="phcolor"></input>
         </view>
     </view>
     <view class="ht_20"></view>

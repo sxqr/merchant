@@ -100,9 +100,9 @@
 
 .input_container {
   height: 0;
-  width: 0;
+  /* width: 0; */
   min-height: 0;
-  position: relative;
+  /* position: relative;
   text-indent: -999em;
-  left: -100%;
+  left: -100%; */
 }

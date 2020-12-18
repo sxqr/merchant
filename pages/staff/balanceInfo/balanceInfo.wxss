@@ -31,3 +31,108 @@ page{
     background: #fff;
     margin-top: 80rpx;
 }
+
+.balance_info .inpt_cell image{
+    width: 20rpx;
+    height: 26rpx;
+    margin-left: 20rpx;
+}
+
+.write{
+    position:fixed; 
+    top :0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    text-align: center;
+    background:rgba(0,0,0,.4);
+    z-index: 99;
+  }
+  .child{
+    width: 80%;
+    z-index: 100;
+    top: 30%;
+    position: fixed;
+    font-size: 30rpx;
+    left: 10%;
+    right: 10%;
+  }
+  .child1{
+    width: 80%;
+    z-index: 100;
+    top: 30%;
+    position: fixed;
+    font-size: 30rpx;
+    left: 10%;
+    right: 10%;
+    max-height: 400rpx;
+    overflow-y: scroll;
+  }
+  .child2{
+    width: 80%;
+    z-index: 100;
+    top: 30%;
+    position: fixed;
+    font-size: 30rpx;
+    left: 10%;
+    right: 10%;
+    border-radius: 4rpx;
+  }
+  .male{
+    padding: 30rpx;
+    border-bottom: 1px solid #efefef;
+    color: #999;
+    height: 40rpx;
+    line-height: 40rpx;
+  }
+  .female{
+    padding: 30rpx;
+    color: #999;
+    height: 40rpx;
+    line-height: 40rpx;
+  }
+  .choose{
+    color: rgb(16, 202, 248)
+  }
+  
+  .mt-title{
+    padding: 40rpx 0 20rpx 0;
+    padding-bottom: 5rpx;
+    font-size: 34rpx;
+    font-weight: 500;
+  }
+  .content{
+    font-size: 28rpx;
+    color: #979797;
+  }
+  .accredit_btn{
+    display: flex;
+    align-items: center;
+    margin-top: 70rpx;
+  }
+  .btn_no{
+    width: 50%;
+    background: #EDEDED;
+    color: #57BF6A;
+    font-size: 32rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom-left-radius: 16rpx;
+  }
+  .child2 .title{
+    padding: 30rpx;
+    font-size: 34rpx;
+  }
+  .btn_yes{
+    width: 50% !important;
+    background: #57BF6A;
+    color: #fff;
+    font-weight: 500;
+    font-size: 32rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    border-bottom-right-radius: 16rpx;
+  }

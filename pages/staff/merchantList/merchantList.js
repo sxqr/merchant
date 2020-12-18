@@ -53,7 +53,11 @@ Page({
                 licenseInfoPerfect: true
             })
         }
-        if(merchants.settleName && merchants.settleNo){
+        if(merchants.merAccountType && merchants.merAccountType == 0 && merchants.settleName && merchants.settleNo && merchants.rate){
+            this.setData({
+                balanceInfoPerfect: true
+            })
+        }else if(merchants.merAccountType && merchants.merAccountType == 1 && merchants.settleName && merchants.rate){
             this.setData({
                 balanceInfoPerfect: true
             })

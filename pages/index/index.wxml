@@ -59,6 +59,10 @@
                 <image src="../../images/wodeqianbao.png"></image>
                 <text>我的钱包</text>
             </view>
+            <view class="item" bindtap="unbind">
+                <image src="../../images/unbind.png"></image>
+                <text>商户解绑</text>
+            </view>
             <view class="item" bindtap="about">
                 <image src="../../images/guanyu.png"></image>
                 <text>关于我们</text>

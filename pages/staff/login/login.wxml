@@ -1,7 +1,7 @@
 <!--pages/login/login.wxml-->
 <!-- 自定义顶部导航 -->
 <view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
-  <view class="{{facility?'custom_title iphone' : 'custom_title'}}">登录</view>
+  <view class="{{facility?'custom_title iphone' : 'custom_title'}}">工作人员登录</view>
 </view>
 <view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
 <view class="we_page">
@@ -21,7 +21,7 @@
             </view>
             <view class="merchant_login_view">
                 <text class="merchant_login" bindtap="goMerchantLogin">
-                    商户登录
+                    登录切换
                 </text>
             </view>
             <view class="login_btn" bindtap="login">登录</view>

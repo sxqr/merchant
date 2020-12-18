@@ -81,3 +81,10 @@ page{
     padding: 25rpx 0;
     border-bottom: 1rpx solid #F8F8F8;
 }
+
+.prompt{
+    color: red;
+    font-size: 24rpx;
+    margin-top: 30rpx;
+    margin-left: 20rpx;
+}

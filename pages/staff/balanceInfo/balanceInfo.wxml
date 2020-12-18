@@ -3,13 +3,30 @@
     <view class="ht_20"></view>
     <view class="balance_info">
         <view class="inpt_cell flex">
+            <text>类型</text>
+            <input placeholder="{{merAccountTypeName}}" bindtap="getMerAccountType" disabled value="{{merchants.merAccountType == 0 ? '对私' : merchants.merAccountType == 1 ? '对公' : ''}}" placeholder-class="phcolor" style="text-align: right;"></input>
+            <image src="../../../images/staff/right.png"></image>
+        </view>
+        <view class="inpt_cell flex">
             <text>结算人姓名</text>
             <input placeholder="请输入结算人姓名" bindinput="settleName" value="{{merchants.settleName}}" placeholder-class="phcolor"></input>
         </view>
-        <view class="inpt_cell flex">
+        <view class="inpt_cell flex" hidden="{{merAccountType != '' && merAccountType == 1}}">
             <text>身份证号</text>
             <input placeholder="请输入结算人身份证号" bindinput="settleNo" value="{{merchants.settleNo}}" placeholder-class="phcolor"></input>
         </view>
+        <view class="inpt_cell flex">
+            <text>交易费率</text>
+            <input placeholder="请输入交易费率" bindinput="rate" value="{{merchants.rate}}" placeholder-class="phcolor"></input>
+        </view>
         <view class="confirm" bindtap="confirm">完成</view>
     </view>
+</view>
+
+<!--授权登录弹出层-->
+<view class='write' hidden='{{merAccountTypeFlag}}' bindtap="hidden">
+  <view class='child2' catchtap='rf' style="background-color: #fff;">
+    <view class="male" data-value="0" bindtap="merAccountType">对私</view>
+    <view class="female" data-value="1" bindtap="merAccountType">对公</view>
+  </view>
 </view>

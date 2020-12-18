@@ -14,7 +14,7 @@
         </view>
         <view class="staff_login_view">
             <text class="staff_login" bindtap="goStaffLogin">
-                工作人员登录
+                登录切换
             </text>
         </view>
         <view class="login_btn" bindtap="userLogin">登录</view>

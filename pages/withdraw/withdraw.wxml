@@ -23,7 +23,7 @@
             <view class="all" bindtap="allRecharge">全部提现</view>
         </view>
         <view class="recharge" bindtap="recharge">确定</view>
-        <view class="warm_hint">注：提现到账时间为次日9点到16点之间，每笔需两元的提现手续费</view>
+        <view class="warm_hint">注：每个工作日16:30前的提现申请在第二个工作日到账，16:30以后申请在第三个工作日到账</view>
     </view>
     <!-- 支付弹窗 -->
     <view class="psd_model" wx:if="{{show}}">

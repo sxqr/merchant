@@ -3,9 +3,8 @@
 	<view class="ht_20"></view>
 	<view class="add_bank">
 		<view class="inpt_cell flex" style="margin-bottom:10rpx;padding: 26rpx 30rpx">
-			<text>姓名</text>
-			<view class="name">{{nickname}}</view>
-			<view class="tips">(注：不能修改)</view>
+			<text>结算人</text>
+			<view class="name">{{settleName}}</view>
 		</view>
 		<view class="inpt_cell flex">
 			<text>银行卡号</text>
@@ -17,6 +16,7 @@
 			<image src="../../images/right.png"></image>
 		</view>
 	</view>
+	<!-- <view class="prompt">提示：银行卡号必须是16、17、19位</view> -->
 	<view class="delete_btn" bindtap="deleteBank">删除</view>
 	<view class="edit_btn" bindtap="editBank">修改</view>
 

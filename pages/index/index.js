@@ -57,6 +57,7 @@ Page({
           wx.setStorageSync('headUrl', t.data.headUrl);
           wx.setStorageSync('userId', t.data.userId);
           wx.setStorageSync('nickname', t.data.merchantShortName);
+          wx.setStorageSync('settleName', t.data.settleName);
           this.setData({
             nickname: t.data.merchantShortName,
             headUrl: t.data.headUrl,
@@ -153,6 +154,49 @@ Page({
   wallet: function () {
     wx.navigateTo({
       url: '../wallet/wallet',
+    })
+  },
+  // 解绑
+  unbind: function () {
+    wx.showModal({
+      title: "提示",
+      content: "是否要解绑商户",
+      success (res) {
+        if (res.confirm) {
+          wx.login({
+            success: function (res) {
+              if (res.code) {
+                let code = res.code;
+                let json = {
+                  access_token: wx.getStorageSync("access_token"),
+                  code: code,
+                }
+                api("/merchant/unOpenIdBind", json, "POST", 1)
+                  .then(t => {
+                    if (t.code == 200) {
+                      wx.showToast({
+                        icon: "none",
+                        title: '解绑成功',
+                      })
+                      setTimeout(function (){
+                        wx.navigateTo({
+                          url: '../login/login',
+                        })
+                      }, 1000);
+                    }
+                  }).catch((response) => {
+                    wx.showToast({
+                        icon: 'none',
+                        title: response.msg
+                    })
+                  })
+              }
+            }
+          })
+        } else if (res.cancel) {
+          
+        }
+      }
     })
   },
   // 关于我们

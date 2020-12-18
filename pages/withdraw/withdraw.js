@@ -51,6 +51,7 @@ Page({
         this.setData({
             usableAmount: options.amount
         })
+        console.log(numMulti(4989.25, 100));
     },
     /**
      * 生命周期函数--监听页面显示
@@ -107,10 +108,10 @@ Page({
                     icon: 'none',
                     title: '可提现金额不足'
                 })
-            } else if(!(/^[3-9]|[1-9]\d+$/.test(amount))) {
+            } else if(!(/^[0-9]+[0-9]*[0-9]*$/.test(amount)) || amount < 100) {
                 wx.showToast({
                     icon: 'none',
-                    title: '提现金额必须是大于2正整数'
+                    title: '提现金额必须是大于等于100的正整数'
                 })
             } else {
                 this.setData({
@@ -145,28 +146,35 @@ Page({
         });
         let json = {
             bankNo: this.data.bankNo,
-            amount: this.data.amount * 100,
+            amount: numMulti(this.data.amount, 100),
             payPwd: e.detail,
             access_token: wx.getStorageSync('access_token')
         }
-        api("/merchantWithdraw/add", json, "POST", 1).then(t => {
-            if (t.code == 200) {
-                wx.showToast({
-                    icon: 'success',
-                    title: '申请提现成功',
-                })
-                setTimeout(function () {
-                    wx.navigateBack({
-                        delta: 1
-                    })
-                }, 1500)
-            }
-        }).catch((response) => {
+        if (!(/^[0-9]+[0-9]*[0-9]*$/.test(json.amount/100)) || json.amount/100 < 100) {
             wx.showToast({
                 icon: 'none',
-                title: response.msg
+                title: '提现金额必须是大于等于100的正整数'
             })
-        });
+        } else {
+            api("/merchantWithdraw/add", json, "POST", 1).then(t => {
+                if (t.code == 200) {
+                    wx.showToast({
+                        icon: 'success',
+                        title: '申请提现成功',
+                    })
+                    setTimeout(function () {
+                        wx.navigateBack({
+                            delta: 1
+                        })
+                    }, 1500)
+                }
+            }).catch((response) => {
+                wx.showToast({
+                    icon: 'none',
+                    title: response.msg
+                })
+            });
+        }
     },
     // 选择银行卡
     slectBankCard: function () {
@@ -193,3 +201,19 @@ Page({
         })
     }
 })
+
+/**
+ * num1被乘数 | num2乘数
+ */
+function numMulti(num1, num2) {
+    var baseNum = 0;
+    try {
+     baseNum += num1.toString().split(".")[1].length;
+    } catch (e) {
+    }
+    try {
+     baseNum += num2.toString().split(".")[1].length;
+    } catch (e) {
+    }
+    return Number(num1.toString().replace(".", "")) * Number(num2.toString().replace(".", "")) / Math.pow(10, baseNum);
+};
